@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FetchUserProtocols.h"
 
-@interface FetchUserInteractor : NSObject
+@interface FetchUserInteractor : NSObject <FetchUserPresenterInteractorProtocol>
+
+@property (nonatomic, weak) id<FetchUserInteractorProtocol> presenter;
 
 @end

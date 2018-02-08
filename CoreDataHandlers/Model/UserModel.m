@@ -7,7 +7,23 @@
 //
 
 #import "UserModel.h"
+#import "NSObject_Extension.h"
+
+@interface UserModel()
+
+@property (nonatomic, strong) User *user;
+
+@end
 
 @implementation UserModel
+
+- (instancetype)initWithUser:(User *)user {
+    self = [super init];
+    if (self) {
+        self.user = user;
+        [self syncDataWithObject:user];
+    }
+    return self;
+}
 
 @end

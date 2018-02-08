@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FetchUserProtocols.h"
 
-@interface FetchUserWireframe : NSObject
+@interface FetchUserWireframe : NSObject <FetchUserPresenterWireframeProtocol>
+
+@property (nonatomic, weak) id<FetchUserWireframeProtocol> presenter;
 
 @end

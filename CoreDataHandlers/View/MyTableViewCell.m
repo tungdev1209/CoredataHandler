@@ -21,4 +21,8 @@
     // Configure the view for the selected state
 }
 
+-(void)setUserDetail:(FetchUserDetail *)userDetail {
+    self.textLabel.text = userDetail.name;
+}
+
 @end

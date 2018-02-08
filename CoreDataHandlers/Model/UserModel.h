@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User+CoreDataProperties.h"
 #import "ObservableObject.h"
 
 @interface UserModel : ObservableObject
 
-@property (nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSString *name;
+@property (nonatomic) int16_t age;
 
+- (instancetype)initWithUser:(User *)user;
 
 @end

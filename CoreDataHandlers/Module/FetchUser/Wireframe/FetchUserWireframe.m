@@ -8,6 +8,10 @@
 
 #import "FetchUserWireframe.h"
 
+@interface FetchUserWireframe() 
+
+@end
+
 @implementation FetchUserWireframe
 
 @end

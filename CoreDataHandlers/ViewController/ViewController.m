@@ -24,7 +24,7 @@
     
     [_userTbl registerClass:[MyTableViewCell class] forCellReuseIdentifier:@"Cell"];
     
-    
+    [self.fetchUserPresenter updateListUsers];
 }
 
 -(NSMutableArray *)users {
@@ -38,14 +38,30 @@
     
 }
 
+#pragma mark - Presenter protocol
+-(void)showUserDetails:(NSArray<FetchUserDetail *> *)userDetails {
+    [self.users removeAllObjects];
+    [self.users addObjectsFromArray:userDetails];
+    [self.userTbl reloadData];
+}
+
+#pragma mark - Root
+-(void)startup:(NSArray *)dependencies {
+    for (id dependency in dependencies) {
+        if ([dependency conformsToProtocol:@protocol(FetchUserViewProtocol)]) {
+            [(id<FetchUserViewProtocol>)dependency setup:self];
+        }
+    }
+}
+
 #pragma mark - TableView
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.users.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    [cell setUserDetail:[self.users objectAtIndex:indexPath.row]];
     return cell;
 }
 

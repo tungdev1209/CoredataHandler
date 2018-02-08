@@ -35,6 +35,12 @@
 		1AE5402E202C29A6001B31BE /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5402A202C29A6001B31BE /* User+CoreDataProperties.m */; };
 		1AE5402F202C29A6001B31BE /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5402B202C29A6001B31BE /* User+CoreDataClass.m */; };
 		1AE54033202C2A13001B31BE /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54032202C2A13001B31BE /* DataHandler.m */; };
+		1AE5403F202C387F001B31BE /* RootPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5403E202C387F001B31BE /* RootPresenter.m */; };
+		1AE54042202C39A6001B31BE /* RootWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54041202C39A6001B31BE /* RootWireframe.m */; };
+		1AE5404A202C3D0A001B31BE /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54049202C3D0A001B31BE /* AppUtils.m */; };
+		1AE5404D202C4DDC001B31BE /* RemoteDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5404C202C4DDC001B31BE /* RemoteDataHandler.m */; };
+		1AE54051202C61EB001B31BE /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54050202C61EB001B31BE /* NSObject_Extension.m */; };
+		1AE54054202C69DA001B31BE /* FetchUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54053202C69DA001B31BE /* FetchUserDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +117,20 @@
 		1AE5402D202C29A6001B31BE /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
 		1AE54031202C2A13001B31BE /* DataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
 		1AE54032202C2A13001B31BE /* DataHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
+		1AE54039202C361B001B31BE /* FetchUserProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchUserProtocols.h; sourceTree = "<group>"; };
+		1AE5403D202C387F001B31BE /* RootPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootPresenter.h; sourceTree = "<group>"; };
+		1AE5403E202C387F001B31BE /* RootPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootPresenter.m; sourceTree = "<group>"; };
+		1AE54040202C39A6001B31BE /* RootWireframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootWireframe.h; sourceTree = "<group>"; };
+		1AE54041202C39A6001B31BE /* RootWireframe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootWireframe.m; sourceTree = "<group>"; };
+		1AE54043202C3A84001B31BE /* RootProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootProtocols.h; sourceTree = "<group>"; };
+		1AE54048202C3D0A001B31BE /* AppUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
+		1AE54049202C3D0A001B31BE /* AppUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
+		1AE5404B202C4DDC001B31BE /* RemoteDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteDataHandler.h; sourceTree = "<group>"; };
+		1AE5404C202C4DDC001B31BE /* RemoteDataHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteDataHandler.m; sourceTree = "<group>"; };
+		1AE5404F202C61EB001B31BE /* NSObject_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_Extension.h; sourceTree = "<group>"; };
+		1AE54050202C61EB001B31BE /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
+		1AE54052202C69DA001B31BE /* FetchUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchUserDetail.h; sourceTree = "<group>"; };
+		1AE54053202C69DA001B31BE /* FetchUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchUserDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,15 +181,16 @@
 		1AE53FAB202C2598001B31BE /* CoreDataHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				1AE5404E202C61D5001B31BE /* Extension */,
+				1AE54047202C3CF2001B31BE /* Utils */,
 				1AE54030202C29F1001B31BE /* DataHandler */,
 				1AE54008202C25EC001B31BE /* Model */,
 				1AE54028202C29A6001B31BE /* Entity */,
 				1AE53FE1202C25EC001B31BE /* Module */,
 				1AE5400F202C25EC001B31BE /* View */,
+				1AE54034202C2ACB001B31BE /* ViewController */,
 				1AE53FAC202C2598001B31BE /* AppDelegate.h */,
 				1AE53FAD202C2598001B31BE /* AppDelegate.m */,
-				1AE53FAF202C2598001B31BE /* ViewController.h */,
-				1AE53FB0202C2598001B31BE /* ViewController.m */,
 				1AE53FB2202C2598001B31BE /* Main.storyboard */,
 				1AE53FB8202C2598001B31BE /* Assets.xcassets */,
 				1AE53FBA202C2598001B31BE /* LaunchScreen.storyboard */,
@@ -201,6 +222,7 @@
 		1AE53FE1202C25EC001B31BE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				1AE5403C202C3873001B31BE /* Root */,
 				1AE53FE2202C25EC001B31BE /* AddUser */,
 				1AE53FEF202C25EC001B31BE /* FetchUser */,
 			);
@@ -257,9 +279,10 @@
 		1AE53FEF202C25EC001B31BE /* FetchUser */ = {
 			isa = PBXGroup;
 			children = (
+				1AE54039202C361B001B31BE /* FetchUserProtocols.h */,
+				1AE53FF6202C25EC001B31BE /* DataHandler */,
 				1AE53FF0202C25EC001B31BE /* Presenter */,
 				1AE53FF3202C25EC001B31BE /* Wireframe */,
-				1AE53FF6202C25EC001B31BE /* DataHandler */,
 				1AE53FF9202C25EC001B31BE /* Interactor */,
 			);
 			path = FetchUser;
@@ -286,8 +309,10 @@
 		1AE53FF6202C25EC001B31BE /* DataHandler */ = {
 			isa = PBXGroup;
 			children = (
-				1AE53FF7202C25EC001B31BE /* FetchUserDataHandler.m */,
 				1AE53FF8202C25EC001B31BE /* FetchUserDataHandler.h */,
+				1AE53FF7202C25EC001B31BE /* FetchUserDataHandler.m */,
+				1AE54052202C69DA001B31BE /* FetchUserDetail.h */,
+				1AE54053202C69DA001B31BE /* FetchUserDetail.m */,
 			);
 			path = DataHandler;
 			sourceTree = "<group>";
@@ -295,8 +320,8 @@
 		1AE53FF9202C25EC001B31BE /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				1AE53FFA202C25EC001B31BE /* FetchUserInteractor.m */,
 				1AE53FFB202C25EC001B31BE /* FetchUserInteractor.h */,
+				1AE53FFA202C25EC001B31BE /* FetchUserInteractor.m */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -304,6 +329,8 @@
 		1AE53FFC202C25EC001B31BE /* LocalDataHandler */ = {
 			isa = PBXGroup;
 			children = (
+				1AE5404B202C4DDC001B31BE /* RemoteDataHandler.h */,
+				1AE5404C202C4DDC001B31BE /* RemoteDataHandler.m */,
 				1AE53FFD202C25EC001B31BE /* LocalDataHandler.h */,
 				1AE54007202C25EC001B31BE /* LocalDataHandler.m */,
 				1AE53FFE202C25EC001B31BE /* CoreData */,
@@ -314,14 +341,14 @@
 		1AE53FFE202C25EC001B31BE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				1AE53FFF202C25EC001B31BE /* CoreDataHandler.m */,
-				1AE54000202C25EC001B31BE /* CoreDataStack_iOS10.h */,
-				1AE54001202C25EC001B31BE /* CoreDataStack_iOS9.h */,
-				1AE54002202C25EC001B31BE /* CoreDataStack.h */,
-				1AE54003202C25EC001B31BE /* CoreDataStack_iOS9.m */,
-				1AE54004202C25EC001B31BE /* CoreDataStack_iOS10.m */,
 				1AE54005202C25EC001B31BE /* CoreDataHandler.h */,
+				1AE53FFF202C25EC001B31BE /* CoreDataHandler.m */,
+				1AE54002202C25EC001B31BE /* CoreDataStack.h */,
 				1AE54006202C25EC001B31BE /* CoreDataStack.m */,
+				1AE54000202C25EC001B31BE /* CoreDataStack_iOS10.h */,
+				1AE54004202C25EC001B31BE /* CoreDataStack_iOS10.m */,
+				1AE54001202C25EC001B31BE /* CoreDataStack_iOS9.h */,
+				1AE54003202C25EC001B31BE /* CoreDataStack_iOS9.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -349,8 +376,8 @@
 		1AE5400F202C25EC001B31BE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1AE54010202C25EC001B31BE /* MyTableViewCell.m */,
 				1AE54011202C25EC001B31BE /* MyTableViewCell.h */,
+				1AE54010202C25EC001B31BE /* MyTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +409,45 @@
 				1AE53FFC202C25EC001B31BE /* LocalDataHandler */,
 			);
 			path = DataHandler;
+			sourceTree = "<group>";
+		};
+		1AE54034202C2ACB001B31BE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FAF202C2598001B31BE /* ViewController.h */,
+				1AE53FB0202C2598001B31BE /* ViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1AE5403C202C3873001B31BE /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1AE54043202C3A84001B31BE /* RootProtocols.h */,
+				1AE5403D202C387F001B31BE /* RootPresenter.h */,
+				1AE5403E202C387F001B31BE /* RootPresenter.m */,
+				1AE54040202C39A6001B31BE /* RootWireframe.h */,
+				1AE54041202C39A6001B31BE /* RootWireframe.m */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		1AE54047202C3CF2001B31BE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1AE54048202C3D0A001B31BE /* AppUtils.h */,
+				1AE54049202C3D0A001B31BE /* AppUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1AE5404E202C61D5001B31BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1AE5404F202C61EB001B31BE /* NSObject_Extension.h */,
+				1AE54050202C61EB001B31BE /* NSObject_Extension.m */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,9 +585,11 @@
 			files = (
 				1AE5401A202C25EC001B31BE /* CoreDataHandler.m in Sources */,
 				1AE54018202C25EC001B31BE /* FetchUserDataHandler.m in Sources */,
+				1AE54042202C39A6001B31BE /* RootWireframe.m in Sources */,
 				1AE54014202C25EC001B31BE /* AddUserDataHandler.m in Sources */,
 				1AE5402E202C29A6001B31BE /* User+CoreDataProperties.m in Sources */,
 				1AE5401D202C25EC001B31BE /* CoreDataStack.m in Sources */,
+				1AE5404D202C4DDC001B31BE /* RemoteDataHandler.m in Sources */,
 				1AE54033202C2A13001B31BE /* DataHandler.m in Sources */,
 				1AE54015202C25EC001B31BE /* AddUserInteractor.m in Sources */,
 				1AE54012202C25EC001B31BE /* AddUserPresenter.m in Sources */,
@@ -531,14 +599,18 @@
 				1AE54021202C25EC001B31BE /* MyTableViewCell.m in Sources */,
 				1AE53FAE202C2598001B31BE /* AppDelegate.m in Sources */,
 				1AE54019202C25EC001B31BE /* FetchUserInteractor.m in Sources */,
+				1AE5404A202C3D0A001B31BE /* AppUtils.m in Sources */,
 				1AE5401F202C25EC001B31BE /* ObservableObject.m in Sources */,
 				1AE5401C202C25EC001B31BE /* CoreDataStack_iOS10.m in Sources */,
 				1AE53FBF202C2598001B31BE /* main.m in Sources */,
 				1AE5402F202C29A6001B31BE /* User+CoreDataClass.m in Sources */,
 				1AE53FB7202C2598001B31BE /* CoreDataHandlers.xcdatamodeld in Sources */,
 				1AE54013202C25EC001B31BE /* AddUserWireframe.m in Sources */,
+				1AE54054202C69DA001B31BE /* FetchUserDetail.m in Sources */,
+				1AE54051202C61EB001B31BE /* NSObject_Extension.m in Sources */,
 				1AE54020202C25EC001B31BE /* UserModel.m in Sources */,
 				1AE5401B202C25EC001B31BE /* CoreDataStack_iOS9.m in Sources */,
+				1AE5403F202C387F001B31BE /* RootPresenter.m in Sources */,
 				1AE5401E202C25EC001B31BE /* LocalDataHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

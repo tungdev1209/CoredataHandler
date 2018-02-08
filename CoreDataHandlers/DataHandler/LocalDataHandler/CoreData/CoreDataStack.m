@@ -11,17 +11,14 @@
 
 @implementation CoreDataStack
 
-+(instancetype)shared {
-    static CoreDataStack *obj = nil;
-    static dispatch_once_t oneToken;
-    dispatch_once(&oneToken, ^{
-        if (@available(iOS 9, *)) {
-            obj = [[CoreDataStack_iOS9 alloc] init];
-        }
-        else {
-            obj = [[CoreDataStack_iOS10 alloc] init];
-        }
-    });
++(instancetype)getStack {
+    CoreDataStack *obj;
+    if (@available(iOS 9, *)) {
+        obj = [[CoreDataStack_iOS9 alloc] init];
+    }
+    else {
+        obj = [[CoreDataStack_iOS10 alloc] init];
+    }
     return obj;
 }
 

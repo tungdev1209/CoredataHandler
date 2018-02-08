@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DataHandler.h"
 
 @interface LocalDataHandler : NSObject
+
+-(void)getListUsersLocal:(ListUsersBlock)completion;
 
 @end

@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FetchUserPresenter : NSObject
+#import "FetchUserProtocols.h"
+#import "FetchUserInteractor.h"
+#import "FetchUserWireframe.h"
+
+@interface FetchUserPresenter : NSObject <FetchUserViewProtocol, FetchUserInteractorProtocol, FetchUserWireframeProtocol>
+
+@property (nonatomic, strong) id<FetchUserPresenterInteractorProtocol> interactor;
+@property (nonatomic, strong) id<FetchUserPresenterWireframeProtocol> wireframe;
+@property (nonatomic, weak) id<FetchUserPresenterViewProtocol> view;
 
 @end

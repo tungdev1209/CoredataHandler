@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FetchUserProtocols.h"
 
 @interface MyTableViewCell : UITableViewCell
 
-
+@property (nonatomic, strong) FetchUserDetail *userDetail;
 
 @end

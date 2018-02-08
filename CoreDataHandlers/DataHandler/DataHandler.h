@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class UserModel;
+
+typedef void(^ListUsersBlock)(NSArray <UserModel *> *mUsers);
+
 @interface DataHandler : NSObject
+
++(instancetype)shared;
+
+-(void)getListUsersLocal:(ListUsersBlock)completion;
 
 @end
