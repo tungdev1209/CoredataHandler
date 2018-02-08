@@ -42,7 +42,10 @@
 
 -(void)getListUsersLocal:(ListUsersBlock)completion {
     [self.localHandler getListUsersLocal:completion];
-    
+}
+
+-(void)addUserLocal:(UserModel *)mUser completion:(AddUserBlock)completion {
+    [self.localHandler addUserLocal:mUser completion:completion];
 }
 
 @end

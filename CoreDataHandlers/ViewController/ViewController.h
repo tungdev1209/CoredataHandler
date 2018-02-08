@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "FetchUserProtocols.h"
+#import "AddUserProtocols.h"
 #import "RootProtocols.h"
 
-@interface ViewController : UIViewController <RootViewProtocol, FetchUserPresenterViewProtocol>
+@interface ViewController : UIViewController <RootViewProtocol, FetchUserPresenterViewProtocol, AddUserPresenterViewProtocol>
 
 @property (nonatomic, strong) id<FetchUserViewProtocol> fetchUserPresenter;
+@property (nonatomic, strong) id<AddUserViewProtocol> addUserPresenter;
 
 @end
 

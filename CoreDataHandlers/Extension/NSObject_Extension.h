@@ -11,5 +11,6 @@
 @interface NSObject(e)
 
 -(void)syncDataWithObject:(NSObject *)object;
+-(void)sendDataToObject:(NSObject *)object;
 
 @end

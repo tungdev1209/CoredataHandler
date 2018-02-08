@@ -58,7 +58,7 @@
     if (_localManagedObjectModel != nil) {
         return _localManagedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"LocationModel" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:AppName withExtension:@"momd"];
     _localManagedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _localManagedObjectModel;
 }

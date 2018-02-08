@@ -17,25 +17,26 @@
 
 @implementation CoreDataHandler
 
-+(instancetype)shared {
-    static CoreDataHandler *obj = nil;
-    static dispatch_once_t oneToken;
-    dispatch_once(&oneToken, ^{
-        obj = [[CoreDataHandler alloc]init];
-        obj.stack = [CoreDataStack getStack];
-    });
-    return obj;
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.stack = [CoreDataStack getStack];
+    }
+    return self;
 }
 
-- (void)saveContext {
-    NSManagedObjectContext *context = self.stack.managedObjectContext;
+- (NSError *)saveContext {
+    NSManagedObjectContext *context = _stack.managedObjectContext;
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        abort();
+//        abort();
+        return error;
     }
+    return nil;
 }
 
 - (void)fetchEntries:(NSFetchRequest *)fetchRequest
@@ -46,10 +47,10 @@
     [fetchRequest setPredicate:predicate];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
-    [self.stack.managedObjectContext performBlock:^{
+    [_stack.managedObjectContext performBlock:^{
         NSLog(@"excute on thread: %@", [NSThread currentThread]);
         NSError *error = nil;
-        NSArray *results = [self.stack.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        NSArray *results = [_stack.managedObjectContext executeFetchRequest:fetchRequest error:&error];
         if (error) {
             NSLog(@"fetch coredata fail: %@", error);
         }
@@ -57,6 +58,15 @@
             completionBlock(results);
         }
     }];
+}
+
+- (NSManagedObject *)newEntry:(Class)entryClass {
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:NSStringFromClass(entryClass) inManagedObjectContext:_stack.managedObjectContext];
+    return [[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_stack.managedObjectContext];
+}
+
+- (void)saveEntry:(SaveResultsBlock)result {
+    result([self saveContext]);
 }
 
 @end

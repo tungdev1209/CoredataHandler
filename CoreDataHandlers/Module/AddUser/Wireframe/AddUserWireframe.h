@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AddUserProtocols.h"
 
-@interface AddUserWireframe : NSObject
+@interface AddUserWireframe : NSObject <AddUserPresenterWireframeProtocol>
+
+@property (nonatomic, weak) id<AddUserWireframeProtocol> presenter;
 
 @end

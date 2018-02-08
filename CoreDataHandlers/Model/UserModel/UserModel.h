@@ -15,6 +15,6 @@
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic) int16_t age;
 
-- (instancetype)initWithUser:(User *)user;
+- (instancetype _Nonnull )initWithUser:(User *_Nonnull)user;
 
 @end

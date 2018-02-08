@@ -8,6 +8,7 @@
 
 #import "UserModel.h"
 #import "NSObject_Extension.h"
+#import "ObservableObject+Private.h"
 
 @interface UserModel()
 
@@ -24,6 +25,10 @@
         [self syncDataWithObject:user];
     }
     return self;
+}
+
+-(void)didObserveKeypath:(NSString *)key {
+    
 }
 
 @end

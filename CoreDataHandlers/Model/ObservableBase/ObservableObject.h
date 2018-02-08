@@ -24,6 +24,4 @@ typedef void(^SubcribeBlock)(id _Nullable);
 -(ObservableObject *_Nonnull)subcribeKeySelector:(SEL _Nonnull)propertySelector binding:(SubcribeBlock _Nonnull)subcriber;
 -(void)cleanupBy:(CleanBag * _Nonnull)bag;
 
-+(instancetype _Nullable)object;
-
 @end

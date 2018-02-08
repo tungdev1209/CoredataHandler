@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AddUserProtocols.h"
 
-@interface AddUserInteractor : NSObject
+@interface AddUserInteractor : NSObject <AddUserPresenterInteractorProtocol>
+
+@property (nonatomic, weak) id<AddUserInteractorProtocol> presenter;
 
 @end

@@ -7,7 +7,38 @@
 //
 
 #import "AddUserPresenter.h"
+#import "AddUserWireframe.h"
+#import "AddUserInteractor.h"
+#import "AddUserDetail.h"
 
 @implementation AddUserPresenter
+
+-(void)setup:(id)view {
+    if (![view conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
+        return;
+    }
+    AddUserWireframe *wireframe = [[AddUserWireframe alloc] init];
+    AddUserInteractor *interactor = [[AddUserInteractor alloc] init];
+    
+    self.wireframe = wireframe;
+    self.interactor = interactor;
+    self.view = view;
+    
+    wireframe.presenter = self;
+    interactor.presenter = self;
+}
+
+-(void)addUserDetail:(AddUserDetail *)userDetail {
+    [self.interactor addUserDetail:userDetail];
+}
+
+-(void)addedUser:(BOOL)result {
+    if (!result) {
+        [self.view showAlertAddingFail];
+    }
+    else {
+        [self.view refreshList];
+    }
+}
 
 @end

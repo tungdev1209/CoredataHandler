@@ -8,8 +8,9 @@
 
 #import "LocalDataHandler.h"
 #import "CoreDataHandler.h"
-
+#import "NSObject_Extension.h"
 #import "UserModel.h"
+#import "User+CoreDataProperties.h"
 
 typedef enum : NSUInteger {
     LocalDataHandlerTypeCoredata,
@@ -41,6 +42,12 @@ typedef enum : NSUInteger {
     }
 }
 
+-(void)addUserLocal:(UserModel *)mUser completion:(AddUserBlock)completion {
+    if (self.usingHandlerType == LocalDataHandlerTypeCoredata) {
+        [self coredataAddUserLocal:mUser completion:completion];
+    }
+}
+
 -(void)coredataGetListUsersLocal:(ListUsersBlock)completion {
     [self.coredataHandler fetchEntries:[User fetchRequest] withPredicate:nil sortDescriptors:nil completionBlock:^(NSArray *users) {
         NSMutableArray *mUsers = [NSMutableArray array];
@@ -49,6 +56,18 @@ typedef enum : NSUInteger {
         }
         if (completion) {
             completion(mUsers);
+        }
+    }];
+}
+
+-(void)coredataAddUserLocal:(UserModel *)mUser completion:(AddUserBlock)completion {
+    [mUser sendDataToObject:(User *)[self.coredataHandler newEntry:[User class]]];
+    [self.coredataHandler saveEntry:^(NSError *error) {
+        if (error) {
+            NSLog(@"save entry failed: %@", error);
+        }
+        if (completion) {
+            completion(!error);
         }
     }];
 }

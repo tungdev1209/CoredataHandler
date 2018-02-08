@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RootPresenter.h"
+#import "RootWireframe.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[RootPresenter shared] setup:self.window];
+    [[RootWireframe shared] setup:self.window];
     
     return YES;
 }

@@ -14,7 +14,4 @@
 
 @property (nonatomic, strong) id<RootPresenterProtocol> wireframe;
 
-+(instancetype)shared;
--(void)setup:(UIWindow *)window;
-
 @end

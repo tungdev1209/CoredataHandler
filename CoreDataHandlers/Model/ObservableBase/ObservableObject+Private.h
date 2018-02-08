@@ -30,4 +30,6 @@
 @property (nonatomic, weak) ObservableObject * _Nullable syncupObject;
 @property (nonatomic, copy) NSString * _Nullable objectID;
 
+-(void)didObserveKeypath:(NSString *_Nonnull)key;
+
 @end

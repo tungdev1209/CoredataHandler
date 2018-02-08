@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18810607202CDA0B002C82D4 /* AddUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18810606202CDA0B002C82D4 /* AddUserDetail.m */; };
 		1AE53FAE202C2598001B31BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FAD202C2598001B31BE /* AppDelegate.m */; };
 		1AE53FB1202C2598001B31BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FB0202C2598001B31BE /* ViewController.m */; };
 		1AE53FB4202C2598001B31BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE53FB2202C2598001B31BE /* Main.storyboard */; };
@@ -61,6 +62,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18810602202CD8BD002C82D4 /* AddUserProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddUserProtocols.h; sourceTree = "<group>"; };
+		18810605202CDA0B002C82D4 /* AddUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddUserDetail.h; sourceTree = "<group>"; };
+		18810606202CDA0B002C82D4 /* AddUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddUserDetail.m; sourceTree = "<group>"; };
 		1AE53FA9202C2598001B31BE /* CoreDataHandlers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataHandlers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE53FAC202C2598001B31BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AE53FAD202C2598001B31BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		188105FE202CC1C3002C82D4 /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				1AE5400E202C25EC001B31BE /* UserModel.h */,
+				1AE5400D202C25EC001B31BE /* UserModel.m */,
+			);
+			path = UserModel;
+			sourceTree = "<group>";
+		};
 		1AE53FA0202C2598001B31BE = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +198,6 @@
 				1AE54047202C3CF2001B31BE /* Utils */,
 				1AE54030202C29F1001B31BE /* DataHandler */,
 				1AE54008202C25EC001B31BE /* Model */,
-				1AE54028202C29A6001B31BE /* Entity */,
 				1AE53FE1202C25EC001B31BE /* Module */,
 				1AE5400F202C25EC001B31BE /* View */,
 				1AE54034202C2ACB001B31BE /* ViewController */,
@@ -232,6 +244,7 @@
 		1AE53FE2202C25EC001B31BE /* AddUser */ = {
 			isa = PBXGroup;
 			children = (
+				18810602202CD8BD002C82D4 /* AddUserProtocols.h */,
 				1AE53FE3202C25EC001B31BE /* Presenter */,
 				1AE53FE6202C25EC001B31BE /* Wireframe */,
 				1AE53FE9202C25EC001B31BE /* DataHandler */,
@@ -261,8 +274,10 @@
 		1AE53FE9202C25EC001B31BE /* DataHandler */ = {
 			isa = PBXGroup;
 			children = (
-				1AE53FEA202C25EC001B31BE /* AddUserDataHandler.m */,
 				1AE53FEB202C25EC001B31BE /* AddUserDataHandler.h */,
+				1AE53FEA202C25EC001B31BE /* AddUserDataHandler.m */,
+				18810605202CDA0B002C82D4 /* AddUserDetail.h */,
+				18810606202CDA0B002C82D4 /* AddUserDetail.m */,
 			);
 			path = DataHandler;
 			sourceTree = "<group>";
@@ -356,9 +371,9 @@
 		1AE54008202C25EC001B31BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				188105FE202CC1C3002C82D4 /* UserModel */,
+				1AE54028202C29A6001B31BE /* CoreDataEntity */,
 				1AE54009202C25EC001B31BE /* ObservableBase */,
-				1AE5400E202C25EC001B31BE /* UserModel.h */,
-				1AE5400D202C25EC001B31BE /* UserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -382,12 +397,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1AE54028202C29A6001B31BE /* Entity */ = {
+		1AE54028202C29A6001B31BE /* CoreDataEntity */ = {
 			isa = PBXGroup;
 			children = (
 				1AE54029202C29A6001B31BE /* User */,
 			);
-			path = Entity;
+			path = CoreDataEntity;
 			sourceTree = "<group>";
 		};
 		1AE54029202C29A6001B31BE /* User */ = {
@@ -588,6 +603,7 @@
 				1AE54042202C39A6001B31BE /* RootWireframe.m in Sources */,
 				1AE54014202C25EC001B31BE /* AddUserDataHandler.m in Sources */,
 				1AE5402E202C29A6001B31BE /* User+CoreDataProperties.m in Sources */,
+				18810607202CDA0B002C82D4 /* AddUserDetail.m in Sources */,
 				1AE5401D202C25EC001B31BE /* CoreDataStack.m in Sources */,
 				1AE5404D202C4DDC001B31BE /* RemoteDataHandler.m in Sources */,
 				1AE54033202C2A13001B31BE /* DataHandler.m in Sources */,
@@ -777,6 +793,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX5SE2R2WN;
 				INFOPLIST_FILE = CoreDataHandlers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fsoft.cme.CoreDataHandlers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -791,6 +808,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX5SE2R2WN;
 				INFOPLIST_FILE = CoreDataHandlers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fsoft.cme.CoreDataHandlers;
 				PRODUCT_NAME = "$(TARGET_NAME)";

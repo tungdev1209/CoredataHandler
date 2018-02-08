@@ -34,4 +34,27 @@
     free(selfProps);
 }
 
+-(void)sendDataToObject:(NSObject *)object {
+    unsigned int count;
+    objc_property_t *props = class_copyPropertyList([self class], &count);
+    
+    NSString *keypath;
+    NSMutableDictionary *selfKeypaths = [NSMutableDictionary dictionary];
+    for (int i = 0; i < count; ++i){
+        keypath = [NSString stringWithUTF8String:property_getName(props[i])];
+        [selfKeypaths setObject:@1 forKey:keypath];
+    }
+    free(props);
+    
+    objc_property_t *objProps = class_copyPropertyList([object class], &count);
+    for (int i = 0; i < count; ++i){
+        keypath = [NSString stringWithUTF8String:property_getName(objProps[i])];
+        if ([selfKeypaths objectForKey:keypath]) {
+            [object setValue:[self valueForKey:keypath] forKey:keypath];
+        }
+    }
+    
+    free(objProps);
+}
+
 @end

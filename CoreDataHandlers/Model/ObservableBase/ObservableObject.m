@@ -77,10 +77,6 @@ static dispatch_queue_t getUUIDQueue() {
 @implementation ObservableObject
 
 #pragma mark - Public funcs
-+(instancetype)object {
-    return [[[self class] alloc] init];
-}
-
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -156,6 +152,11 @@ static dispatch_queue_t getUUIDQueue() {
     [self addObservingBag];
 }
 
+#pragma mark Subclass funs
+-(void)didObserveKeypath:(NSString *)key {
+    
+}
+
 #pragma mark - Private funcs
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     NSLog(@"observed keypath: %@ from object: %@", object, keyPath);
@@ -184,6 +185,8 @@ static dispatch_queue_t getUUIDQueue() {
             SubcribeBlock block = self.subcriberById[subBlockId];
             block([self valueForKey:keyPath]);
         }
+        
+        [self didObserveKeypath:keyPath];
     });
 }
 
@@ -238,7 +241,9 @@ static dispatch_queue_t getUUIDQueue() {
 
 -(void)removeObservingProperties {
     dispatch_sync(self.observerQueue, ^{
-        [self removeObservingPropertiesForObject:self];
+        if (_obsAdded) {
+            [self removeObservingPropertiesForObject:self];
+        }
         _obsAdded = NO;
     });
 }

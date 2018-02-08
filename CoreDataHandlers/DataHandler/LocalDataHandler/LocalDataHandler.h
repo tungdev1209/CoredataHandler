@@ -12,5 +12,6 @@
 @interface LocalDataHandler : NSObject
 
 -(void)getListUsersLocal:(ListUsersBlock)completion;
+-(void)addUserLocal:(UserModel *)mUser completion:(AddUserBlock)completion;
 
 @end

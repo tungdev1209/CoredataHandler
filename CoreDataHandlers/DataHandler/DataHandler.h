@@ -11,11 +11,13 @@
 @class UserModel;
 
 typedef void(^ListUsersBlock)(NSArray <UserModel *> *mUsers);
+typedef void(^AddUserBlock)(BOOL);
 
 @interface DataHandler : NSObject
 
 +(instancetype)shared;
 
 -(void)getListUsersLocal:(ListUsersBlock)completion;
+-(void)addUserLocal:(UserModel *)mUser completion:(AddUserBlock)completion;
 
 @end

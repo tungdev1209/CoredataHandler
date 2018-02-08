@@ -10,14 +10,16 @@
 #import <CoreData/CoreData.h>
 
 typedef void(^FetchResultsBlock)(NSArray *);
+typedef void(^SaveResultsBlock)(NSError *);
 
 @interface CoreDataHandler : NSObject
-
-+(instancetype)shared;
 
 -(void)fetchEntries:(NSFetchRequest *)fetchRequest
       withPredicate:(NSPredicate *)predicate
     sortDescriptors:(NSArray *)sortDescriptors
     completionBlock:(FetchResultsBlock)completionBlock;
+
+-(void)saveEntry:(SaveResultsBlock)result;
+-(NSManagedObject *)newEntry:(Class)entryClass;
 
 @end

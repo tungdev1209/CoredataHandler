@@ -9,6 +9,7 @@
 #import "CoreDataStack_iOS9.h"
 #import "CoreDataStack_iOS10.h"
 
+// https://stackoverflow.com/questions/24657437/core-data-background-context-best-practice
 @implementation CoreDataStack
 
 +(instancetype)getStack {

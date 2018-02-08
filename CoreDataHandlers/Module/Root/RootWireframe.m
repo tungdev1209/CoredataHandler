@@ -11,6 +11,7 @@
 #import "AppUtils.h"
 
 #import "FetchUserPresenter.h"
+#import "AddUserPresenter.h"
 
 @interface RootWireframe ()
 
@@ -50,6 +51,7 @@
     NSMutableArray *dependencies = [NSMutableArray array];
     if ([vc conformsToProtocol:@protocol(RootViewProtocol)]) {
         [dependencies addObject:[[FetchUserPresenter alloc] init]];
+        [dependencies addObject:[[AddUserPresenter alloc] init]];
     }
     [(id<RootViewProtocol>)vc startup:dependencies];
 }

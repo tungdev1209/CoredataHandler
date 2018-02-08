@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#define AppName @"CoreDataHandlers"
+
 @interface CoreDataStack : NSObject
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;

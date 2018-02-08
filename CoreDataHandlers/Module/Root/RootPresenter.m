@@ -7,19 +7,11 @@
 //
 
 #import "RootPresenter.h"
-#import "RootWireframe.h"
-#import "AppUtils.h"
-
-#import "FetchUserPresenter.h"
 
 @interface RootPresenter()
-
-
 
 @end
 
 @implementation RootPresenter
-
-
 
 @end
