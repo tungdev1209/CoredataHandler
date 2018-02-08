@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  FetchUserInteractor.m
 //  CoredataUpgrade
 //
 //  Created by Tung Nguyen on 2/8/18.
 //  Copyright © 2018 Tung Nguyen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FetchUserInteractor.h"
 
-@interface ViewController : UIViewController
-
+@implementation FetchUserInteractor
 
 @end
-

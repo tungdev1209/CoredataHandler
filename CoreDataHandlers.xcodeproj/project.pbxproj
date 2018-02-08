@@ -16,6 +16,25 @@
 		1AE53FBF202C2598001B31BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FBE202C2598001B31BE /* main.m */; };
 		1AE53FC9202C2598001B31BE /* CoreDataHandlersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FC8202C2598001B31BE /* CoreDataHandlersTests.m */; };
 		1AE53FD4202C2598001B31BE /* CoreDataHandlersUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FD3202C2598001B31BE /* CoreDataHandlersUITests.m */; };
+		1AE54012202C25EC001B31BE /* AddUserPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FE5202C25EC001B31BE /* AddUserPresenter.m */; };
+		1AE54013202C25EC001B31BE /* AddUserWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FE8202C25EC001B31BE /* AddUserWireframe.m */; };
+		1AE54014202C25EC001B31BE /* AddUserDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FEA202C25EC001B31BE /* AddUserDataHandler.m */; };
+		1AE54015202C25EC001B31BE /* AddUserInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FEE202C25EC001B31BE /* AddUserInteractor.m */; };
+		1AE54016202C25EC001B31BE /* FetchUserPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FF2202C25EC001B31BE /* FetchUserPresenter.m */; };
+		1AE54017202C25EC001B31BE /* FetchUserWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FF5202C25EC001B31BE /* FetchUserWireframe.m */; };
+		1AE54018202C25EC001B31BE /* FetchUserDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FF7202C25EC001B31BE /* FetchUserDataHandler.m */; };
+		1AE54019202C25EC001B31BE /* FetchUserInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FFA202C25EC001B31BE /* FetchUserInteractor.m */; };
+		1AE5401A202C25EC001B31BE /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FFF202C25EC001B31BE /* CoreDataHandler.m */; };
+		1AE5401B202C25EC001B31BE /* CoreDataStack_iOS9.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54003202C25EC001B31BE /* CoreDataStack_iOS9.m */; };
+		1AE5401C202C25EC001B31BE /* CoreDataStack_iOS10.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54004202C25EC001B31BE /* CoreDataStack_iOS10.m */; };
+		1AE5401D202C25EC001B31BE /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54006202C25EC001B31BE /* CoreDataStack.m */; };
+		1AE5401E202C25EC001B31BE /* LocalDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54007202C25EC001B31BE /* LocalDataHandler.m */; };
+		1AE5401F202C25EC001B31BE /* ObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5400A202C25EC001B31BE /* ObservableObject.m */; };
+		1AE54020202C25EC001B31BE /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5400D202C25EC001B31BE /* UserModel.m */; };
+		1AE54021202C25EC001B31BE /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54010202C25EC001B31BE /* MyTableViewCell.m */; };
+		1AE5402E202C29A6001B31BE /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5402A202C29A6001B31BE /* User+CoreDataProperties.m */; };
+		1AE5402F202C29A6001B31BE /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5402B202C29A6001B31BE /* User+CoreDataClass.m */; };
+		1AE54033202C2A13001B31BE /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54032202C2A13001B31BE /* DataHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +72,45 @@
 		1AE53FCF202C2598001B31BE /* CoreDataHandlersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataHandlersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE53FD3202C2598001B31BE /* CoreDataHandlersUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHandlersUITests.m; sourceTree = "<group>"; };
 		1AE53FD5202C2598001B31BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AE53FE4202C25EC001B31BE /* AddUserPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserPresenter.h; sourceTree = "<group>"; };
+		1AE53FE5202C25EC001B31BE /* AddUserPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserPresenter.m; sourceTree = "<group>"; };
+		1AE53FE7202C25EC001B31BE /* AddUserWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserWireframe.h; sourceTree = "<group>"; };
+		1AE53FE8202C25EC001B31BE /* AddUserWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserWireframe.m; sourceTree = "<group>"; };
+		1AE53FEA202C25EC001B31BE /* AddUserDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserDataHandler.m; sourceTree = "<group>"; };
+		1AE53FEB202C25EC001B31BE /* AddUserDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserDataHandler.h; sourceTree = "<group>"; };
+		1AE53FED202C25EC001B31BE /* AddUserInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserInteractor.h; sourceTree = "<group>"; };
+		1AE53FEE202C25EC001B31BE /* AddUserInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserInteractor.m; sourceTree = "<group>"; };
+		1AE53FF1202C25EC001B31BE /* FetchUserPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchUserPresenter.h; sourceTree = "<group>"; };
+		1AE53FF2202C25EC001B31BE /* FetchUserPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchUserPresenter.m; sourceTree = "<group>"; };
+		1AE53FF4202C25EC001B31BE /* FetchUserWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchUserWireframe.h; sourceTree = "<group>"; };
+		1AE53FF5202C25EC001B31BE /* FetchUserWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchUserWireframe.m; sourceTree = "<group>"; };
+		1AE53FF7202C25EC001B31BE /* FetchUserDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchUserDataHandler.m; sourceTree = "<group>"; };
+		1AE53FF8202C25EC001B31BE /* FetchUserDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchUserDataHandler.h; sourceTree = "<group>"; };
+		1AE53FFA202C25EC001B31BE /* FetchUserInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchUserInteractor.m; sourceTree = "<group>"; };
+		1AE53FFB202C25EC001B31BE /* FetchUserInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchUserInteractor.h; sourceTree = "<group>"; };
+		1AE53FFD202C25EC001B31BE /* LocalDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataHandler.h; sourceTree = "<group>"; };
+		1AE53FFF202C25EC001B31BE /* CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHandler.m; sourceTree = "<group>"; };
+		1AE54000202C25EC001B31BE /* CoreDataStack_iOS10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack_iOS10.h; sourceTree = "<group>"; };
+		1AE54001202C25EC001B31BE /* CoreDataStack_iOS9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack_iOS9.h; sourceTree = "<group>"; };
+		1AE54002202C25EC001B31BE /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		1AE54003202C25EC001B31BE /* CoreDataStack_iOS9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack_iOS9.m; sourceTree = "<group>"; };
+		1AE54004202C25EC001B31BE /* CoreDataStack_iOS10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack_iOS10.m; sourceTree = "<group>"; };
+		1AE54005202C25EC001B31BE /* CoreDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHandler.h; sourceTree = "<group>"; };
+		1AE54006202C25EC001B31BE /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		1AE54007202C25EC001B31BE /* LocalDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataHandler.m; sourceTree = "<group>"; };
+		1AE5400A202C25EC001B31BE /* ObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservableObject.m; sourceTree = "<group>"; };
+		1AE5400B202C25EC001B31BE /* ObservableObject+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObservableObject+Private.h"; sourceTree = "<group>"; };
+		1AE5400C202C25EC001B31BE /* ObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableObject.h; sourceTree = "<group>"; };
+		1AE5400D202C25EC001B31BE /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		1AE5400E202C25EC001B31BE /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		1AE54010202C25EC001B31BE /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		1AE54011202C25EC001B31BE /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		1AE5402A202C29A6001B31BE /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1AE5402B202C29A6001B31BE /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
+		1AE5402C202C29A6001B31BE /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
+		1AE5402D202C29A6001B31BE /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1AE54031202C2A13001B31BE /* DataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
+		1AE54032202C2A13001B31BE /* DataHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +161,11 @@
 		1AE53FAB202C2598001B31BE /* CoreDataHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				1AE54030202C29F1001B31BE /* DataHandler */,
+				1AE54008202C25EC001B31BE /* Model */,
+				1AE54028202C29A6001B31BE /* Entity */,
+				1AE53FE1202C25EC001B31BE /* Module */,
+				1AE5400F202C25EC001B31BE /* View */,
 				1AE53FAC202C2598001B31BE /* AppDelegate.h */,
 				1AE53FAD202C2598001B31BE /* AppDelegate.m */,
 				1AE53FAF202C2598001B31BE /* ViewController.h */,
@@ -133,6 +196,192 @@
 				1AE53FD5202C2598001B31BE /* Info.plist */,
 			);
 			path = CoreDataHandlersUITests;
+			sourceTree = "<group>";
+		};
+		1AE53FE1202C25EC001B31BE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FE2202C25EC001B31BE /* AddUser */,
+				1AE53FEF202C25EC001B31BE /* FetchUser */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		1AE53FE2202C25EC001B31BE /* AddUser */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FE3202C25EC001B31BE /* Presenter */,
+				1AE53FE6202C25EC001B31BE /* Wireframe */,
+				1AE53FE9202C25EC001B31BE /* DataHandler */,
+				1AE53FEC202C25EC001B31BE /* Interactor */,
+			);
+			path = AddUser;
+			sourceTree = "<group>";
+		};
+		1AE53FE3202C25EC001B31BE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FE4202C25EC001B31BE /* AddUserPresenter.h */,
+				1AE53FE5202C25EC001B31BE /* AddUserPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1AE53FE6202C25EC001B31BE /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FE7202C25EC001B31BE /* AddUserWireframe.h */,
+				1AE53FE8202C25EC001B31BE /* AddUserWireframe.m */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		1AE53FE9202C25EC001B31BE /* DataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FEA202C25EC001B31BE /* AddUserDataHandler.m */,
+				1AE53FEB202C25EC001B31BE /* AddUserDataHandler.h */,
+			);
+			path = DataHandler;
+			sourceTree = "<group>";
+		};
+		1AE53FEC202C25EC001B31BE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FED202C25EC001B31BE /* AddUserInteractor.h */,
+				1AE53FEE202C25EC001B31BE /* AddUserInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1AE53FEF202C25EC001B31BE /* FetchUser */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FF0202C25EC001B31BE /* Presenter */,
+				1AE53FF3202C25EC001B31BE /* Wireframe */,
+				1AE53FF6202C25EC001B31BE /* DataHandler */,
+				1AE53FF9202C25EC001B31BE /* Interactor */,
+			);
+			path = FetchUser;
+			sourceTree = "<group>";
+		};
+		1AE53FF0202C25EC001B31BE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FF1202C25EC001B31BE /* FetchUserPresenter.h */,
+				1AE53FF2202C25EC001B31BE /* FetchUserPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1AE53FF3202C25EC001B31BE /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FF4202C25EC001B31BE /* FetchUserWireframe.h */,
+				1AE53FF5202C25EC001B31BE /* FetchUserWireframe.m */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		1AE53FF6202C25EC001B31BE /* DataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FF7202C25EC001B31BE /* FetchUserDataHandler.m */,
+				1AE53FF8202C25EC001B31BE /* FetchUserDataHandler.h */,
+			);
+			path = DataHandler;
+			sourceTree = "<group>";
+		};
+		1AE53FF9202C25EC001B31BE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FFA202C25EC001B31BE /* FetchUserInteractor.m */,
+				1AE53FFB202C25EC001B31BE /* FetchUserInteractor.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1AE53FFC202C25EC001B31BE /* LocalDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FFD202C25EC001B31BE /* LocalDataHandler.h */,
+				1AE54007202C25EC001B31BE /* LocalDataHandler.m */,
+				1AE53FFE202C25EC001B31BE /* CoreData */,
+			);
+			path = LocalDataHandler;
+			sourceTree = "<group>";
+		};
+		1AE53FFE202C25EC001B31BE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1AE53FFF202C25EC001B31BE /* CoreDataHandler.m */,
+				1AE54000202C25EC001B31BE /* CoreDataStack_iOS10.h */,
+				1AE54001202C25EC001B31BE /* CoreDataStack_iOS9.h */,
+				1AE54002202C25EC001B31BE /* CoreDataStack.h */,
+				1AE54003202C25EC001B31BE /* CoreDataStack_iOS9.m */,
+				1AE54004202C25EC001B31BE /* CoreDataStack_iOS10.m */,
+				1AE54005202C25EC001B31BE /* CoreDataHandler.h */,
+				1AE54006202C25EC001B31BE /* CoreDataStack.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1AE54008202C25EC001B31BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1AE54009202C25EC001B31BE /* ObservableBase */,
+				1AE5400E202C25EC001B31BE /* UserModel.h */,
+				1AE5400D202C25EC001B31BE /* UserModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1AE54009202C25EC001B31BE /* ObservableBase */ = {
+			isa = PBXGroup;
+			children = (
+				1AE5400B202C25EC001B31BE /* ObservableObject+Private.h */,
+				1AE5400C202C25EC001B31BE /* ObservableObject.h */,
+				1AE5400A202C25EC001B31BE /* ObservableObject.m */,
+			);
+			path = ObservableBase;
+			sourceTree = "<group>";
+		};
+		1AE5400F202C25EC001B31BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1AE54010202C25EC001B31BE /* MyTableViewCell.m */,
+				1AE54011202C25EC001B31BE /* MyTableViewCell.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1AE54028202C29A6001B31BE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1AE54029202C29A6001B31BE /* User */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		1AE54029202C29A6001B31BE /* User */ = {
+			isa = PBXGroup;
+			children = (
+				1AE5402D202C29A6001B31BE /* User+CoreDataProperties.h */,
+				1AE5402A202C29A6001B31BE /* User+CoreDataProperties.m */,
+				1AE5402C202C29A6001B31BE /* User+CoreDataClass.h */,
+				1AE5402B202C29A6001B31BE /* User+CoreDataClass.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1AE54030202C29F1001B31BE /* DataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				1AE54031202C2A13001B31BE /* DataHandler.h */,
+				1AE54032202C2A13001B31BE /* DataHandler.m */,
+				1AE53FFC202C25EC001B31BE /* LocalDataHandler */,
+			);
+			path = DataHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +517,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE5401A202C25EC001B31BE /* CoreDataHandler.m in Sources */,
+				1AE54018202C25EC001B31BE /* FetchUserDataHandler.m in Sources */,
+				1AE54014202C25EC001B31BE /* AddUserDataHandler.m in Sources */,
+				1AE5402E202C29A6001B31BE /* User+CoreDataProperties.m in Sources */,
+				1AE5401D202C25EC001B31BE /* CoreDataStack.m in Sources */,
+				1AE54033202C2A13001B31BE /* DataHandler.m in Sources */,
+				1AE54015202C25EC001B31BE /* AddUserInteractor.m in Sources */,
+				1AE54012202C25EC001B31BE /* AddUserPresenter.m in Sources */,
+				1AE54016202C25EC001B31BE /* FetchUserPresenter.m in Sources */,
+				1AE54017202C25EC001B31BE /* FetchUserWireframe.m in Sources */,
 				1AE53FB1202C2598001B31BE /* ViewController.m in Sources */,
+				1AE54021202C25EC001B31BE /* MyTableViewCell.m in Sources */,
 				1AE53FAE202C2598001B31BE /* AppDelegate.m in Sources */,
+				1AE54019202C25EC001B31BE /* FetchUserInteractor.m in Sources */,
+				1AE5401F202C25EC001B31BE /* ObservableObject.m in Sources */,
+				1AE5401C202C25EC001B31BE /* CoreDataStack_iOS10.m in Sources */,
 				1AE53FBF202C2598001B31BE /* main.m in Sources */,
+				1AE5402F202C29A6001B31BE /* User+CoreDataClass.m in Sources */,
 				1AE53FB7202C2598001B31BE /* CoreDataHandlers.xcdatamodeld in Sources */,
+				1AE54013202C25EC001B31BE /* AddUserWireframe.m in Sources */,
+				1AE54020202C25EC001B31BE /* UserModel.m in Sources */,
+				1AE5401B202C25EC001B31BE /* CoreDataStack_iOS9.m in Sources */,
+				1AE5401E202C25EC001B31BE /* LocalDataHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

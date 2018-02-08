@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  UserModel.m
 //  CoredataUpgrade
 //
 //  Created by Tung Nguyen on 2/8/18.
 //  Copyright © 2018 Tung Nguyen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UserModel.h"
 
-@interface ViewController : UIViewController
-
+@implementation UserModel
 
 @end
-

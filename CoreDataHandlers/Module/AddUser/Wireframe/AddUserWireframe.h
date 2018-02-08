@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  AddUserWireframe.h
 //  CoredataUpgrade
 //
 //  Created by Tung Nguyen on 2/8/18.
 //  Copyright © 2018 Tung Nguyen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : UIViewController
-
+@interface AddUserWireframe : NSObject
 
 @end
-

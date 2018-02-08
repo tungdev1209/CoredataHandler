@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyTableViewCell.h
 //  CoredataUpgrade
 //
 //  Created by Tung Nguyen on 2/8/18.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MyTableViewCell : UITableViewCell
+
 
 
 @end
-
