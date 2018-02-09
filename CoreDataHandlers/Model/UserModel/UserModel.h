@@ -10,11 +10,18 @@
 #import "User+CoreDataProperties.h"
 #import "ObservableObject.h"
 
+@class UserModel;
+
+typedef void(^SaveUserBlock)(BOOL succeed);
+typedef void(^ListUsersBlock)(NSArray <UserModel *> * _Nonnull mUsers);
+
 @interface UserModel : ObservableObject
 
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic) int16_t age;
 
-- (instancetype _Nonnull )initWithUser:(User *_Nonnull)user;
+-(instancetype _Nonnull )initWithUser:(User *_Nonnull)user;
++(void)get:(ListUsersBlock _Nullable )completion;
+-(void)save:(SaveUserBlock _Nullable )completion;
 
 @end

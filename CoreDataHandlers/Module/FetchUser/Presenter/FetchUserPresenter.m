@@ -29,7 +29,7 @@
     [self.interactor fetchUsers];
 }
 
--(void)receivedUserDetails:(NSArray *)userDetails {
+-(void)receivedUserDetails:(FetchUserListUserDetail *)userDetails {
     [self.view showUserDetails:userDetails];
 }
 

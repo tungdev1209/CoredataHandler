@@ -42,7 +42,7 @@ typedef enum : NSUInteger {
     }
 }
 
--(void)addUserLocal:(UserModel *)mUser completion:(AddUserBlock)completion {
+-(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
     if (self.usingHandlerType == LocalDataHandlerTypeCoredata) {
         [self coredataAddUserLocal:mUser completion:completion];
     }
@@ -60,7 +60,7 @@ typedef enum : NSUInteger {
     }];
 }
 
--(void)coredataAddUserLocal:(UserModel *)mUser completion:(AddUserBlock)completion {
+-(void)coredataAddUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
     [mUser sendDataToObject:(User *)[self.coredataHandler newEntry:[User class]]];
     [self.coredataHandler saveEntry:^(NSError *error) {
         if (error) {

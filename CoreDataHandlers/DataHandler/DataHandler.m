@@ -10,8 +10,6 @@
 #import "LocalDataHandler.h"
 #import "RemoteDataHandler.h"
 
-#import "UserModel.h"
-
 @interface DataHandler ()
 
 @property (nonatomic, strong) RemoteDataHandler *remoteHandler;
@@ -44,7 +42,7 @@
     [self.localHandler getListUsersLocal:completion];
 }
 
--(void)addUserLocal:(UserModel *)mUser completion:(AddUserBlock)completion {
+-(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
     [self.localHandler addUserLocal:mUser completion:completion];
 }
 

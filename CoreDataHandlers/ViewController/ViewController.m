@@ -81,9 +81,9 @@
 }
 
 #pragma mark - FetchUser Presenter protocol
--(void)showUserDetails:(NSArray<FetchUserDetail *> *)userDetails {
+-(void)showUserDetails:(FetchUserListUserDetail *)userDetails {
     [self.users removeAllObjects];
-    [self.users addObjectsFromArray:userDetails];
+    [self.users addObjectsFromArray:userDetails.listUsers];
     [self.userTbl reloadData];
 }
 

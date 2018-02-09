@@ -9,6 +9,7 @@
 #import "UserModel.h"
 #import "NSObject_Extension.h"
 #import "ObservableObject+Private.h"
+#import "DataHandler.h"
 
 @interface UserModel()
 
@@ -29,6 +30,14 @@
 
 -(void)didObserveKeypath:(NSString *)key {
     
+}
+
+-(void)save:(SaveUserBlock)completion {
+    [[DataHandler shared] addUserLocal:self completion:completion];
+}
+
++(void)get:(ListUsersBlock)completion {
+    [[DataHandler shared] getListUsersLocal:completion];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FetchUserDetail.h"
+#import "FetchUserListUserDetail.h"
 
 @protocol FetchUserViewProtocol <NSObject>
 
@@ -29,7 +30,7 @@
 
 @protocol FetchUserPresenterViewProtocol <NSObject>
 
--(void)showUserDetails:(NSArray <FetchUserDetail *> *)userDetails;
+-(void)showUserDetails:(FetchUserListUserDetail *)userDetails;
 
 @end
 
@@ -39,6 +40,6 @@
 
 @protocol FetchUserInteractorProtocol <NSObject>
 
--(void)receivedUserDetails:(NSArray *)userDetails;
+-(void)receivedUserDetails:(FetchUserListUserDetail *)userDetails;
 
 @end

@@ -42,6 +42,7 @@
 		1AE5404D202C4DDC001B31BE /* RemoteDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5404C202C4DDC001B31BE /* RemoteDataHandler.m */; };
 		1AE54051202C61EB001B31BE /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54050202C61EB001B31BE /* NSObject_Extension.m */; };
 		1AE54054202C69DA001B31BE /* FetchUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54053202C69DA001B31BE /* FetchUserDetail.m */; };
+		1AE54057202D4218001B31BE /* FetchUserListUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54056202D4218001B31BE /* FetchUserListUserDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,8 @@
 		1AE54050202C61EB001B31BE /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
 		1AE54052202C69DA001B31BE /* FetchUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchUserDetail.h; sourceTree = "<group>"; };
 		1AE54053202C69DA001B31BE /* FetchUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchUserDetail.m; sourceTree = "<group>"; };
+		1AE54055202D4218001B31BE /* FetchUserListUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchUserListUserDetail.h; sourceTree = "<group>"; };
+		1AE54056202D4218001B31BE /* FetchUserListUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchUserListUserDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +331,8 @@
 				1AE53FF7202C25EC001B31BE /* FetchUserDataHandler.m */,
 				1AE54052202C69DA001B31BE /* FetchUserDetail.h */,
 				1AE54053202C69DA001B31BE /* FetchUserDetail.m */,
+				1AE54055202D4218001B31BE /* FetchUserListUserDetail.h */,
+				1AE54056202D4218001B31BE /* FetchUserListUserDetail.m */,
 			);
 			path = DataHandler;
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 				1AE5401D202C25EC001B31BE /* CoreDataStack.m in Sources */,
 				1AE5404D202C4DDC001B31BE /* RemoteDataHandler.m in Sources */,
 				1AE54033202C2A13001B31BE /* DataHandler.m in Sources */,
+				1AE54057202D4218001B31BE /* FetchUserListUserDetail.m in Sources */,
 				1AE54015202C25EC001B31BE /* AddUserInteractor.m in Sources */,
 				1AE54012202C25EC001B31BE /* AddUserPresenter.m in Sources */,
 				1AE54016202C25EC001B31BE /* FetchUserPresenter.m in Sources */,

@@ -7,8 +7,7 @@
 //
 
 #import "FetchUserInteractor.h"
-#import "DataHandler.h"
-#import "UserModel.h"
+#import "FetchUserListUserDetail.h"
 
 @interface FetchUserInteractor ()
 
@@ -18,17 +17,9 @@
 
 -(void)fetchUsers {
     __weak typeof(self) weakSelf = self;
-    [[DataHandler shared] getListUsersLocal:^(NSArray *users) {
+    [FetchUserListUserDetail get:^(FetchUserListUserDetail *listUsers) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        FetchUserDetail *userDetail;
-        NSMutableArray *userDetails = [NSMutableArray array];
-        for (UserModel *user in users) {
-            userDetail = [[FetchUserDetail alloc] init];
-            userDetail.name = user.name;
-            userDetail.age = user.age;
-            [userDetails addObject:userDetail];
-        }
-        [strongSelf.presenter receivedUserDetails:userDetails];
+        [strongSelf.presenter receivedUserDetails:listUsers];
     }];
 }
 

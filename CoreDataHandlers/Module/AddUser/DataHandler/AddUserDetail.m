@@ -10,4 +10,11 @@
 
 @implementation AddUserDetail
 
+-(void)add:(SaveUserBlock)completion {
+    UserModel *mUser = [[UserModel alloc] init];
+    mUser.name = self.name;
+    mUser.age = self.age;
+    [mUser save:completion];
+}
+
 @end
