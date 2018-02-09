@@ -12,14 +12,7 @@
 
 @protocol FetchUserViewProtocol <NSObject>
 
--(void)setup:(id)view;
 -(void)updateListUsers;
-
-@end
-
-@protocol FetchUserPresenterInteractorProtocol <NSObject>
-
--(void)fetchUsers;
 
 @end
 
@@ -34,12 +27,22 @@
 
 @end
 
-@protocol FetchUserWireframeProtocol <NSObject>
-
-@end
 
 @protocol FetchUserInteractorProtocol <NSObject>
 
 -(void)receivedUserDetails:(FetchUserListUserDetail *)userDetails;
+
+@end
+
+@protocol FetchUserPresenterInteractorProtocol <NSObject>
+
+-(void)setup:(id<FetchUserInteractorProtocol>)presenter;
+-(void)fetchUsers;
+
+@end
+
+@protocol FetchUserWireframeProtocol <NSObject>
+
+-(void)setup:(id<FetchUserPresenterViewProtocol>)view wireframe:(id<FetchUserPresenterWireframeProtocol>)wireframe;
 
 @end

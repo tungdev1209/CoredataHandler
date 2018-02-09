@@ -11,6 +11,10 @@
 
 @implementation AddUserInteractor
 
+-(void)setup:(id<AddUserInteractorProtocol>)presenter {
+    self.presenter = presenter;
+}
+
 -(void)addUserDetail:(AddUserDetail *)userDetail {
     __weak typeof(self) weakSelf = self;
     [userDetail add:^(BOOL succeed) {

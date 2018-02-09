@@ -10,7 +10,7 @@
 
 @interface NSObject(e)
 
--(void)syncDataWithObject:(NSObject *)object;
+-(void)getDataFromObject:(NSObject *)object;
 -(void)sendDataToObject:(NSObject *)object;
 
 @end

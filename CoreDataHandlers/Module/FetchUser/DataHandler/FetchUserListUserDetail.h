@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class FetchUserDetail;
 @class FetchUserListUserDetail;
 
 typedef void(^ListUserDetailBlock)(FetchUserListUserDetail *listUsers);
 
 @interface FetchUserListUserDetail : NSObject
 
-@property (nonatomic, strong) NSMutableArray *listUsers;
+@property (nonatomic, strong) NSMutableArray <FetchUserDetail *> *listUsers;
 
 +(void)get:(ListUserDetailBlock)completion;
 

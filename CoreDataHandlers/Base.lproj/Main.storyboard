@@ -68,6 +68,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="10" y="28"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="q1x-hW-oz5">
+            <objects>
+                <viewController storyboardIdentifier="UserDetailViewController" id="lgP-LV-vy9" customClass="UserDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fYr-Rt-nCO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVe-7z-Mez">
+                                <rect key="frame" x="10" y="70" width="355" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="O4o-u5-Yr6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vj8-Dm-pwV">
+                                <rect key="frame" x="10" y="130" width="355" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PxE-fl-Bg3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FVe-7z-Mez" firstAttribute="top" secondItem="EGW-Gx-lsg" secondAttribute="top" constant="50" id="5qH-pN-KzO"/>
+                            <constraint firstItem="FVe-7z-Mez" firstAttribute="leading" secondItem="EGW-Gx-lsg" secondAttribute="leading" constant="10" id="FPX-is-qCU"/>
+                            <constraint firstItem="EGW-Gx-lsg" firstAttribute="trailing" secondItem="Vj8-Dm-pwV" secondAttribute="trailing" constant="10" id="Hl0-oC-TMh"/>
+                            <constraint firstItem="Vj8-Dm-pwV" firstAttribute="top" secondItem="FVe-7z-Mez" secondAttribute="bottom" constant="20" id="MVd-68-8PO"/>
+                            <constraint firstItem="EGW-Gx-lsg" firstAttribute="trailing" secondItem="FVe-7z-Mez" secondAttribute="trailing" constant="10" id="j5R-Vd-pbp"/>
+                            <constraint firstItem="Vj8-Dm-pwV" firstAttribute="leading" secondItem="EGW-Gx-lsg" secondAttribute="leading" constant="10" id="zF6-s3-24t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EGW-Gx-lsg"/>
+                    </view>
+                    <connections>
+                        <outlet property="ageLbl" destination="Vj8-Dm-pwV" id="s7L-y5-09p"/>
+                        <outlet property="nameLbl" destination="FVe-7z-Mez" id="MBO-rM-NBE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nnd-Ab-ZgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="692" y="37"/>
         </scene>
     </scenes>
 </document>

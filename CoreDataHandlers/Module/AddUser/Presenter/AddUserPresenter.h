@@ -12,7 +12,7 @@
 @interface AddUserPresenter : NSObject <AddUserViewProtocol, AddUserWireframeProtocol, AddUserInteractorProtocol>
 
 @property (nonatomic, weak) id<AddUserPresenterViewProtocol> view;
-@property (nonatomic, strong) id<AddUserPresenterWireframeProtocol> wireframe;
+@property (nonatomic, weak) id<AddUserPresenterWireframeProtocol> wireframe;
 @property (nonatomic, strong) id<AddUserPresenterInteractorProtocol> interactor;
 
 @end

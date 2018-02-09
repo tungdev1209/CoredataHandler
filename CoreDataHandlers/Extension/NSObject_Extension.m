@@ -11,7 +11,7 @@
 
 @implementation NSObject(e)
 
--(void)syncDataWithObject:(NSObject *)object {
+-(void)getDataFromObject:(NSObject *)object {
     unsigned int count;
     objc_property_t *props = class_copyPropertyList([object class], &count);
     

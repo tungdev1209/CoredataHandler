@@ -11,12 +11,7 @@
 
 @protocol AddUserViewProtocol <NSObject>
 
--(void)setup:(id)view;
 -(void)addUserDetail:(AddUserDetail *)userDetail;
-
-@end
-
-@protocol AddUserWireframeProtocol <NSObject>
 
 @end
 
@@ -26,11 +21,7 @@
 
 @end
 
-@protocol AddUserPresenterInteractorProtocol <NSObject>
 
--(void)addUserDetail:(AddUserDetail *)userDetail;
-
-@end
 
 @protocol AddUserPresenterWireframeProtocol <NSObject>
 
@@ -41,5 +32,18 @@
 
 -(void)showAlertAddingFail;
 -(void)refreshList;
+
+@end
+
+@protocol AddUserPresenterInteractorProtocol <NSObject>
+
+-(void)addUserDetail:(AddUserDetail *)userDetail;
+-(void)setup:(id<AddUserInteractorProtocol>)presenter;
+
+@end
+
+@protocol AddUserWireframeProtocol <NSObject>
+
+-(void)setup:(id<AddUserPresenterViewProtocol>)view wireframe:(id<AddUserPresenterWireframeProtocol>)wireframe;
 
 @end

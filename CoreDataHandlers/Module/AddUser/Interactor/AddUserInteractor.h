@@ -11,6 +11,6 @@
 
 @interface AddUserInteractor : NSObject <AddUserPresenterInteractorProtocol>
 
-@property (nonatomic, weak) id<AddUserInteractorProtocol> presenter;
+@property (nonatomic, strong) id<AddUserInteractorProtocol> presenter;
 
 @end

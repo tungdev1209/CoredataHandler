@@ -42,6 +42,12 @@ typedef enum : NSUInteger {
     }
 }
 
+-(void)getUserLocal:(GetUserBlock)completion withName:(NSString *)name {
+    if (self.usingHandlerType == LocalDataHandlerTypeCoredata) {
+        [self coredataGetUserLocal:completion withName:name];
+    }
+}
+
 -(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
     if (self.usingHandlerType == LocalDataHandlerTypeCoredata) {
         [self coredataAddUserLocal:mUser completion:completion];
@@ -56,6 +62,18 @@ typedef enum : NSUInteger {
         }
         if (completion) {
             completion(mUsers);
+        }
+    }];
+}
+
+-(void)coredataGetUserLocal:(GetUserBlock)completion withName:(NSString *)name {
+    [self.coredataHandler fetchEntries:[User fetchRequest] withPredicate:[NSPredicate predicateWithFormat:@"name == %@", name] sortDescriptors:nil completionBlock:^(NSArray *users) {
+        UserModel *mUser = nil;
+        if (users.firstObject) {
+            mUser = [[UserModel alloc] initWithUser:users.firstObject];
+        }
+        if (completion) {
+            completion(mUser);
         }
     }];
 }

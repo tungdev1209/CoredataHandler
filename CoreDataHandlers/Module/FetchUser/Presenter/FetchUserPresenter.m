@@ -10,19 +10,19 @@
 
 @implementation FetchUserPresenter
 
--(void)setup:(id)view {
-    if (![view conformsToProtocol:@protocol(FetchUserPresenterViewProtocol)]) {
-        return;
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.interactor = [[FetchUserInteractor alloc] init];
     }
-    FetchUserWireframe *wireframe = [[FetchUserWireframe alloc] init];
-    FetchUserInteractor *interactor = [[FetchUserInteractor alloc] init];
-    
-    self.wireframe = wireframe;
-    self.interactor = interactor;
+    return self;
+}
+
+-(void)setup:(id<FetchUserPresenterViewProtocol>)view wireframe:(id<FetchUserPresenterWireframeProtocol>)wireframe {
     self.view = view;
-    
-    wireframe.presenter = self;
-    interactor.presenter = self;
+    self.wireframe = wireframe;
+    [self.interactor setup:self];
 }
 
 -(void)updateListUsers {

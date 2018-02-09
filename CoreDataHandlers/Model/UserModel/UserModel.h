@@ -14,6 +14,7 @@
 
 typedef void(^SaveUserBlock)(BOOL succeed);
 typedef void(^ListUsersBlock)(NSArray <UserModel *> * _Nonnull mUsers);
+typedef void(^GetUserBlock)(UserModel * _Nullable mUser);
 
 @interface UserModel : ObservableObject
 
@@ -22,6 +23,8 @@ typedef void(^ListUsersBlock)(NSArray <UserModel *> * _Nonnull mUsers);
 
 -(instancetype _Nonnull )initWithUser:(User *_Nonnull)user;
 +(void)get:(ListUsersBlock _Nullable )completion;
++(void)getUser:(GetUserBlock _Nullable)completion withName:(NSString * _Nonnull)name;
++(void)getUser:(GetUserBlock _Nullable )completion;
 -(void)save:(SaveUserBlock _Nullable )completion;
 
 @end

@@ -11,6 +11,6 @@
 
 @interface AddUserWireframe : NSObject <AddUserPresenterWireframeProtocol>
 
-@property (nonatomic, weak) id<AddUserWireframeProtocol> presenter;
+@property (nonatomic, strong) id<AddUserWireframeProtocol> presenter;
 
 @end

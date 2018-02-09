@@ -11,6 +11,6 @@
 
 @interface FetchUserWireframe : NSObject <FetchUserPresenterWireframeProtocol>
 
-@property (nonatomic, weak) id<FetchUserWireframeProtocol> presenter;
+@property (nonatomic, strong) id<FetchUserWireframeProtocol> presenter;
 
 @end

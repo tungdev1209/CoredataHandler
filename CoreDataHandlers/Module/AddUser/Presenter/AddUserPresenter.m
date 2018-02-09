@@ -13,19 +13,19 @@
 
 @implementation AddUserPresenter
 
--(void)setup:(id)view {
-    if (![view conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
-        return;
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.interactor = [[AddUserInteractor alloc] init];
     }
-    AddUserWireframe *wireframe = [[AddUserWireframe alloc] init];
-    AddUserInteractor *interactor = [[AddUserInteractor alloc] init];
-    
+    return self;
+}
+
+-(void)setup:(id<AddUserPresenterViewProtocol>)view wireframe:(id<AddUserPresenterWireframeProtocol>)wireframe {
     self.wireframe = wireframe;
-    self.interactor = interactor;
     self.view = view;
-    
-    wireframe.presenter = self;
-    interactor.presenter = self;
+    [self.interactor setup:self];
 }
 
 -(void)addUserDetail:(AddUserDetail *)userDetail {

@@ -7,7 +7,17 @@
 //
 
 #import "AddUserWireframe.h"
+#import "AddUserPresenter.h"
 
 @implementation AddUserWireframe
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.presenter = [[AddUserPresenter alloc] init];
+    }
+    return self;
+}
 
 @end

@@ -10,7 +10,7 @@
 
 @protocol RootViewProtocol <NSObject>
 
--(void)startup:(NSArray *)dependencies;
+-(void)addDependencies:(NSArray *)dependencies;
 
 @end
 

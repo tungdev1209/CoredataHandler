@@ -15,6 +15,10 @@
 
 @implementation FetchUserInteractor
 
+-(void)setup:(id<FetchUserInteractorProtocol>)presenter {
+    self.presenter = presenter;
+}
+
 -(void)fetchUsers {
     __weak typeof(self) weakSelf = self;
     [FetchUserListUserDetail get:^(FetchUserListUserDetail *listUsers) {

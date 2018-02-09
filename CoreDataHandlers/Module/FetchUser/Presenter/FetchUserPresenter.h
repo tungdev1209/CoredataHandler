@@ -15,7 +15,7 @@
 @interface FetchUserPresenter : NSObject <FetchUserViewProtocol, FetchUserInteractorProtocol, FetchUserWireframeProtocol>
 
 @property (nonatomic, strong) id<FetchUserPresenterInteractorProtocol> interactor;
-@property (nonatomic, strong) id<FetchUserPresenterWireframeProtocol> wireframe;
+@property (nonatomic, weak) id<FetchUserPresenterWireframeProtocol> wireframe;
 @property (nonatomic, weak) id<FetchUserPresenterViewProtocol> view;
 
 @end

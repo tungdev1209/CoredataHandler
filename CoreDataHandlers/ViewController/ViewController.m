@@ -66,6 +66,8 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - ShowUser Presenter protocol
+
 #pragma mark - AddUser Presenter protocol
 -(void)showAlertAddingFail {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"CoreData app" message:@"Adding fail!" preferredStyle:UIAlertControllerStyleAlert];
@@ -87,16 +89,17 @@
     [self.userTbl reloadData];
 }
 
-#pragma mark - Root
--(void)startup:(NSArray *)dependencies {
+#pragma mark - RootWireframeProtocol
+-(void)addDependencies:(NSArray *)dependencies {
     for (id dependency in dependencies) {
         if ([dependency conformsToProtocol:@protocol(FetchUserViewProtocol)]) {
             self.fetchUserPresenter = dependency;
-            [(id<FetchUserViewProtocol>)dependency setup:self];
         }
         else if ([dependency conformsToProtocol:@protocol(AddUserViewProtocol)]) {
             self.addUserPresenter = dependency;
-            [(id<AddUserViewProtocol>)dependency setup:self];
+        }
+        else if ([dependency conformsToProtocol:@protocol(ShowUserViewProtocol)]) {
+            self.showUserPresenter = dependency;
         }
     }
 }
@@ -113,7 +116,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    FetchUserDetail *mUser = [self.users objectAtIndex:indexPath.row];
+    [self.showUserPresenter showUserDetail:mUser.name];
 }
 
 @end

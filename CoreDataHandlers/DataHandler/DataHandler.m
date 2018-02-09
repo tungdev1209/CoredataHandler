@@ -42,6 +42,10 @@
     [self.localHandler getListUsersLocal:completion];
 }
 
+-(void)getUserLocalWith:(GetUserBlock)completion withName:(NSString *)name {
+    [self.localHandler getUserLocal:completion withName:name];
+}
+
 -(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
     [self.localHandler addUserLocal:mUser completion:completion];
 }

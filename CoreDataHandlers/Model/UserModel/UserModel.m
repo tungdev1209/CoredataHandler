@@ -23,7 +23,7 @@
     self = [super init];
     if (self) {
         self.user = user;
-        [self syncDataWithObject:user];
+        [self getDataFromObject:user];
     }
     return self;
 }
@@ -38,6 +38,10 @@
 
 +(void)get:(ListUsersBlock)completion {
     [[DataHandler shared] getListUsersLocal:completion];
+}
+
++(void)getUser:(GetUserBlock)completion withName:(NSString *)name {
+    [[DataHandler shared] getUserLocalWith:completion withName:name];
 }
 
 @end
