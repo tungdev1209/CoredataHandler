@@ -53,29 +53,32 @@
 -(void)setup:(UIWindow *)window {
     self.window = window;
     self.rootVC = [AppUtils topViewControllerWithRootViewController:self.window.rootViewController];
-    [self initializeRootViewControllerWithDependencies:self.rootVC];
+    [self initializeRootViewControllerWithDependencies];
 }
 
--(void)initializeRootViewControllerWithDependencies:(UIViewController *)vc {
+-(void)initializeRootViewControllerWithDependencies {
+    // get strong refs
     self.addUserWireframe = [[AddUserWireframe alloc] init];
     self.showUserWireframe = [[ShowUserWireframe alloc] init];
     self.fetchUserWireframe = [[FetchUserWireframe alloc] init];
     
-    if ([vc conformsToProtocol:@protocol(RootViewProtocol)]) {
+    if ([self.rootVC conformsToProtocol:@protocol(RootViewProtocol)]) {
         NSMutableArray *dependencies = [NSMutableArray array];
         [dependencies addObject:self.addUserWireframe.presenter];
         [dependencies addObject:self.showUserWireframe.presenter];
         [dependencies addObject:self.fetchUserWireframe.presenter];
-        [(id<RootViewProtocol>)vc addDependencies:dependencies];
+        [(id<RootViewProtocol>)self.rootVC addDependencies:dependencies];
     }
-    if ([vc conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
-        [self.addUserWireframe.presenter setup:(id<AddUserPresenterViewProtocol>)vc wireframe:self.addUserWireframe];
+    
+    // get weak refs
+    if ([self.rootVC conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
+        [self.addUserWireframe.presenter setup:(id<AddUserPresenterViewProtocol>)self.rootVC wireframe:self.addUserWireframe];
     }
-    if ([vc conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
-        [self.fetchUserWireframe.presenter setup:(id<FetchUserPresenterViewProtocol>)vc wireframe:self.fetchUserWireframe];
+    if ([self.rootVC conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
+        [self.fetchUserWireframe.presenter setup:(id<FetchUserPresenterViewProtocol>)self.rootVC wireframe:self.fetchUserWireframe];
     }
-    if ([vc conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
-        [self.showUserWireframe.presenter setup:(id<ShowUserPresenterViewProtocol>)vc wireframe:self.showUserWireframe];
+    if ([self.rootVC conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
+        [self.showUserWireframe.presenter setup:(id<ShowUserPresenterViewProtocol>)self.rootVC wireframe:self.showUserWireframe];
     }
 }
 

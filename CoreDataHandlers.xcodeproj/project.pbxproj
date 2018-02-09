@@ -253,6 +253,7 @@
 		1AE53FE1202C25EC001B31BE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				1AE54090202DB358001B31BE /* Dimiss */,
 				1AE54079202D62DB001B31BE /* ShowUser */,
 				1AE53FE2202C25EC001B31BE /* AddUser */,
 				1AE53FEF202C25EC001B31BE /* FetchUser */,
@@ -535,6 +536,13 @@
 				1AE5408B202D6471001B31BE /* ShowUserWireframe.m */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		1AE54090202DB358001B31BE /* Dimiss */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dimiss;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

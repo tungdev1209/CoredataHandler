@@ -7,6 +7,7 @@
 //
 
 #import "UserDetailViewController.h"
+#import "ShowUserDetail.h"
 
 @interface UserDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLbl;
@@ -26,6 +27,10 @@
 -(void)setUserInfor {
     self.nameLbl.text = _userDetail.name;
     self.ageLbl.text = [NSString stringWithFormat:@"%d", _userDetail.age];
+}
+
+- (IBAction)btnPressed:(id)sender {
+    
 }
 
 @end
