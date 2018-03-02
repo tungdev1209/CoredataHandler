@@ -66,6 +66,20 @@
 }
 
 - (void)saveEntry:(SaveResultsBlock)result {
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(mergeChanges:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:context];
+    [context performBlock:^{
+        //make changes
+        NSError *error = nil;
+        [context save:&error];
+        //remember to remove observer after the save (in mergeChanges: and dealloc)
+    }];
+}
+
+-(void)mergeChanges:(NSNotification *)notification {
     result([self saveContext]);
 }
 
