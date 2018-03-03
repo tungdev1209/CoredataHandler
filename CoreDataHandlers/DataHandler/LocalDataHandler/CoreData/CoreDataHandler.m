@@ -8,10 +8,12 @@
 
 #import "CoreDataHandler.h"
 #import "CoreDataStack.h"
+#import "NSObject_Extension.h"
 
 @interface CoreDataHandler()
 
 @property (nonatomic, strong) CoreDataStack *stack;
+@property (nonatomic, strong) NSMutableArray *currentBackgroundContexts;
 
 @end
 
@@ -22,11 +24,13 @@
     self = [super init];
     if (self) {
         self.stack = [CoreDataStack getStack];
+        self.currentBackgroundContexts = [NSMutableArray array];
     }
     return self;
 }
 
-- (NSError *)saveContext {
+#pragma mark - COREDATA funcs
+- (NSError *)saveMainContext {
     NSManagedObjectContext *context = _stack.managedObjectContext;
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
@@ -47,40 +51,137 @@
     [fetchRequest setPredicate:predicate];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
-    [_stack.managedObjectContext performBlock:^{
+    NSManagedObjectContext *context = self.stack.managedObjectContext;
+    
+    NSAsynchronousFetchRequest *asyncFetch = [[NSAsynchronousFetchRequest alloc] initWithFetchRequest:fetchRequest completionBlock:^(NSAsynchronousFetchResult * _Nonnull result) {
+        if (completionBlock) {
+            completionBlock(result.finalResult);
+        }
+    }];
+    
+    [context performBlock:^{
         NSLog(@"excute on thread: %@", [NSThread currentThread]);
         NSError *error = nil;
-        NSArray *results = [_stack.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        [context executeRequest:asyncFetch error:&error];
+        
         if (error) {
             NSLog(@"fetch coredata fail: %@", error);
-        }
-        if (completionBlock) {
-            completionBlock(results);
         }
     }];
 }
 
-- (NSManagedObject *)newEntry:(Class)entryClass {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:NSStringFromClass(entryClass) inManagedObjectContext:_stack.managedObjectContext];
-    return [[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_stack.managedObjectContext];
+- (NSArray *)fetchEntries:(NSFetchRequest *)fetchRequest
+            withPredicate:(NSPredicate *)predicate
+          sortDescriptors:(NSArray *)sortDescriptors
+{
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSManagedObjectContext *context = self.stack.managedObjectContext;
+    
+    __block NSArray *result = nil;
+    [context performBlockAndWait:^{
+        NSLog(@"excute on thread: %@", [NSThread currentThread]);
+        NSError *error = nil;
+        result = [context executeFetchRequest:fetchRequest error:&error];
+        if (error) {
+            NSLog(@"fetch coredata fail: %@", error);
+        }
+    }];
+    return result;
 }
 
-- (void)saveEntry:(SaveResultsBlock)result {
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+- (NSManagedObject *)newEntry:(Class)entryClass {
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:NSStringFromClass(entryClass) inManagedObjectContext:self.stack.managedObjectContext];
+    return [[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:self.stack.managedObjectContext];
+}
+
+-(NSError *)saveEntry:(NSManagedObject *)object {
+    return [self saveMainContext];
+}
+
+- (NSManagedObject *)newBackgroundEntry:(Class)entryClass {
+    NSManagedObjectContext *backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    backgroundContext.parentContext = self.stack.managedObjectContext;
+     
+    [self.currentBackgroundContexts addObject:backgroundContext];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:NSStringFromClass(entryClass) inManagedObjectContext:backgroundContext];
+    return [[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:backgroundContext];
+}
+
+-(void)saveEntry:(NSManagedObject *)object completion:(SaveResultsBlock)result {
+    NSManagedObjectContext *context = object.managedObjectContext;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(mergeChanges:)
                                                  name:NSManagedObjectContextDidSaveNotification
                                                object:context];
+    
+    __weak typeof(self) weakSelf = self;
+    
     [context performBlock:^{
-        //make changes
         NSError *error = nil;
         [context save:&error];
-        //remember to remove observer after the save (in mergeChanges: and dealloc)
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.stack.managedObjectContext performBlockAndWait:^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            result([strongSelf saveMainContext]);
+        }];
     }];
 }
 
 -(void)mergeChanges:(NSNotification *)notification {
-    result([self saveContext]);
+    if ([notification.name isEqualToString:NSManagedObjectContextDidSaveNotification]) {
+        [self.currentBackgroundContexts removeObject:notification.object];
+    }
+}
+
+#pragma mark - APP funcs
+-(void)getListUsersLocal:(ListUsersBlock)completion {
+    [self fetchEntries:[User fetchRequest] withPredicate:nil sortDescriptors:nil completionBlock:^(NSArray *users) {
+        NSMutableArray *mUsers = [NSMutableArray array];
+        for (User *user in users) {
+            [mUsers addObject:[[UserModel alloc] initWithUser:user]];
+        }
+        if (completion) {
+            completion(mUsers);
+        }
+    }];
+}
+
+-(void)getUserLocal:(GetUserBlock)completion withName:(NSString *)name {
+    [self fetchEntries:[User fetchRequest] withPredicate:[NSPredicate predicateWithFormat:@"name == %@", name] sortDescriptors:nil completionBlock:^(NSArray *users) {
+        UserModel *mUser = nil;
+        if (users.firstObject) {
+            mUser = [[UserModel alloc] initWithUser:users.firstObject];
+        }
+        if (completion) {
+            completion(mUser);
+        }
+    }];
+}
+
+-(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
+    User *cdUser = (User *)[self newBackgroundEntry:[User class]];
+    [mUser sendDataToObject:cdUser];
+     
+    [self saveEntry:cdUser completion:^(NSError *error) {
+        if (error) {
+            NSLog(@"save entry failed: %@", error);
+        }
+        if (completion) {
+            completion(!error);
+        }
+    }];
+}
+
+-(NSError *)addUserLocal:(UserModel *)mUser {
+    User *cdUser = (User *)[self newEntry:[User class]];
+    [mUser sendDataToObject:cdUser];
+     
+    return [self saveEntry:cdUser];
 }
 
 @end

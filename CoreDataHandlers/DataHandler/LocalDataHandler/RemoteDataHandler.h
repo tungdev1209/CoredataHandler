@@ -10,4 +10,6 @@
 
 @interface RemoteDataHandler : NSObject
 
++(instancetype)getHandler;
+
 @end

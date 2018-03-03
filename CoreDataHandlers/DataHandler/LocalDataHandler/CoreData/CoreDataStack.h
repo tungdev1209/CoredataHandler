@@ -17,6 +17,6 @@
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-+(instancetype)getStack;
++ (instancetype)getStack;
 
 @end

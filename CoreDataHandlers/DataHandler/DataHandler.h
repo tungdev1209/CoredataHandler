@@ -15,6 +15,8 @@
 
 -(void)getListUsersLocal:(ListUsersBlock)completion;
 -(void)getUserLocalWith:(GetUserBlock)completion withName:(NSString *)name;
+
 -(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion;
+-(NSError *)addUserLocal:(UserModel *)mUser;
 
 @end

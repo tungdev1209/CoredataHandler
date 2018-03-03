@@ -18,13 +18,17 @@
 
 @implementation ViewController
 
+@synthesize presenterFetch;
+@synthesize presenterAdd;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [_userTbl registerClass:[MyTableViewCell class] forCellReuseIdentifier:@"Cell"];
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([MyTableViewCell class]) bundle:[NSBundle mainBundle]];
+    [_userTbl registerNib:nib forCellReuseIdentifier:@"Cell"];
     
-    [self.fetchUserPresenter updateListUsers];
+    [self.presenterFetch updateListUsers];
 }
 
 -(NSMutableArray *)users {
@@ -56,7 +60,7 @@
         AddUserDetail *userDetail = [[AddUserDetail alloc] init];
         userDetail.name = name;
         userDetail.age = age;
-        [strongSelf.addUserPresenter addUserDetail:userDetail];
+        [strongSelf.presenterAdd addUserDetail:userDetail];
     }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -79,34 +83,25 @@
 }
 
 -(void)refreshList {
-    [self.fetchUserPresenter updateListUsers];
+    [self.presenterFetch updateListUsers];
 }
 
 #pragma mark - FetchUser Presenter protocol
 -(void)showUserDetails:(FetchUserListUserDetail *)userDetails {
-    [self.users removeAllObjects];
-    [self.users addObjectsFromArray:userDetails.listUsers];
-    [self.userTbl reloadData];
-}
-
-#pragma mark - RootWireframeProtocol
--(void)addDependencies:(NSArray *)dependencies {
-    for (id dependency in dependencies) {
-        if ([dependency conformsToProtocol:@protocol(FetchUserViewProtocol)]) {
-            self.fetchUserPresenter = dependency;
-        }
-        else if ([dependency conformsToProtocol:@protocol(AddUserViewProtocol)]) {
-            self.addUserPresenter = dependency;
-        }
-        else if ([dependency conformsToProtocol:@protocol(ShowUserViewProtocol)]) {
-            self.showUserPresenter = dependency;
-        }
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.users removeAllObjects];
+        [self.users addObjectsFromArray:userDetails.listUsers];
+        [self.userTbl reloadData];
+    });
 }
 
 #pragma mark - TableView
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.users.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50.0f;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -117,7 +112,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FetchUserDetail *mUser = [self.users objectAtIndex:indexPath.row];
-    [self.showUserPresenter showUserDetail:mUser.name];
+//    [self.showUserPresenter showUserDetail:mUser.name];
 }
 
 @end

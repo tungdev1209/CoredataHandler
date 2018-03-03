@@ -10,4 +10,8 @@
 
 @implementation RemoteDataHandler
 
++(instancetype)getHandler {
+    return [[RemoteDataHandler alloc] init];
+}
+
 @end

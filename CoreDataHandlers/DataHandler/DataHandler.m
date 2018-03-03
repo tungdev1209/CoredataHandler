@@ -32,8 +32,8 @@
 {
     self = [super init];
     if (self) {
-        self.localHandler = [[LocalDataHandler alloc] init];
-        self.remoteHandler = [[RemoteDataHandler alloc] init];
+        self.localHandler = [LocalDataHandler getHandler];
+        self.remoteHandler = [RemoteDataHandler getHandler];
     }
     return self;
 }
@@ -48,6 +48,10 @@
 
 -(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
     [self.localHandler addUserLocal:mUser completion:completion];
+}
+
+-(NSError *)addUserLocal:(UserModel *)mUser {
+    return [self.localHandler addUserLocal:mUser];
 }
 
 @end

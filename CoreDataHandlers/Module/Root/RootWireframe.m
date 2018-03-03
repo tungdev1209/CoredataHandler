@@ -13,17 +13,15 @@
 #import "ViewController.h"
 #import "UserDetailViewController.h"
 
-#import "FetchUserWireframe.h"
-#import "AddUserWireframe.h"
-#import "ShowUserWireframe.h"
+#import "AddWireframe.h"
+#import "FetchWireframe.h"
 
 @interface RootWireframe ()
 
 @property (nonatomic, weak) UIWindow *window;
-@property (nonatomic, weak) UIViewController *rootVC;
-@property (nonatomic, strong) FetchUserWireframe *fetchUserWireframe;
-@property (nonatomic, strong) AddUserWireframe *addUserWireframe;
-@property (nonatomic, strong) ShowUserWireframe *showUserWireframe;
+@property (nonatomic, weak) id<ViewControllerProtocolInput> rootVC;
+@property (nonatomic, strong) id<FetchPresenterWireframeProtocol> fetchUserWireframe;
+@property (nonatomic, strong) id<AddPresenterWireframeProtocol> addUserWireframe;
 @property (nonatomic, strong) UserDetailViewController *userDetailVC;
 
 @end
@@ -52,40 +50,25 @@
 
 -(void)setup:(UIWindow *)window {
     self.window = window;
-    self.rootVC = [AppUtils topViewControllerWithRootViewController:self.window.rootViewController];
-    [self initializeRootViewControllerWithDependencies];
+    self.rootVC = (id<ViewControllerProtocolInput>)[AppUtils topViewControllerWithRootViewController:self.window.rootViewController];
+    [self addRootViewControllerDependencies];
 }
 
--(void)initializeRootViewControllerWithDependencies {
-    // get strong refs
-    self.addUserWireframe = [[AddUserWireframe alloc] init];
-    self.showUserWireframe = [[ShowUserWireframe alloc] init];
-    self.fetchUserWireframe = [[FetchUserWireframe alloc] init];
+-(void)addRootViewControllerDependencies {
+    // add Add module
+    self.addUserWireframe = [[AddWireframe alloc] init];
+    self.addUserWireframe.presenterInput.view = self.rootVC;
     
-    if ([self.rootVC conformsToProtocol:@protocol(RootViewProtocol)]) {
-        NSMutableArray *dependencies = [NSMutableArray array];
-        [dependencies addObject:self.addUserWireframe.presenter];
-        [dependencies addObject:self.showUserWireframe.presenter];
-        [dependencies addObject:self.fetchUserWireframe.presenter];
-        [(id<RootViewProtocol>)self.rootVC addDependencies:dependencies];
-    }
-    
-    // get weak refs
-    if ([self.rootVC conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
-        [self.addUserWireframe.presenter setup:(id<AddUserPresenterViewProtocol>)self.rootVC wireframe:self.addUserWireframe];
-    }
-    if ([self.rootVC conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
-        [self.fetchUserWireframe.presenter setup:(id<FetchUserPresenterViewProtocol>)self.rootVC wireframe:self.fetchUserWireframe];
-    }
-    if ([self.rootVC conformsToProtocol:@protocol(AddUserPresenterViewProtocol)]) {
-        [self.showUserWireframe.presenter setup:(id<ShowUserPresenterViewProtocol>)self.rootVC wireframe:self.showUserWireframe];
-    }
+    // add Fetch module
+    self.fetchUserWireframe = [[FetchWireframe alloc] init];
+    self.fetchUserWireframe.presenterInput.view = self.rootVC;
 }
 
 -(void)showUserDetailVCFromRoot:(ShowUserDetail *)userDetail {
-    self.userDetailVC = [self.rootVC.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([UserDetailViewController class])];
+    UIViewController *vc = (UIViewController *)self.rootVC;
+    self.userDetailVC = [vc.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([UserDetailViewController class])];
     self.userDetailVC.userDetail = userDetail;
-    [self.rootVC presentViewController:self.userDetailVC animated:YES completion:nil];
+    [vc presentViewController:self.userDetailVC animated:YES completion:nil];
 }
 
 @end

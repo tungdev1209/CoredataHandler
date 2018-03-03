@@ -32,16 +32,20 @@
     
 }
 
--(void)save:(SaveUserBlock)completion {
-    [[DataHandler shared] addUserLocal:self completion:completion];
-}
-
 +(void)get:(ListUsersBlock)completion {
     [[DataHandler shared] getListUsersLocal:completion];
 }
 
 +(void)getUser:(GetUserBlock)completion withName:(NSString *)name {
     [[DataHandler shared] getUserLocalWith:completion withName:name];
+}
+
+-(void)saveInBackground:(SaveUserBlock)completion {
+    [[DataHandler shared] addUserLocal:self completion:completion];
+}
+
+-(NSError *)save {
+    return [[DataHandler shared] addUserLocal:self];
 }
 
 @end

@@ -8,18 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "LocalDataHandler.h"
 
 typedef void(^FetchResultsBlock)(NSArray *);
 typedef void(^SaveResultsBlock)(NSError *);
 
-@interface CoreDataHandler : NSObject
+@interface CoreDataHandler : LocalDataHandler
 
 -(void)fetchEntries:(NSFetchRequest *)fetchRequest
       withPredicate:(NSPredicate *)predicate
     sortDescriptors:(NSArray *)sortDescriptors
     completionBlock:(FetchResultsBlock)completionBlock;
 
--(void)saveEntry:(SaveResultsBlock)result;
+-(void)saveEntry:(NSManagedObject *)object completion:(SaveResultsBlock)result;
+-(NSError *)saveEntry:(NSManagedObject *)object;
 -(NSManagedObject *)newEntry:(Class)entryClass;
+-(NSManagedObject *)newBackgroundEntry:(Class)entryClass;
 
 @end

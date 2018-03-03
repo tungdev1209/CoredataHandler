@@ -12,7 +12,7 @@
 // https://stackoverflow.com/questions/24657437/core-data-background-context-best-practice
 @implementation CoreDataStack
 
-+(instancetype)getStack {
++ (instancetype)getStack {
     CoreDataStack *obj;
     if (@available(iOS 9, *)) {
         obj = [[CoreDataStack_iOS9 alloc] init];

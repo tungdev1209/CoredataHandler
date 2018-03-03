@@ -11,8 +11,11 @@
 
 @interface LocalDataHandler : NSObject
 
++(instancetype)getHandler;
+
 -(void)getListUsersLocal:(ListUsersBlock)completion;
 -(void)getUserLocal:(GetUserBlock)completion withName:(NSString *)name;
 -(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion;
+-(NSError *)addUserLocal:(UserModel *)mUser;
 
 @end

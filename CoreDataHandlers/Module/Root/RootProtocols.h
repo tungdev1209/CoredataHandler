@@ -10,8 +10,6 @@
 
 @protocol RootViewProtocol <NSObject>
 
--(void)addDependencies:(NSArray *)dependencies;
-
 @end
 
 @protocol RootPresenterProtocol <NSObject>

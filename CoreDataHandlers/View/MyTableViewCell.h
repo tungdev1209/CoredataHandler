@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FetchUserProtocols.h"
+#import "FetchProtocols.h"
 
 @interface MyTableViewCell : UITableViewCell
 

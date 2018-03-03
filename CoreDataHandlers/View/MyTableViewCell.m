@@ -8,6 +8,14 @@
 
 #import "MyTableViewCell.h"
 
+@interface MyTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLbl;
+@property (weak, nonatomic) IBOutlet UILabel *ageLbl;
+
+
+@end
+
 @implementation MyTableViewCell
 
 - (void)awakeFromNib {
@@ -22,7 +30,8 @@
 }
 
 -(void)setUserDetail:(FetchUserDetail *)userDetail {
-    self.textLabel.text = userDetail.name;
+    self.nameLbl.text = userDetail.name;
+    self.ageLbl.text = [NSString stringWithFormat:@"%d", userDetail.age];
 }
 
 @end
