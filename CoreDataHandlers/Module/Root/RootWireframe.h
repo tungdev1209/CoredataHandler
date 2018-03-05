@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "RootProtocols.h"
 
-@class ShowUserDetail;
+@class UserModel;
 
 @interface RootWireframe : NSObject <RootPresenterProtocol>
 
@@ -18,6 +18,6 @@
 
 +(instancetype)shared;
 -(void)setup:(UIWindow *)window;
--(void)showUserDetailVCFromRoot:(ShowUserDetail *)userDetail;
+-(void)showUserDetailVCFromRootWithUser:(UserModel *)user;
 
 @end

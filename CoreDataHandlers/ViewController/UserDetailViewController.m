@@ -7,7 +7,7 @@
 //
 
 #import "UserDetailViewController.h"
-#import "ShowUserDetail.h"
+#import "UserModel.h"
 
 @interface UserDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLbl;

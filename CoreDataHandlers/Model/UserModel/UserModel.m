@@ -33,19 +33,19 @@
 }
 
 +(void)get:(ListUsersBlock)completion {
-    [[DataHandler shared] getListUsersLocal:completion];
+    [[DataHandler shared] local_getListUsers:completion];
 }
 
-+(void)getUser:(GetUserBlock)completion withName:(NSString *)name {
-    [[DataHandler shared] getUserLocalWith:completion withName:name];
++(void)getUserWithName:(NSString *)name completion:(GetUserBlock)completion {
+    [[DataHandler shared] local_getUserWithName:name completion:completion];
 }
 
 -(void)saveInBackground:(SaveUserBlock)completion {
-    [[DataHandler shared] addUserLocal:self completion:completion];
+    [[DataHandler shared] local_addUser:self completion:completion];
 }
 
 -(NSError *)save {
-    return [[DataHandler shared] addUserLocal:self];
+    return [[DataHandler shared] local_addUser:self];
 }
 
 @end

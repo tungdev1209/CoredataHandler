@@ -35,19 +35,19 @@ typedef enum : NSUInteger {
     }
 }
 
--(void)getListUsersLocal:(ListUsersBlock)completion {
+-(void)getListUsers:(ListUsersBlock)completion {
     
 }
 
--(void)getUserLocal:(GetUserBlock)completion withName:(NSString *)name {
+-(void)getUserWithName:(NSString *)name completion:(GetUserBlock)completion {
     
 }
 
--(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
+-(void)addUser:(UserModel *)mUser completion:(SaveUserBlock)completion {
     
 }
 
--(NSError *)addUserLocal:(UserModel *)mUser {
+-(NSError *)addUser:(UserModel *)mUser {
     return nil;
 }
 

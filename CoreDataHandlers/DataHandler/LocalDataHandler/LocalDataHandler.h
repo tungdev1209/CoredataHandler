@@ -13,9 +13,9 @@
 
 +(instancetype)getHandler;
 
--(void)getListUsersLocal:(ListUsersBlock)completion;
--(void)getUserLocal:(GetUserBlock)completion withName:(NSString *)name;
--(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion;
--(NSError *)addUserLocal:(UserModel *)mUser;
+-(void)getListUsers:(ListUsersBlock)completion;
+-(void)getUserWithName:(NSString *)name completion:(GetUserBlock)completion;
+-(void)addUser:(UserModel *)mUser completion:(SaveUserBlock)completion;
+-(NSError *)addUser:(UserModel *)mUser;
 
 @end

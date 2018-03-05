@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserModel.h"
 
 @protocol ShowPresenterInteractorProtocol;
 @protocol ShowPresenterViewProtocol;
@@ -17,12 +18,16 @@
 
 @property (nonatomic, weak) id<ShowPresenterViewProtocol> view;
 
+-(void)showUserDetail:(NSString *)username;
+
 @end
 
 // Interactor -> Presenter
 @protocol ShowInteractorProtocol <NSObject>
 
 @property (nonatomic, strong) id<ShowPresenterInteractorProtocol> interactor;
+
+-(void)didGetUser:(UserModel *)user;
 
 @end
 
@@ -49,6 +54,8 @@
 
 @property (nonatomic, weak) id<ShowInteractorProtocol> presenter;
 
+-(void)getUser:(NSString *)username;
+
 @end
 
 // Presenter -> Wireframe
@@ -58,5 +65,7 @@
 
 // should only use for adding dependencies
 @property (nonatomic, strong) id<ShowPresenterInputProtocol> presenterInput;
+
+-(void)showUserDetailVC:(UserModel *)user;
 
 @end

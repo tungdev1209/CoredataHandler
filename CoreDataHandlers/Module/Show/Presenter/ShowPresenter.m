@@ -14,7 +14,7 @@
 @end
 
 @implementation ShowPresenter
-@synthesize view;
+@synthesize view = _view;
 @synthesize interactor;
 @synthesize wireframe;
 
@@ -30,8 +30,16 @@
 }
 
 -(void)setView:(id<ShowPresenterViewProtocol>)view {
-    [self setValue:view forKey:@"view"];
+    _view = view;
     self.view.presenterShow = self;
+}
+
+- (void)showUserDetail:(NSString *)username {
+    [self.interactor getUser:username];
+}
+
+- (void)didGetUser:(UserModel *)user {
+    [self.wireframe showUserDetailVC:user];
 }
 
 @end

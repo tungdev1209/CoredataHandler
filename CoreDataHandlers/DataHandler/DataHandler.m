@@ -38,20 +38,21 @@
     return self;
 }
 
--(void)getListUsersLocal:(ListUsersBlock)completion {
-    [self.localHandler getListUsersLocal:completion];
+#pragma mark - Local funcs
+-(void)local_getUserWithName:(NSString *)name completion:(GetUserBlock)completion {
+    [self.localHandler getUserWithName:name completion:completion];
 }
 
--(void)getUserLocalWith:(GetUserBlock)completion withName:(NSString *)name {
-    [self.localHandler getUserLocal:completion withName:name];
+-(void)local_getListUsers:(ListUsersBlock)completion {
+    [self.localHandler getListUsers:completion];
 }
 
--(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
-    [self.localHandler addUserLocal:mUser completion:completion];
+-(NSError *)local_addUser:(UserModel *)mUser {
+    return [self.localHandler addUser:mUser];
 }
 
--(NSError *)addUserLocal:(UserModel *)mUser {
-    return [self.localHandler addUserLocal:mUser];
+-(void)local_addUser:(UserModel *)mUser completion:(SaveUserBlock)completion {
+    [self.localHandler addUser:mUser completion:completion];
 }
 
 @end

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ShowUserDetail;
+@class UserModel;
 
-@interface UserDetailViewController : UIViewController
+@protocol UserControllerProtocolInput <NSObject>
+@end
 
-@property (nonatomic, strong) ShowUserDetail *userDetail;
+@interface UserDetailViewController : UIViewController <UserControllerProtocolInput>
+
+@property (nonatomic, strong) UserModel *userDetail;
 
 @end

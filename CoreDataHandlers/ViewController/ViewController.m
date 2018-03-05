@@ -20,6 +20,7 @@
 
 @synthesize presenterFetch;
 @synthesize presenterAdd;
+@synthesize presenterShow;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -112,7 +113,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FetchUserDetail *mUser = [self.users objectAtIndex:indexPath.row];
-//    [self.showUserPresenter showUserDetail:mUser.name];
+    [self.presenterShow showUserDetail:mUser.name];
 }
 
 @end

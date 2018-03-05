@@ -139,7 +139,7 @@
 }
 
 #pragma mark - APP funcs
--(void)getListUsersLocal:(ListUsersBlock)completion {
+-(void)getListUsers:(ListUsersBlock)completion {
     [self fetchEntries:[User fetchRequest] withPredicate:nil sortDescriptors:nil completionBlock:^(NSArray *users) {
         NSMutableArray *mUsers = [NSMutableArray array];
         for (User *user in users) {
@@ -151,7 +151,7 @@
     }];
 }
 
--(void)getUserLocal:(GetUserBlock)completion withName:(NSString *)name {
+-(void)getUserWithName:(NSString *)name completion:(GetUserBlock)completion {
     [self fetchEntries:[User fetchRequest] withPredicate:[NSPredicate predicateWithFormat:@"name == %@", name] sortDescriptors:nil completionBlock:^(NSArray *users) {
         UserModel *mUser = nil;
         if (users.firstObject) {
@@ -163,7 +163,7 @@
     }];
 }
 
--(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion {
+-(void)addUser:(UserModel *)mUser completion:(SaveUserBlock)completion {
     User *cdUser = (User *)[self newBackgroundEntry:[User class]];
     [mUser sendDataToObject:cdUser];
      
@@ -177,7 +177,7 @@
     }];
 }
 
--(NSError *)addUserLocal:(UserModel *)mUser {
+-(NSError *)addUser:(UserModel *)mUser {
     User *cdUser = (User *)[self newEntry:[User class]];
     [mUser sendDataToObject:cdUser];
      

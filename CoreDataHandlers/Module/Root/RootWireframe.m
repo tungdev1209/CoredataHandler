@@ -15,14 +15,19 @@
 
 #import "AddWireframe.h"
 #import "FetchWireframe.h"
+#import "ShowWireframe.h"
 
 @interface RootWireframe ()
 
 @property (nonatomic, weak) UIWindow *window;
 @property (nonatomic, weak) id<ViewControllerProtocolInput> rootVC;
+@property (nonatomic, weak) UIStoryboard *mainStoryboard;
+
 @property (nonatomic, strong) id<FetchPresenterWireframeProtocol> fetchUserWireframe;
 @property (nonatomic, strong) id<AddPresenterWireframeProtocol> addUserWireframe;
-@property (nonatomic, strong) UserDetailViewController *userDetailVC;
+@property (nonatomic, strong) id<ShowPresenterWireframeProtocol> showUserWireframe;
+
+@property (nonatomic, strong) id<UserControllerProtocolInput> userDetailVC;
 
 @end
 
@@ -51,7 +56,20 @@
 -(void)setup:(UIWindow *)window {
     self.window = window;
     self.rootVC = (id<ViewControllerProtocolInput>)[AppUtils topViewControllerWithRootViewController:self.window.rootViewController];
+    self.mainStoryboard = ((UIViewController *)self.rootVC).storyboard;
     [self addRootViewControllerDependencies];
+}
+
+-(void)showUserDetailVCFromRootWithUser:(UserModel *)user {
+    ViewController *vc = (ViewController *)self.rootVC;
+    UserDetailViewController *userVC = (UserDetailViewController *)self.userDetailVC;
+    userVC.userDetail = user;
+    [self addUserDetailControllerDependencies];
+    [vc presentViewController:userVC animated:YES completion:nil];
+}
+
+-(void)addUserDetailControllerDependencies {
+    
 }
 
 -(void)addRootViewControllerDependencies {
@@ -62,13 +80,17 @@
     // add Fetch module
     self.fetchUserWireframe = [[FetchWireframe alloc] init];
     self.fetchUserWireframe.presenterInput.view = self.rootVC;
+    
+    // add Show module
+    self.showUserWireframe = [[ShowWireframe alloc] init];
+    self.showUserWireframe.presenterInput.view = self.rootVC;
 }
 
--(void)showUserDetailVCFromRoot:(ShowUserDetail *)userDetail {
-    UIViewController *vc = (UIViewController *)self.rootVC;
-    self.userDetailVC = [vc.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([UserDetailViewController class])];
-    self.userDetailVC.userDetail = userDetail;
-    [vc presentViewController:self.userDetailVC animated:YES completion:nil];
+-(id<UserControllerProtocolInput>)userDetailVC {
+    if (!_userDetailVC) {
+        _userDetailVC = [self.mainStoryboard instantiateViewControllerWithIdentifier:NSStringFromClass([UserDetailViewController class])];
+    }
+    return _userDetailVC;
 }
 
 @end

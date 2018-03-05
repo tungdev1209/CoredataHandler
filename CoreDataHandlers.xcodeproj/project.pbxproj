@@ -11,8 +11,6 @@
 		0F5B0BCB0F478C20F4C62664 /* ShowInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = E283E8414049BEFEC713BC3E /* ShowInteractor.h */; };
 		169E7E4466424832758A85C0 /* AddProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 45826BEBD89E83C0976B2173 /* AddProtocols.h */; };
 		16A3B5A9992604C6E7D85E73 /* ShowWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = C95BD05A2116AA7F8CF5F204 /* ShowWireframe.h */; };
-		1840F7B8204A78C20005F4E9 /* ShowUserDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 1840F7B6204A78C20005F4E9 /* ShowUserDetail.h */; };
-		1840F7B9204A78C20005F4E9 /* ShowUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1840F7B7204A78C20005F4E9 /* ShowUserDetail.m */; };
 		1840F7BB204AAB6B0005F4E9 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840F7BA204AAB6B0005F4E9 /* MyTableViewCell.xib */; };
 		18810607202CDA0B002C82D4 /* AddUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18810606202CDA0B002C82D4 /* AddUserDetail.m */; };
 		1AE53FAE202C2598001B31BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FAD202C2598001B31BE /* AppDelegate.m */; };
@@ -83,8 +81,6 @@
 		00E35CDA58E1F35CC1BB55CE /* FetchPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FetchPresenter.m; sourceTree = "<group>"; };
 		016996F92A1AA196F9EEB1D9 /* AddPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AddPresenter.m; sourceTree = "<group>"; };
 		01AAE195202489DCFBC43D24 /* ShowPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ShowPresenter.h; sourceTree = "<group>"; };
-		1840F7B6204A78C20005F4E9 /* ShowUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowUserDetail.h; sourceTree = "<group>"; };
-		1840F7B7204A78C20005F4E9 /* ShowUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowUserDetail.m; sourceTree = "<group>"; };
 		1840F7BA204AAB6B0005F4E9 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		18810605202CDA0B002C82D4 /* AddUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddUserDetail.h; sourceTree = "<group>"; };
 		18810606202CDA0B002C82D4 /* AddUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddUserDetail.m; sourceTree = "<group>"; };
@@ -219,15 +215,6 @@
 			path = UserDetail;
 			sourceTree = "<group>";
 		};
-		1840F7B5204A78AF0005F4E9 /* ShowUserDetail */ = {
-			isa = PBXGroup;
-			children = (
-				1840F7B6204A78C20005F4E9 /* ShowUserDetail.h */,
-				1840F7B7204A78C20005F4E9 /* ShowUserDetail.m */,
-			);
-			path = ShowUserDetail;
-			sourceTree = "<group>";
-		};
 		188105FE202CC1C3002C82D4 /* UserModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,7 +334,6 @@
 		1AE54008202C25EC001B31BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1840F7B5204A78AF0005F4E9 /* ShowUserDetail */,
 				1840F7B4204A641F0005F4E9 /* UserDetail */,
 				1840F7B3204A62100005F4E9 /* FetchUser */,
 				188105FE202CC1C3002C82D4 /* UserModel */,
@@ -550,7 +536,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1840F7B8204A78C20005F4E9 /* ShowUserDetail.h in Headers */,
 				79AB7785FC6C26B47E78CF3C /* FetchProtocols.h in Headers */,
 				21F25C68713D1AF70E3727A5 /* FetchPresenter.h in Headers */,
 				717B9580CB6AB57AC5BB2890 /* FetchInteractor.h in Headers */,
@@ -721,7 +706,6 @@
 				1AE53FB7202C2598001B31BE /* CoreDataHandlers.xcdatamodeld in Sources */,
 				1AE54054202C69DA001B31BE /* FetchUserDetail.m in Sources */,
 				1AE54051202C61EB001B31BE /* NSObject_Extension.m in Sources */,
-				1840F7B9204A78C20005F4E9 /* ShowUserDetail.m in Sources */,
 				1AE54020202C25EC001B31BE /* UserModel.m in Sources */,
 				1AE5401B202C25EC001B31BE /* CoreDataStack_iOS9.m in Sources */,
 				1AE5403F202C387F001B31BE /* RootPresenter.m in Sources */,

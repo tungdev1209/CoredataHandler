@@ -8,6 +8,7 @@
 
 #import "ShowWireframe.h"
 #import "ShowPresenter.h"
+#import "RootWireframe.h"
 
 @interface ShowWireframe()
 
@@ -27,6 +28,10 @@
         self.presenter.wireframe = self;
     }
     return self;
+}
+
+- (void)showUserDetailVC:(UserModel *)user {
+    [[RootWireframe shared] showUserDetailVCFromRootWithUser:user];
 }
 
 @end

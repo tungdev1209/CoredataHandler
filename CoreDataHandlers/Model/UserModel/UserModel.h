@@ -23,7 +23,7 @@ typedef void(^GetUserBlock)(UserModel * _Nullable mUser);
 
 -(instancetype _Nonnull )initWithUser:(User *_Nonnull)user;
 +(void)get:(ListUsersBlock _Nullable )completion;
-+(void)getUser:(GetUserBlock _Nullable)completion withName:(NSString * _Nonnull)name;
++(void)getUserWithName:(NSString * _Nonnull)name completion:(GetUserBlock _Nullable)completion;
 -(void)saveInBackground:(SaveUserBlock _Nullable )completion;
 -(NSError *_Nullable)save;
 

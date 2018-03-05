@@ -13,10 +13,9 @@
 
 +(instancetype)shared;
 
--(void)getListUsersLocal:(ListUsersBlock)completion;
--(void)getUserLocalWith:(GetUserBlock)completion withName:(NSString *)name;
-
--(void)addUserLocal:(UserModel *)mUser completion:(SaveUserBlock)completion;
--(NSError *)addUserLocal:(UserModel *)mUser;
+-(void)local_getListUsers:(ListUsersBlock)completion;
+-(void)local_getUserWithName:(NSString *)name completion:(GetUserBlock)completion;
+-(void)local_addUser:(UserModel *)mUser completion:(SaveUserBlock)completion;
+-(NSError *)local_addUser:(UserModel *)mUser;
 
 @end
