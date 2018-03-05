@@ -16,10 +16,10 @@
 @synthesize presenter;
 
 - (void)fetchUsers {
-    __weak typeof(self) weakSelf = self;
+    weakify(self);
     [FetchUserListUserDetail get:^(FetchUserListUserDetail *listUsers) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.presenter didReceiveUserDetails:listUsers];
+        strongify(self);
+        [self.presenter didReceiveUserDetails:listUsers];
     }];
 }
 

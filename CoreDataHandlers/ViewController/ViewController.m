@@ -52,16 +52,16 @@
         textField.placeholder = @"age";
     }];
     
-    __weak typeof(self) weakSelf = self;
+    weakify(self);
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         name = [alert.textFields.firstObject text];
         age = [[alert.textFields[1] text] intValue];
         
-        __strong typeof(weakSelf) strongSelf = weakSelf;
+        strongify(self);
         AddUserDetail *userDetail = [[AddUserDetail alloc] init];
         userDetail.name = name;
         userDetail.age = age;
-        [strongSelf.presenterAdd addUserDetail:userDetail];
+        [self.presenterAdd addUserDetail:userDetail];
     }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

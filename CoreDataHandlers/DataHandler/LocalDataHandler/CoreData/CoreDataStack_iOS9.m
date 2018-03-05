@@ -30,18 +30,18 @@
 }
 
 -(void)mainContextChanged:(NSNotification *)notification {
-    __weak typeof(self) weakSelf = self;
+    weakify(self);
     [self.backgroundManagedObjectContext performBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.backgroundManagedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+        strongify(self);
+        [self.backgroundManagedObjectContext mergeChangesFromContextDidSaveNotification:notification];
     }];
 }
 
 -(void)backgroundContextChanged:(NSNotification *)notification {
-    __weak typeof(self) weakSelf = self;
+    weakify(self);
     [self.managedObjectContext performBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+        strongify(self);
+        [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
     }];
 }
 

@@ -16,10 +16,10 @@
 @synthesize presenter;
 
 - (void)getUser:(NSString *)username {
-    __weak typeof(self) weakSelf = self;
+    weakify(self);
     [UserModel getUserWithName:username completion:^(UserModel * _Nullable mUser) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.presenter didGetUser:mUser];
+        strongify(self);
+        [self.presenter didGetUser:mUser];
     }];
 }
 
