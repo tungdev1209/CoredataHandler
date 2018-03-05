@@ -12,7 +12,6 @@
 @interface CoreDataStackHandler ()
 
 @property (nonatomic, strong) CoreDataStack *stack;
-@property (nonatomic, strong) NSManagedObjectContext *backgroundContext;
 
 @end
 
@@ -28,20 +27,6 @@
 }
 
 #pragma mark - COREDATA funcs
-- (NSError *)saveMainContext {
-    NSManagedObjectContext *context = _stack.managedObjectContext;
-    __block NSError *error = nil;
-    [context performBlockAndWait:^{
-        if ([context hasChanges] && ![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-            //        abort();
-        }
-    }];
-    return error;
-}
-
 - (void)fetchEntries:(NSFetchRequest *)fetchRequest
        withPredicate:(NSPredicate *)predicate
      sortDescriptors:(NSArray *)sortDescriptors
@@ -101,14 +86,23 @@
 }
 
 -(NSError *)saveEntry:(NSManagedObject *)object {
-    return [self saveMainContext];
+    NSManagedObjectContext *context = self.stack.managedObjectContext;
+    __block NSError *error = nil;
+    [context performBlockAndWait:^{
+        if ([context hasChanges] && ![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        }
+    }];
+    return error;
 }
 
 -(void)saveEntry:(NSManagedObject *)object completion:(SaveResultsBlock)result {
     NSManagedObjectContext *context = object.managedObjectContext;
     [context performBlock:^{
         NSError *error = nil;
-        [context save:&error];
+        if ([context hasChanges] && ![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        }
         result(error);
     }];
 }
