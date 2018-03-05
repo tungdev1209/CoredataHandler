@@ -46,17 +46,24 @@
 		21107B83DCE5AD2469E92CFB /* AddInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 36549F3FECB651E7429A8A95 /* AddInteractor.h */; };
 		21F25C68713D1AF70E3727A5 /* FetchPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = F721401F25F086B36D12CF1B /* FetchPresenter.h */; };
 		2D54F59E0EB3B2C558B9AA57 /* ShowWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E703854C3E4D60892ECA3B /* ShowWireframe.m */; };
+		32B8CB93A39552E38717E863 /* DimissPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D255BFAD7ACA96D9B11108F /* DimissPresenter.m */; };
+		361A6BD8B5B79F3448E0B6EC /* DimissInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F6A0FB027F5616C88A3B65 /* DimissInteractor.m */; };
 		3797E46E24B3826D49E2B1BD /* ShowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = A415323378085B1B44556FE1 /* ShowProtocols.h */; };
 		3E5D44E33AB796E4E2ED05A0 /* FetchWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F82D835D0EFF01F0E1271E /* FetchWireframe.m */; };
 		49F1AD3338F9D4BCB879832E /* AddPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 016996F92A1AA196F9EEB1D9 /* AddPresenter.m */; };
 		4A653474A9B7885CF721F6EF /* AddWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 493A1F4BA66C22556C4008C5 /* AddWireframe.m */; };
+		56D18EBD040BD9215F23494A /* DimissInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 89AD8A93CFE16B61E637BAD9 /* DimissInteractor.h */; };
+		58E3A3377895458D188E0C05 /* DimissPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 74025EFE24D531250C95421F /* DimissPresenter.h */; };
 		62FD94A1EC0538FE20568AD8 /* FetchWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 397EC5BF43391065082425BE /* FetchWireframe.h */; };
 		7173FC34013DCF605A8126FE /* FetchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E35CDA58E1F35CC1BB55CE /* FetchPresenter.m */; };
 		717B9580CB6AB57AC5BB2890 /* FetchInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8212BFC219DDA2FF121DB0 /* FetchInteractor.h */; };
+		780EA8D759DC14FBD9C4410A /* DimissWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5551A9144B8937C5EA5A7635 /* DimissWireframe.m */; };
 		79AB7785FC6C26B47E78CF3C /* FetchProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = D26B89479B28472DA7CFF95F /* FetchProtocols.h */; };
 		7CFAD56B7B933DC75CC755E0 /* ShowPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AAE195202489DCFBC43D24 /* ShowPresenter.h */; };
 		90E39ED3348DC6CD422D71CC /* ShowInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1152AD7BC80A504E41A48E /* ShowInteractor.m */; };
+		A3E4CE3D6B5D1F67DCC1BC19 /* DimissWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DBA1F6E3197F1EE65DD781E /* DimissWireframe.h */; };
 		AB7F079187567D70C9655C98 /* AddPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 65E9E019F4AF8AC19ABE8E15 /* AddPresenter.h */; };
+		C151D12566FD09CB67699B1E /* DimissProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3EFFDAF69F9CF8E7BCED36 /* DimissProtocols.h */; };
 		D696E9C59BF346FBCCB2901C /* AddInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F670C7A3B9C1C5B66260A22D /* AddInteractor.m */; };
 		D9DB836F9A0FE705416BFA86 /* ShowPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6714955735E645D1E6BF8E08 /* ShowPresenter.m */; };
 		DCEA8EA8480987A176A35B2A /* FetchInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC47AA22F26A4D76BE70E34A /* FetchInteractor.m */; };
@@ -88,6 +95,7 @@
 		18810606202CDA0B002C82D4 /* AddUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddUserDetail.m; sourceTree = "<group>"; };
 		1AC90A3F204CE595006D612D /* CoreDataStackHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStackHandler.h; sourceTree = "<group>"; };
 		1AC90A40204CE595006D612D /* CoreDataStackHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStackHandler.m; sourceTree = "<group>"; };
+		1AC90A43204CFF8F006D612D /* CoreDataHandlers_prefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHandlers_prefixHeader.pch; sourceTree = "<group>"; };
 		1AE53FA9202C2598001B31BE /* CoreDataHandlers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataHandlers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE53FAC202C2598001B31BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AE53FAD202C2598001B31BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -150,10 +158,16 @@
 		397EC5BF43391065082425BE /* FetchWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchWireframe.h; sourceTree = "<group>"; };
 		45826BEBD89E83C0976B2173 /* AddProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AddProtocols.h; sourceTree = "<group>"; };
 		493A1F4BA66C22556C4008C5 /* AddWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AddWireframe.m; sourceTree = "<group>"; };
+		4DBA1F6E3197F1EE65DD781E /* DimissWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DimissWireframe.h; sourceTree = "<group>"; };
+		5551A9144B8937C5EA5A7635 /* DimissWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DimissWireframe.m; sourceTree = "<group>"; };
 		65E9E019F4AF8AC19ABE8E15 /* AddPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AddPresenter.h; sourceTree = "<group>"; };
 		6714955735E645D1E6BF8E08 /* ShowPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ShowPresenter.m; sourceTree = "<group>"; };
 		6A0F93D27D0EDC3935B23CCB /* AddWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AddWireframe.h; sourceTree = "<group>"; };
+		74025EFE24D531250C95421F /* DimissPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DimissPresenter.h; sourceTree = "<group>"; };
+		89AD8A93CFE16B61E637BAD9 /* DimissInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DimissInteractor.h; sourceTree = "<group>"; };
+		9D255BFAD7ACA96D9B11108F /* DimissPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DimissPresenter.m; sourceTree = "<group>"; };
 		A415323378085B1B44556FE1 /* ShowProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ShowProtocols.h; sourceTree = "<group>"; };
+		AB3EFFDAF69F9CF8E7BCED36 /* DimissProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DimissProtocols.h; sourceTree = "<group>"; };
 		BA8212BFC219DDA2FF121DB0 /* FetchInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchInteractor.h; sourceTree = "<group>"; };
 		C95BD05A2116AA7F8CF5F204 /* ShowWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ShowWireframe.h; sourceTree = "<group>"; };
 		CC47AA22F26A4D76BE70E34A /* FetchInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FetchInteractor.m; sourceTree = "<group>"; };
@@ -163,6 +177,7 @@
 		F670C7A3B9C1C5B66260A22D /* AddInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AddInteractor.m; sourceTree = "<group>"; };
 		F721401F25F086B36D12CF1B /* FetchPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchPresenter.h; sourceTree = "<group>"; };
 		F8E703854C3E4D60892ECA3B /* ShowWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ShowWireframe.m; sourceTree = "<group>"; };
+		F9F6A0FB027F5616C88A3B65 /* DimissInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DimissInteractor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +290,7 @@
 				1AE53FBD202C2598001B31BE /* Info.plist */,
 				1AE53FBE202C2598001B31BE /* main.m */,
 				1AE53FB5202C2598001B31BE /* CoreDataHandlers.xcdatamodeld */,
+				1AC90A43204CFF8F006D612D /* CoreDataHandlers_prefixHeader.pch */,
 			);
 			path = CoreDataHandlers;
 			sourceTree = "<group>";
@@ -304,6 +320,7 @@
 				C54C94110CB3EE42EC20D9BE /* Fetch */,
 				62D1D5F005B6A26DA17609FF /* Add */,
 				57D86FE6404368488FD1D389 /* Show */,
+				23C058ACCB6D0BF7AEAD02FC /* Dimiss */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -439,6 +456,28 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		23C058ACCB6D0BF7AEAD02FC /* Dimiss */ = {
+			isa = PBXGroup;
+			children = (
+				B10385C29A50932EEC2D7FDD /* Presenter */,
+				71B68575E03499E8204D0249 /* Interactor */,
+				2EE483510E438FA318503407 /* Wireframe */,
+				AB3EFFDAF69F9CF8E7BCED36 /* DimissProtocols.h */,
+			);
+			name = Dimiss;
+			path = Dimiss;
+			sourceTree = "<group>";
+		};
+		2EE483510E438FA318503407 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				4DBA1F6E3197F1EE65DD781E /* DimissWireframe.h */,
+				5551A9144B8937C5EA5A7635 /* DimissWireframe.m */,
+			);
+			name = Wireframe;
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
 		49CD6E8C4523D16AD6434A79 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +509,16 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
+		71B68575E03499E8204D0249 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				89AD8A93CFE16B61E637BAD9 /* DimissInteractor.h */,
+				F9F6A0FB027F5616C88A3B65 /* DimissInteractor.m */,
+			);
+			name = Interactor;
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		91422568D7BC86515E79C89C /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +535,16 @@
 				CC47AA22F26A4D76BE70E34A /* FetchInteractor.m */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B10385C29A50932EEC2D7FDD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				74025EFE24D531250C95421F /* DimissPresenter.h */,
+				9D255BFAD7ACA96D9B11108F /* DimissPresenter.m */,
+			);
+			name = Presenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		BA49723E3800B0776B02ABCF /* Wireframe */ = {
@@ -555,6 +614,10 @@
 				7CFAD56B7B933DC75CC755E0 /* ShowPresenter.h in Headers */,
 				0F5B0BCB0F478C20F4C62664 /* ShowInteractor.h in Headers */,
 				16A3B5A9992604C6E7D85E73 /* ShowWireframe.h in Headers */,
+				C151D12566FD09CB67699B1E /* DimissProtocols.h in Headers */,
+				58E3A3377895458D188E0C05 /* DimissPresenter.h in Headers */,
+				56D18EBD040BD9215F23494A /* DimissInteractor.h in Headers */,
+				A3E4CE3D6B5D1F67DCC1BC19 /* DimissWireframe.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +790,9 @@
 				D9DB836F9A0FE705416BFA86 /* ShowPresenter.m in Sources */,
 				90E39ED3348DC6CD422D71CC /* ShowInteractor.m in Sources */,
 				2D54F59E0EB3B2C558B9AA57 /* ShowWireframe.m in Sources */,
+				32B8CB93A39552E38717E863 /* DimissPresenter.m in Sources */,
+				361A6BD8B5B79F3448E0B6EC /* DimissInteractor.m in Sources */,
+				780EA8D759DC14FBD9C4410A /* DimissWireframe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +957,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX5SE2R2WN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CoreDataHandlers/CoreDataHandlers_prefixHeader.pch";
 				INFOPLIST_FILE = CoreDataHandlers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -906,6 +974,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TX5SE2R2WN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CoreDataHandlers/CoreDataHandlers_prefixHeader.pch";
 				INFOPLIST_FILE = CoreDataHandlers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

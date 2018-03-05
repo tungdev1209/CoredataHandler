@@ -16,6 +16,7 @@
 @end
 
 @implementation UserDetailViewController
+@synthesize presenterDimiss;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +31,7 @@
 }
 
 - (IBAction)btnPressed:(id)sender {
-    
+    [self.presenterDimiss shouldDimissVC];
 }
 
 @end

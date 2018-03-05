@@ -19,5 +19,6 @@
 +(instancetype)shared;
 -(void)setup:(UIWindow *)window;
 -(void)showUserDetailVCFromRootWithUser:(UserModel *)user;
+-(void)didDismissViewController:(UIViewController *)vc;
 
 @end

@@ -8,6 +8,13 @@
 
 #import "AddInteractor.h"
 
+#define weakify(var) __weak typeof(var) weak_##var = var;
+#define strongify(var) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+__strong typeof(var) var = weak_##var; \
+_Pragma("clang diagnostic pop")
+
 @interface AddInteractor()
 
 @end
@@ -16,13 +23,11 @@
 @synthesize presenter;
 
 - (void)addUserDetail:(AddUserDetail *)userDetail {
-    [self.presenter didAddUser:![userDetail add]];
-    
-//    __weak typeof(self) weakSelf = self;
-//    [userDetail add:^(BOOL succeed) {
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-//        [strongSelf.presenter didAddUser:succeed];
-//    }];
+    weakify(self);
+    [userDetail add:^(BOOL succeed) {
+        strongify(self);
+        [self.presenter didAddUser:succeed];
+    }];
 }
 
 @end

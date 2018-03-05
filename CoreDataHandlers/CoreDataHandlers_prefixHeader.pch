@@ -1,0 +1,14 @@
+//
+//  CoreDataHandlers_prefixHeader.pch
+//  CoreDataHandlers
+//
+//  Created by Tung Nguyen on 3/5/18.
+//  Copyright © 2018 Tung Nguyen. All rights reserved.
+//
+
+#ifndef CoreDataHandlers_prefixHeader_h
+#define CoreDataHandlers_prefixHeader_h
+
+#import "AppUtils.h"
+
+#endif /* CoreDataHandlers_prefixHeader_h */

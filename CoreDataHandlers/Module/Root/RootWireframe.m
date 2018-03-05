@@ -8,7 +8,6 @@
 
 #import "RootWireframe.h"
 #import "RootPresenter.h"
-#import "AppUtils.h"
 
 #import "ViewController.h"
 #import "UserDetailViewController.h"
@@ -16,18 +15,20 @@
 #import "AddWireframe.h"
 #import "FetchWireframe.h"
 #import "ShowWireframe.h"
+#import "DimissWireframe.h"
 
 @interface RootWireframe ()
 
 @property (nonatomic, weak) UIWindow *window;
-@property (nonatomic, weak) id<ViewControllerProtocolInput> rootVC;
 @property (nonatomic, weak) UIStoryboard *mainStoryboard;
 
-@property (nonatomic, strong) id<FetchPresenterWireframeProtocol> fetchUserWireframe;
-@property (nonatomic, strong) id<AddPresenterWireframeProtocol> addUserWireframe;
-@property (nonatomic, strong) id<ShowPresenterWireframeProtocol> showUserWireframe;
+@property (nonatomic, weak) ViewController *rootVC;
+@property (nonatomic, strong) UserDetailViewController *userDetailVC;
 
-@property (nonatomic, strong) id<UserControllerProtocolInput> userDetailVC;
+@property (nonatomic, strong) FetchWireframe *fetchWireframe;
+@property (nonatomic, strong) AddWireframe *addWireframe;
+@property (nonatomic, strong) ShowWireframe *showWireframe;
+@property (nonatomic, strong) DimissWireframe *dismissWireframe;
 
 @end
 
@@ -55,11 +56,27 @@
 
 -(void)setup:(UIWindow *)window {
     self.window = window;
-    self.rootVC = (id<ViewControllerProtocolInput>)[AppUtils topViewControllerWithRootViewController:self.window.rootViewController];
+    self.rootVC = (ViewController *)[AppUtils topViewControllerWithRootViewController:self.window.rootViewController];
     self.mainStoryboard = ((UIViewController *)self.rootVC).storyboard;
     [self addRootViewControllerDependencies];
 }
 
+#pragma mark - ViewController
+-(void)addRootViewControllerDependencies {
+    // add Add module
+    self.addWireframe = [[AddWireframe alloc] init];
+    self.addWireframe.presenterInput.view = self.rootVC;
+    
+    // add Fetch module
+    self.fetchWireframe = [[FetchWireframe alloc] init];
+    self.fetchWireframe.presenterInput.view = self.rootVC;
+    
+    // add Show module
+    self.showWireframe = [[ShowWireframe alloc] init];
+    self.showWireframe.presenterInput.view = self.rootVC;
+}
+
+#pragma mark - UserDetailViewController
 -(void)showUserDetailVCFromRootWithUser:(UserModel *)user {
     ViewController *vc = (ViewController *)self.rootVC;
     UserDetailViewController *userVC = (UserDetailViewController *)self.userDetailVC;
@@ -68,22 +85,17 @@
     [vc presentViewController:userVC animated:YES completion:nil];
 }
 
--(void)addUserDetailControllerDependencies {
-    
+-(void)didDismissViewController:(UIViewController *)vc {
+    if (vc == (UIViewController *)self.userDetailVC) {
+        self.dismissWireframe = nil;
+        self.userDetailVC = nil;
+    }
 }
 
--(void)addRootViewControllerDependencies {
-    // add Add module
-    self.addUserWireframe = [[AddWireframe alloc] init];
-    self.addUserWireframe.presenterInput.view = self.rootVC;
-    
-    // add Fetch module
-    self.fetchUserWireframe = [[FetchWireframe alloc] init];
-    self.fetchUserWireframe.presenterInput.view = self.rootVC;
-    
-    // add Show module
-    self.showUserWireframe = [[ShowWireframe alloc] init];
-    self.showUserWireframe.presenterInput.view = self.rootVC;
+-(void)addUserDetailControllerDependencies {
+    self.dismissWireframe = [[DimissWireframe alloc] init];
+    self.dismissWireframe.presenterInput.view = self.userDetailVC;
+    [self.dismissWireframe setViewController:self.userDetailVC];
 }
 
 -(id<UserControllerProtocolInput>)userDetailVC {

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DimissProtocols.h"
 @class UserModel;
 
-@protocol UserControllerProtocolInput <NSObject>
+@protocol UserControllerProtocolInput <DimissPresenterViewProtocol>
 @end
 
 @interface UserDetailViewController : UIViewController <UserControllerProtocolInput>
