@@ -26,7 +26,15 @@
     // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
     @synchronized (self) {
         if (_persistentContainer == nil) {
+            
+            NSPersistentStoreDescription *description = [[NSPersistentStoreDescription alloc] init];
+            description.shouldInferMappingModelAutomatically = YES;
+            description.shouldMigrateStoreAutomatically = YES;
+            
+//            [description setOption:NSFileProtectionComplete forKey:NSPersistentStoreFileProtectionKey];
+            
             _persistentContainer = [[NSPersistentContainer alloc] initWithName:AppName];
+            [_persistentContainer setPersistentStoreDescriptions:@[description]];
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.

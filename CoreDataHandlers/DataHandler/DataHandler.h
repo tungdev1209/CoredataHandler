@@ -7,15 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserModel.h"
+
+@class UserModel;
+
+typedef void(^SaveUserBlock)(BOOL succeed);
+typedef void(^ListUsersBlock)(NSArray <UserModel *> * _Nonnull mUsers);
+typedef void(^GetUserBlock)(UserModel * _Nullable mUser);
 
 @interface DataHandler : NSObject
 
-+(instancetype)shared;
++(instancetype _Nonnull )shared;
 
--(void)local_getListUsers:(ListUsersBlock)completion;
--(void)local_getUserWithName:(NSString *)name completion:(GetUserBlock)completion;
--(void)local_addUser:(UserModel *)mUser completion:(SaveUserBlock)completion;
--(NSError *)local_addUser:(UserModel *)mUser;
+-(void)local_getListUsers:(ListUsersBlock _Nullable )completion;
+-(void)local_getUserWithName:(NSString * _Nonnull)name completion:(GetUserBlock _Nullable)completion;
+-(void)local_addUser:(UserModel * _Nonnull)mUser completion:(SaveUserBlock _Nullable)completion;
+-(NSError * _Nullable)local_addUser:(UserModel * _Nonnull)mUser;
 
 @end

@@ -9,12 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "User+CoreDataProperties.h"
 #import "ObservableObject.h"
+#import "LocalDataHandler.h"
 
 @class UserModel;
-
-typedef void(^SaveUserBlock)(BOOL succeed);
-typedef void(^ListUsersBlock)(NSArray <UserModel *> * _Nonnull mUsers);
-typedef void(^GetUserBlock)(UserModel * _Nullable mUser);
 
 @interface UserModel : ObservableObject
 
