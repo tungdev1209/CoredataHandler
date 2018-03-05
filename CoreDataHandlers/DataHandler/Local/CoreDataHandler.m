@@ -9,6 +9,7 @@
 #import "CoreDataHandler.h"
 #import "CoreDataStackHandler.h"
 #import "NSObject_Extension.h"
+#import "UserModel.h"
 
 @interface CoreDataHandler()
 
