@@ -14,6 +14,7 @@ typedef void(^SaveResultsBlock)(NSError *_Nullable);
 
 @interface CoreDataStackHandler : NSObject
 
+// Fetching
 - (void)fetchEntries:(NSFetchRequest *_Nullable)fetchRequest
        withPredicate:(NSPredicate *_Nullable)predicate
      sortDescriptors:(NSArray *_Nullable)sortDescriptors
@@ -21,9 +22,13 @@ typedef void(^SaveResultsBlock)(NSError *_Nullable);
 - (NSArray *_Nullable)fetchEntries:(NSFetchRequest *_Nullable)fetchRequest
             withPredicate:(NSPredicate *_Nullable)predicate
           sortDescriptors:(NSArray *_Nullable)sortDescriptors;
-- (NSError *_Nullable)saveEntry:(NSManagedObject *_Nullable)object;
+
+// Insert new entry
 - (NSManagedObject *_Nonnull)newEntry:(Class _Nullable )entryClass;
 - (NSManagedObject *_Nonnull)newBackgroundEntry:(Class _Nullable )entryClass;
+
+// Saving
+- (NSError *_Nullable)saveEntry:(NSManagedObject *_Nullable)object;
 - (void)saveEntry:(NSManagedObject *_Nullable)object completion:(SaveResultsBlock _Nullable )result;
 
 @end

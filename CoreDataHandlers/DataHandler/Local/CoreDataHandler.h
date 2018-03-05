@@ -6,7 +6,6 @@
 //  Copyright © 2018 Tung Nguyen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "LocalDataHandler.h"
 
 @interface CoreDataHandler : LocalDataHandler

@@ -252,6 +252,15 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		1AC90A44204D1E55006D612D /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				1AE5404B202C4DDC001B31BE /* RemoteDataHandler.h */,
+				1AE5404C202C4DDC001B31BE /* RemoteDataHandler.m */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 		1AE53FA0202C2598001B31BE = {
 			isa = PBXGroup;
 			children = (
@@ -325,18 +334,16 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
-		1AE53FFC202C25EC001B31BE /* LocalDataHandler */ = {
+		1AE53FFC202C25EC001B31BE /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				1AE5404B202C4DDC001B31BE /* RemoteDataHandler.h */,
-				1AE5404C202C4DDC001B31BE /* RemoteDataHandler.m */,
 				1AE53FFD202C25EC001B31BE /* LocalDataHandler.h */,
 				1AE54007202C25EC001B31BE /* LocalDataHandler.m */,
 				1AE54005202C25EC001B31BE /* CoreDataHandler.h */,
 				1AE53FFF202C25EC001B31BE /* CoreDataHandler.m */,
 				1AE53FFE202C25EC001B31BE /* CoreData */,
 			);
-			path = LocalDataHandler;
+			path = Local;
 			sourceTree = "<group>";
 		};
 		1AE53FFE202C25EC001B31BE /* CoreData */ = {
@@ -410,7 +417,8 @@
 			children = (
 				1AE54031202C2A13001B31BE /* DataHandler.h */,
 				1AE54032202C2A13001B31BE /* DataHandler.m */,
-				1AE53FFC202C25EC001B31BE /* LocalDataHandler */,
+				1AC90A44204D1E55006D612D /* Remote */,
+				1AE53FFC202C25EC001B31BE /* Local */,
 			);
 			path = DataHandler;
 			sourceTree = "<group>";
@@ -464,7 +472,6 @@
 				2EE483510E438FA318503407 /* Wireframe */,
 				AB3EFFDAF69F9CF8E7BCED36 /* DimissProtocols.h */,
 			);
-			name = Dimiss;
 			path = Dimiss;
 			sourceTree = "<group>";
 		};
@@ -474,7 +481,6 @@
 				4DBA1F6E3197F1EE65DD781E /* DimissWireframe.h */,
 				5551A9144B8937C5EA5A7635 /* DimissWireframe.m */,
 			);
-			name = Wireframe;
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
@@ -515,7 +521,6 @@
 				89AD8A93CFE16B61E637BAD9 /* DimissInteractor.h */,
 				F9F6A0FB027F5616C88A3B65 /* DimissInteractor.m */,
 			);
-			name = Interactor;
 			path = Interactor;
 			sourceTree = "<group>";
 		};
@@ -543,7 +548,6 @@
 				74025EFE24D531250C95421F /* DimissPresenter.h */,
 				9D255BFAD7ACA96D9B11108F /* DimissPresenter.m */,
 			);
-			name = Presenter;
 			path = Presenter;
 			sourceTree = "<group>";
 		};
