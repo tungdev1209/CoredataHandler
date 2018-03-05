@@ -54,6 +54,10 @@
     return self.persistentContainer.viewContext;
 }
 
+-(NSManagedObjectContext *)backgroundManagedObjectContext {
+    return [self.persistentContainer newBackgroundContext];
+}
+
 -(NSManagedObjectModel *)managedObjectModel {
     return self.persistentContainer.managedObjectModel;
 }

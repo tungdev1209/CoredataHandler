@@ -11,12 +11,43 @@
 @interface CoreDataStack_iOS9 ()
 
 @property (nonatomic, strong) NSManagedObjectContext *localManagedObjectContext;
+@property (nonatomic, strong) NSManagedObjectContext *localBackgroundManagedObjectContext;
 @property (nonatomic, strong) NSManagedObjectModel *localManagedObjectModel;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *localPersistentStoreCoordinator;
 
 @end
 
 @implementation CoreDataStack_iOS9
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainContextChanged:) name:NSManagedObjectContextDidSaveNotification object:self.managedObjectContext];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundContextChanged:) name:NSManagedObjectContextDidSaveNotification object:self.managedObjectContext];
+    }
+    return self;
+}
+
+-(void)mainContextChanged:(NSNotification *)notification {
+    __weak typeof(self) weakSelf = self;
+    [self.backgroundManagedObjectContext performBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.backgroundManagedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+    }];
+}
+
+-(void)backgroundContextChanged:(NSNotification *)notification {
+    __weak typeof(self) weakSelf = self;
+    [self.managedObjectContext performBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+    }];
+}
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - CoreData Model
 - (void)saveContext
@@ -49,6 +80,14 @@
         [_localManagedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _localManagedObjectContext;
+}
+
+-(NSManagedObjectContext *)backgroundManagedObjectContext {
+    if (!_localBackgroundManagedObjectContext) {
+        _localBackgroundManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        _localBackgroundManagedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+    }
+    return _localBackgroundManagedObjectContext;
 }
 
 // Returns the managed object model for the application.

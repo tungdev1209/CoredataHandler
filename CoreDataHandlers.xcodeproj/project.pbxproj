@@ -13,6 +13,8 @@
 		16A3B5A9992604C6E7D85E73 /* ShowWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = C95BD05A2116AA7F8CF5F204 /* ShowWireframe.h */; };
 		1840F7BB204AAB6B0005F4E9 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840F7BA204AAB6B0005F4E9 /* MyTableViewCell.xib */; };
 		18810607202CDA0B002C82D4 /* AddUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18810606202CDA0B002C82D4 /* AddUserDetail.m */; };
+		1AC90A41204CE595006D612D /* CoreDataStackHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC90A3F204CE595006D612D /* CoreDataStackHandler.h */; };
+		1AC90A42204CE595006D612D /* CoreDataStackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC90A40204CE595006D612D /* CoreDataStackHandler.m */; };
 		1AE53FAE202C2598001B31BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FAD202C2598001B31BE /* AppDelegate.m */; };
 		1AE53FB1202C2598001B31BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FB0202C2598001B31BE /* ViewController.m */; };
 		1AE53FB4202C2598001B31BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE53FB2202C2598001B31BE /* Main.storyboard */; };
@@ -84,6 +86,8 @@
 		1840F7BA204AAB6B0005F4E9 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		18810605202CDA0B002C82D4 /* AddUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddUserDetail.h; sourceTree = "<group>"; };
 		18810606202CDA0B002C82D4 /* AddUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddUserDetail.m; sourceTree = "<group>"; };
+		1AC90A3F204CE595006D612D /* CoreDataStackHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStackHandler.h; sourceTree = "<group>"; };
+		1AC90A40204CE595006D612D /* CoreDataStackHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStackHandler.m; sourceTree = "<group>"; };
 		1AE53FA9202C2598001B31BE /* CoreDataHandlers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataHandlers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE53FAC202C2598001B31BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AE53FAD202C2598001B31BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				1AE5404C202C4DDC001B31BE /* RemoteDataHandler.m */,
 				1AE53FFD202C25EC001B31BE /* LocalDataHandler.h */,
 				1AE54007202C25EC001B31BE /* LocalDataHandler.m */,
+				1AE54005202C25EC001B31BE /* CoreDataHandler.h */,
+				1AE53FFF202C25EC001B31BE /* CoreDataHandler.m */,
 				1AE53FFE202C25EC001B31BE /* CoreData */,
 			);
 			path = LocalDataHandler;
@@ -319,8 +325,8 @@
 		1AE53FFE202C25EC001B31BE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				1AE54005202C25EC001B31BE /* CoreDataHandler.h */,
-				1AE53FFF202C25EC001B31BE /* CoreDataHandler.m */,
+				1AC90A3F204CE595006D612D /* CoreDataStackHandler.h */,
+				1AC90A40204CE595006D612D /* CoreDataStackHandler.m */,
 				1AE54002202C25EC001B31BE /* CoreDataStack.h */,
 				1AE54006202C25EC001B31BE /* CoreDataStack.m */,
 				1AE54000202C25EC001B31BE /* CoreDataStack_iOS10.h */,
@@ -536,6 +542,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC90A41204CE595006D612D /* CoreDataStackHandler.h in Headers */,
 				79AB7785FC6C26B47E78CF3C /* FetchProtocols.h in Headers */,
 				21F25C68713D1AF70E3727A5 /* FetchPresenter.h in Headers */,
 				717B9580CB6AB57AC5BB2890 /* FetchInteractor.h in Headers */,
@@ -712,6 +719,7 @@
 				1AE5401E202C25EC001B31BE /* LocalDataHandler.m in Sources */,
 				7173FC34013DCF605A8126FE /* FetchPresenter.m in Sources */,
 				DCEA8EA8480987A176A35B2A /* FetchInteractor.m in Sources */,
+				1AC90A42204CE595006D612D /* CoreDataStackHandler.m in Sources */,
 				3E5D44E33AB796E4E2ED05A0 /* FetchWireframe.m in Sources */,
 				49F1AD3338F9D4BCB879832E /* AddPresenter.m in Sources */,
 				D696E9C59BF346FBCCB2901C /* AddInteractor.m in Sources */,
