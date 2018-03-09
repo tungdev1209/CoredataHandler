@@ -19,6 +19,51 @@
 
 @implementation CoreDataStack_iOS9
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainContextChanged:) name:NSManagedObjectContextDidSaveNotification object:self.managedObjectContext];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundContextChanged:) name:NSManagedObjectContextDidSaveNotification object:self.managedObjectContext];
+    }
+    return self;
+}
+
+-(void)mainContextChanged:(NSNotification *)notification {
+    weakify(self);
+    [self.backgroundManagedObjectContext performBlock:^{
+        strongify(self);
+        [self.backgroundManagedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+    }];
+}
+
+-(void)backgroundContextChanged:(NSNotification *)notification {
+    weakify(self);
+    [self.managedObjectContext performBlock:^{
+        strongify(self);
+        [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+    }];
+}
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - CoreData Model
+- (void)saveContext
+{
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
 #pragma mark Core Data stack
 
 // Returns the managed object context for the application.
@@ -40,7 +85,7 @@
 -(NSManagedObjectContext *)backgroundManagedObjectContext {
     if (!_localBackgroundManagedObjectContext) {
         _localBackgroundManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        _localBackgroundManagedObjectContext.parentContext = self.managedObjectContext;
+        [_localBackgroundManagedObjectContext setPersistentStoreCoordinator:self.managedObjectContext.persistentStoreCoordinator];
     }
     return _localBackgroundManagedObjectContext;
 }
