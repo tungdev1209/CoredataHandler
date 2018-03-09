@@ -65,7 +65,7 @@
         return _localPersistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]]];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", AppName]];
     
     NSError *error = nil;
     _localPersistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

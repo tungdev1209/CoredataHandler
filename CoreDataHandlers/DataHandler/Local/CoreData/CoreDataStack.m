@@ -14,11 +14,11 @@
 
 + (instancetype)getStack {
     CoreDataStack *obj;
-    if (@available(iOS 9, *)) {
-        obj = [[CoreDataStack_iOS9 alloc] init];
+    if (@available(iOS 10, *)) {
+        obj = [[CoreDataStack_iOS10 alloc] init];
     }
     else {
-        obj = [[CoreDataStack_iOS10 alloc] init];
+        obj = [[CoreDataStack_iOS9 alloc] init];
     }
     return obj;
 }

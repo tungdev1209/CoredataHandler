@@ -14,6 +14,7 @@
 @interface CoreDataStack_iOS10 ()
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
+@property (nonatomic, strong) NSManagedObjectContext *backgroundContext;
 
 @end
 
@@ -27,7 +28,9 @@
     @synchronized (self) {
         if (_persistentContainer == nil) {
             
-            NSPersistentStoreDescription *description = [[NSPersistentStoreDescription alloc] init];
+            NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", AppName]]; //[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]
+            
+            NSPersistentStoreDescription *description = [[NSPersistentStoreDescription alloc] initWithURL:storeURL];
             description.shouldInferMappingModelAutomatically = YES;
             description.shouldMigrateStoreAutomatically = YES;
             
@@ -49,7 +52,7 @@
                      Check the error message to determine what the actual problem was.
                      */
                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-                    abort();
+//                    abort();
                 }
             }];
         }
@@ -58,12 +61,19 @@
     return _persistentContainer;
 }
 
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
 -(NSManagedObjectContext *)managedObjectContext {
     return self.persistentContainer.viewContext;
 }
 
 -(NSManagedObjectContext *)backgroundManagedObjectContext {
-    return [self.persistentContainer newBackgroundContext];
+    if (!_backgroundContext) {
+        _backgroundContext = [self.persistentContainer newBackgroundContext];
+    }
+    return _backgroundContext;
 }
 
 -(NSManagedObjectModel *)managedObjectModel {
@@ -76,3 +86,4 @@
 
 @end
 #pragma clang diagnostic pop
+

@@ -86,7 +86,7 @@
 }
 
 -(NSError *)saveEntry:(NSManagedObject *)object {
-    NSManagedObjectContext *context = self.stack.managedObjectContext;
+    NSManagedObjectContext *context = object.managedObjectContext;
     __block NSError *error = nil;
     [context performBlockAndWait:^{
         if ([context hasChanges] && ![context save:&error]) {

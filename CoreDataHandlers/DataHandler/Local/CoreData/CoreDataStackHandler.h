@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wnullability-completeness"
+
 typedef void(^FetchResultsBlock)(NSArray *_Nullable);
 typedef void(^SaveResultsBlock)(NSError *_Nullable);
 
@@ -32,3 +35,6 @@ typedef void(^SaveResultsBlock)(NSError *_Nullable);
 - (void)saveEntry:(NSManagedObject *_Nullable)object completion:(SaveResultsBlock _Nullable )result;
 
 @end
+
+//#pragma clang diagnostic pop
+
