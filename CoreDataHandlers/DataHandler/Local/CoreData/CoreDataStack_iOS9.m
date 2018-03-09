@@ -24,7 +24,7 @@
     self = [super init];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainContextChanged:) name:NSManagedObjectContextDidSaveNotification object:self.managedObjectContext];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundContextChanged:) name:NSManagedObjectContextDidSaveNotification object:self.managedObjectContext];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundContextChanged:) name:NSManagedObjectContextDidSaveNotification object:self.backgroundManagedObjectContext];
     }
     return self;
 }
