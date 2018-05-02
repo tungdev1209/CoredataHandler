@@ -27,7 +27,7 @@
 
 @property (nonatomic, strong) id<AddPresenterInteractorProtocol> interactor;
 
--(void)didAddUser:(BOOL)result;
+-(void)didAddUser:(UserModel *)userDetail status:(BOOL)result;
 
 @end
 
@@ -47,8 +47,10 @@
 
 @property (nonatomic, weak) id<AddViewProtocol> presenterAdd;
 
--(void)showAlertAddingFail;
--(void)refreshList;
+-(void)showAlertAddingFailWithUser:(UserModel *)userDetail;
+-(void)didAddUser:(UserModel *)user;
+-(void)refreshListMembers;
+-(void)getListMembers;
 
 @end
 

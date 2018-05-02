@@ -35,11 +35,7 @@
 }
 
 - (void)showUserDetail:(NSString *)username {
-    [self.interactor getUser:username];
-}
-
-- (void)didGetUser:(UserModel *)user {
-    [self.wireframe showUserDetailVC:user];
+    [self.wireframe showUserDetailVC:username];
 }
 
 @end

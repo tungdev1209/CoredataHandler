@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DimissProtocols.h"
-@class UserModel;
 
-@protocol UserControllerProtocolInput <DimissPresenterViewProtocol>
+#import "DismissProtocols.h"
+#import "UpdateProtocols.h"
+#import "FetchUserProtocols.h"
+
+@protocol UserControllerProtocolInput <DismissPresenterViewProtocol, UpdatePresenterViewProtocol, FetchUserPresenterViewProtocol>
 @end
 
 @interface UserDetailViewController : UIViewController <UserControllerProtocolInput>
 
-@property (nonatomic, strong) UserModel *userDetail;
+@property (nonatomic, copy) NSString *username;
 
 @end

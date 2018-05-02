@@ -29,7 +29,7 @@
     // Configure the view for the selected state
 }
 
--(void)setUserDetail:(FetchUserDetail *)userDetail {
+-(void)setUserDetail:(UserModel *)userDetail {
     self.nameLbl.text = userDetail.name;
     self.ageLbl.text = [NSString stringWithFormat:@"%d", userDetail.age];
 }

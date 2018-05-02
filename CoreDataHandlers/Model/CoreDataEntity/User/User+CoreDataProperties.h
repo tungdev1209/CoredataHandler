@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic) int16_t age;
+@property (nullable, nonatomic, copy) NSString *role;
 
 @end
 

@@ -30,8 +30,8 @@
     return self;
 }
 
-- (void)showUserDetailVC:(UserModel *)user {
-    [[RootWireframe shared] showUserDetailVCFromRootWithUser:user];
+- (void)showUserDetailVC:(NSString *)username {
+    [[RootWireframe shared] showUserDetailVCFromRootWithUserName:username];
 }
 
 @end

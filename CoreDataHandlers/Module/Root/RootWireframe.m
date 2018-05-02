@@ -13,22 +13,27 @@
 #import "UserDetailViewController.h"
 
 #import "AddWireframe.h"
-#import "FetchWireframe.h"
 #import "ShowWireframe.h"
-#import "DimissWireframe.h"
+#import "DismissWireframe.h"
+#import "UpdateWireframe.h"
+#import "FetchUserWireframe.h"
+
+#define sc(x) NSStringFromClass([x class])
+#define eqs(x, y) [x isEqualToString:y]
 
 @interface RootWireframe ()
 
 @property (nonatomic, weak) UIWindow *window;
 @property (nonatomic, weak) UIStoryboard *mainStoryboard;
 
-@property (nonatomic, weak) ViewController *rootVC;
-@property (nonatomic, strong) UserDetailViewController *userDetailVC;
+@property (nonatomic, weak) ViewController<ViewControllerProtocolInput> *rootVC;
+@property (nonatomic, strong) UserDetailViewController<UserControllerProtocolInput> *userDetailVC;
 
-@property (nonatomic, strong) FetchWireframe *fetchWireframe;
 @property (nonatomic, strong) AddWireframe *addWireframe;
 @property (nonatomic, strong) ShowWireframe *showWireframe;
-@property (nonatomic, strong) DimissWireframe *dismissWireframe;
+@property (nonatomic, strong) DismissWireframe *dismissWireframe;
+@property (nonatomic, strong) UpdateWireframe *updateWireframe;
+@property (nonatomic, strong) FetchUserWireframe *fetchUserWireframe;
 
 @end
 
@@ -56,49 +61,60 @@
 
 -(void)setup:(UIWindow *)window {
     self.window = window;
-    self.rootVC = (ViewController *)[AppUtils topViewControllerWithRootViewController:self.window.rootViewController];
+    self.rootVC = (ViewController <ViewControllerProtocolInput> *)[AppUtils topViewControllerWithRootViewController:self.window.rootViewController];
     self.mainStoryboard = ((UIViewController *)self.rootVC).storyboard;
-    [self addRootViewControllerDependencies];
+    [self addDependencies:@[sc(AddWireframe),
+                            sc(ShowWireframe),
+                            sc(FetchUserWireframe)]
+                    forVC:self.rootVC];
 }
 
-#pragma mark - ViewController
--(void)addRootViewControllerDependencies {
-    // add Add module
-    self.addWireframe = [[AddWireframe alloc] init];
-    self.addWireframe.presenterInput.view = self.rootVC;
-    
-    // add Fetch module
-    self.fetchWireframe = [[FetchWireframe alloc] init];
-    self.fetchWireframe.presenterInput.view = self.rootVC;
-    
-    // add Show module
-    self.showWireframe = [[ShowWireframe alloc] init];
-    self.showWireframe.presenterInput.view = self.rootVC;
-}
-
-#pragma mark - UserDetailViewController
--(void)showUserDetailVCFromRootWithUser:(UserModel *)user {
-    ViewController *vc = (ViewController *)self.rootVC;
-    UserDetailViewController *userVC = (UserDetailViewController *)self.userDetailVC;
-    userVC.userDetail = user;
-    [self addUserDetailControllerDependencies];
-    [vc presentViewController:userVC animated:YES completion:nil];
-}
-
--(void)didDismissViewController:(UIViewController *)vc {
-    if (vc == (UIViewController *)self.userDetailVC) {
-        self.dismissWireframe = nil;
-        self.userDetailVC = nil;
+#pragma mark - Dependencies
+-(void)addDependencies:(NSArray *)deps forVC:(UIViewController <ViewControllerProtocolInput, UserControllerProtocolInput> *)vc {
+    for (NSString *className in deps) {
+        if (eqs(className, sc(FetchUserWireframe))) {
+            self.fetchUserWireframe = [[FetchUserWireframe alloc] init];
+            self.fetchUserWireframe.presenterInput.view = vc;
+        }
+        else if (eqs(className, sc(AddWireframe))) {
+            self.addWireframe = [[AddWireframe alloc] init];
+            self.addWireframe.presenterInput.view = vc;
+        }
+        else if (eqs(className, sc(ShowWireframe))) {
+            self.showWireframe = [[ShowWireframe alloc] init];
+            self.showWireframe.presenterInput.view = vc;
+        }
+        else if (eqs(className, sc(DismissWireframe))) {
+            self.dismissWireframe = [[DismissWireframe alloc] init];
+            self.dismissWireframe.presenterInput.view = vc;
+        }
+        else if (eqs(className, sc(UpdateWireframe))) {
+            self.updateWireframe = [[UpdateWireframe alloc] init];
+            self.updateWireframe.presenterInput.view = vc;
+        }
     }
 }
 
--(void)addUserDetailControllerDependencies {
-    self.dismissWireframe = [[DimissWireframe alloc] init];
-    self.dismissWireframe.presenterInput.view = self.userDetailVC;
-    [self.dismissWireframe setViewController:self.userDetailVC];
+#pragma mark - UserDetailViewController
+-(void)showUserDetailVCFromRootWithUserName:(NSString *)username {
+    self.userDetailVC.username = username;
+    [self addDependencies:@[sc(DismissWireframe),
+                            sc(FetchUserWireframe),
+                            sc(UpdateWireframe)]
+                    forVC:self.userDetailVC];
+    [self.rootVC presentViewController:self.userDetailVC animated:YES completion:nil];
 }
 
--(id<UserControllerProtocolInput>)userDetailVC {
+-(void)dismissUserDetailViewController {
+    weakify(self);
+    [self.userDetailVC dismissViewControllerAnimated:YES completion:^{
+        strongify(self);
+        self.dismissWireframe = nil;
+        self.userDetailVC = nil;
+    }];
+}
+
+-(UserDetailViewController<UserControllerProtocolInput> *)userDetailVC {
     if (!_userDetailVC) {
         _userDetailVC = [self.mainStoryboard instantiateViewControllerWithIdentifier:NSStringFromClass([UserDetailViewController class])];
     }

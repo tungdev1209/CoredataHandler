@@ -11,4 +11,8 @@
 
 #import "AppUtils.h"
 
+#import "ObservableObject.h"
+#import "Subcriber.h"
+#import "CleanBag.h"
+
 #endif /* CoreDataHandlers_prefixHeader_h */

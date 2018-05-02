@@ -1,19 +1,20 @@
 //
-//  FetchWireframe.m
+//  DismissWireframe.m
 //  CoreDataHandlers
 //
-//  Created by apple on 03/03/18.
+//  Created by apple on 05/01/18.
 //  Copyright © 2018 apple. All rights reserved.
 //
 
-#import "FetchWireframe.h"
-#import "FetchPresenter.h"
+#import "DismissWireframe.h"
+#import "DismissPresenter.h"
+#import "RootWireframe.h"
 
-@interface FetchWireframe()
+@interface DismissWireframe()
 
 @end
 
-@implementation FetchWireframe
+@implementation DismissWireframe
 @synthesize presenter;
 @synthesize presenterInput;
 
@@ -22,11 +23,15 @@
     self = [super init];
     if (self) {
         // initialize dependencies
-        self.presenterInput = [[FetchPresenter alloc] init];
+        self.presenterInput = [[DismissPresenter alloc] init];
         self.presenter = self.presenterInput;
         self.presenter.wireframe = self;
     }
     return self;
+}
+
+-(void)shouldDismissVC {
+    [[RootWireframe shared] dismissUserDetailViewController];
 }
 
 @end

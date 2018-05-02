@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "RootProtocols.h"
 
-#import "FetchProtocols.h"
 #import "AddProtocols.h"
 #import "ShowProtocols.h"
+#import "FetchUserProtocols.h"
 
-@protocol ViewControllerProtocolInput <FetchPresenterViewProtocol, AddPresenterViewProtocol, ShowPresenterViewProtocol>
+@protocol ViewControllerProtocolInput <AddPresenterViewProtocol, ShowPresenterViewProtocol, FetchUserPresenterViewProtocol>
 @end
 
 @interface ViewController : UIViewController <RootViewProtocol, ViewControllerProtocolInput>

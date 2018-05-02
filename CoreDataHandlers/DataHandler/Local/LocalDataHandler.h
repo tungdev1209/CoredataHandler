@@ -14,8 +14,10 @@
 +(instancetype _Nullable )getHandler;
 
 -(void)getListUsers:(ListUsersBlock _Nullable)completion;
--(void)getUserWithName:(NSString * _Nonnull)name completion:(GetUserBlock _Nullable )completion;
+-(void)getUserWithPredicate:(NSPredicate * _Nullable)predicate completion:(GetUserBlock _Nullable)completion;
+-(void)getListUsersWithPredicate:(NSPredicate * _Nullable)predicate completion:(ListUsersBlock _Nullable)completion;
 -(void)addUser:(UserModel *_Nonnull )mUser completion:(SaveUserBlock _Nullable )completion;
 -(NSError * _Nullable)addUser:(UserModel * _Nonnull)mUser;
+-(void)updateUser:(UserModel *_Nonnull )mUser completion:(SaveUserBlock _Nullable )completion;
 
 @end

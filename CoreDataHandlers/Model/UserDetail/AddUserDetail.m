@@ -10,18 +10,4 @@
 
 @implementation AddUserDetail
 
--(void)add:(SaveUserBlock)completion {
-    UserModel *mUser = [[UserModel alloc] init];
-    mUser.name = self.name;
-    mUser.age = self.age;
-    [mUser saveInBackground:completion];
-}
-
--(NSError *)add {
-    UserModel *mUser = [[UserModel alloc] init];
-    mUser.name = self.name;
-    mUser.age = self.age;
-    return [mUser save];
-}
-
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AddInteractor.h"
+#import "NSObject_Extension.h"
 
 @interface AddInteractor()
 
@@ -16,10 +17,13 @@
 @synthesize presenter;
 
 - (void)addUserDetail:(AddUserDetail *)userDetail {
+    UserModel *mUser = [[UserModel alloc] init];
+    [mUser getDataFromObject:userDetail];
+    
     weakify(self);
-    [userDetail add:^(BOOL succeed) {
+    [[DataHandler shared] local_addUser:mUser completion:^(BOOL succeed, UserModel *user) {
         strongify(self);
-        [self.presenter didAddUser:succeed];
+        [self.presenter didAddUser:user status:succeed];
     }];
 }
 

@@ -38,13 +38,21 @@
     [self.interactor addUserDetail:userDetail];
 }
 
-- (void)didAddUser:(BOOL)result {
-    if (!result) {
-        [self.view showAlertAddingFail];
-    }
-    else {
-        [self.view refreshList];
-    }
+-(void)didAddUser:(UserModel *)userDetail status:(BOOL)result {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!result) {
+            [self.view showAlertAddingFailWithUser:userDetail];
+        }
+        else {
+            [self.view didAddUser:userDetail];
+            if ([userDetail.role isEqualToString:Member]) {
+                [self.view refreshListMembers];
+            }
+            else {
+                [self.view getListMembers];
+            }
+        }
+    });
 }
 
 @end

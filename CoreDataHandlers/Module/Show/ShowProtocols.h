@@ -27,8 +27,6 @@
 
 @property (nonatomic, strong) id<ShowPresenterInteractorProtocol> interactor;
 
--(void)didGetUser:(UserModel *)user;
-
 @end
 
 // Wireframe -> Presenter
@@ -54,8 +52,6 @@
 
 @property (nonatomic, weak) id<ShowInteractorProtocol> presenter;
 
--(void)getUser:(NSString *)username;
-
 @end
 
 // Presenter -> Wireframe
@@ -66,6 +62,6 @@
 // should only use for adding dependencies
 @property (nonatomic, strong) id<ShowPresenterInputProtocol> presenterInput;
 
--(void)showUserDetailVC:(UserModel *)user;
+-(void)showUserDetailVC:(NSString *)username;
 
 @end

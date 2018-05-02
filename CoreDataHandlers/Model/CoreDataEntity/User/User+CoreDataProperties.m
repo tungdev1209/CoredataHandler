@@ -17,5 +17,6 @@
 
 @dynamic name;
 @dynamic age;
+@dynamic role;
 
 @end

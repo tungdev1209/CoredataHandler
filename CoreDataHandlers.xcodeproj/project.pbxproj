@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		0D2C8114FA215FBC1B08E30C /* AddWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A0F93D27D0EDC3935B23CCB /* AddWireframe.h */; };
 		0F5B0BCB0F478C20F4C62664 /* ShowInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = E283E8414049BEFEC713BC3E /* ShowInteractor.h */; };
+		0FC395431B1CD0AEFE8D160F /* FetchUserInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAEE3C85AB7C3DFF4CFB220 /* FetchUserInteractor.h */; };
+		109D608E573606AEC04EE772 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		120D60D2598E98D3AC8B0152 /* (null) in Headers */ = {isa = PBXBuildFile; };
 		169E7E4466424832758A85C0 /* AddProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 45826BEBD89E83C0976B2173 /* AddProtocols.h */; };
 		16A3B5A9992604C6E7D85E73 /* ShowWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = C95BD05A2116AA7F8CF5F204 /* ShowWireframe.h */; };
 		1840F7BB204AAB6B0005F4E9 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840F7BA204AAB6B0005F4E9 /* MyTableViewCell.xib */; };
 		18810607202CDA0B002C82D4 /* AddUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18810606202CDA0B002C82D4 /* AddUserDetail.m */; };
+		188DA59920961BDF00570C1C /* Subcriber.h in Headers */ = {isa = PBXBuildFile; fileRef = 188DA59720961BDF00570C1C /* Subcriber.h */; };
+		188DA59A20961BDF00570C1C /* Subcriber.m in Sources */ = {isa = PBXBuildFile; fileRef = 188DA59820961BDF00570C1C /* Subcriber.m */; };
+		188DA59D20961C0200570C1C /* CleanBag.h in Headers */ = {isa = PBXBuildFile; fileRef = 188DA59B20961C0200570C1C /* CleanBag.h */; };
+		188DA59E20961C0200570C1C /* CleanBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 188DA59C20961C0200570C1C /* CleanBag.m */; };
 		1AC90A41204CE595006D612D /* CoreDataStackHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC90A3F204CE595006D612D /* CoreDataStackHandler.h */; };
 		1AC90A42204CE595006D612D /* CoreDataStackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC90A40204CE595006D612D /* CoreDataStackHandler.m */; };
 		1AE53FAE202C2598001B31BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FAD202C2598001B31BE /* AppDelegate.m */; };
@@ -41,32 +48,42 @@
 		1AE5404D202C4DDC001B31BE /* RemoteDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5404C202C4DDC001B31BE /* RemoteDataHandler.m */; };
 		1AE54051202C61EB001B31BE /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54050202C61EB001B31BE /* NSObject_Extension.m */; };
 		1AE54054202C69DA001B31BE /* FetchUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54053202C69DA001B31BE /* FetchUserDetail.m */; };
-		1AE54057202D4218001B31BE /* FetchUserListUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54056202D4218001B31BE /* FetchUserListUserDetail.m */; };
 		1AE54078202D624A001B31BE /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE54077202D624A001B31BE /* UserDetailViewController.m */; };
 		21107B83DCE5AD2469E92CFB /* AddInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 36549F3FECB651E7429A8A95 /* AddInteractor.h */; };
-		21F25C68713D1AF70E3727A5 /* FetchPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = F721401F25F086B36D12CF1B /* FetchPresenter.h */; };
+		2939F70052BD951FC56A75E2 /* UpdateWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E22E241B90227CD21E59E34 /* UpdateWireframe.m */; };
+		2BA77BCBB76BF297255ABEA0 /* FetchUserWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB3FF372E9C0CE9FDB6C456 /* FetchUserWireframe.m */; };
 		2D54F59E0EB3B2C558B9AA57 /* ShowWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E703854C3E4D60892ECA3B /* ShowWireframe.m */; };
-		32B8CB93A39552E38717E863 /* DimissPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D255BFAD7ACA96D9B11108F /* DimissPresenter.m */; };
-		361A6BD8B5B79F3448E0B6EC /* DimissInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F6A0FB027F5616C88A3B65 /* DimissInteractor.m */; };
+		2F3B3CE8A5E5B9DAC03738DC /* FetchUserProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 61EB83A2DFB7B8B65DF04EAC /* FetchUserProtocols.h */; };
 		3797E46E24B3826D49E2B1BD /* ShowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = A415323378085B1B44556FE1 /* ShowProtocols.h */; };
-		3E5D44E33AB796E4E2ED05A0 /* FetchWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F82D835D0EFF01F0E1271E /* FetchWireframe.m */; };
 		49F1AD3338F9D4BCB879832E /* AddPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 016996F92A1AA196F9EEB1D9 /* AddPresenter.m */; };
 		4A653474A9B7885CF721F6EF /* AddWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 493A1F4BA66C22556C4008C5 /* AddWireframe.m */; };
-		56D18EBD040BD9215F23494A /* DimissInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 89AD8A93CFE16B61E637BAD9 /* DimissInteractor.h */; };
-		58E3A3377895458D188E0C05 /* DimissPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 74025EFE24D531250C95421F /* DimissPresenter.h */; };
-		62FD94A1EC0538FE20568AD8 /* FetchWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 397EC5BF43391065082425BE /* FetchWireframe.h */; };
-		7173FC34013DCF605A8126FE /* FetchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E35CDA58E1F35CC1BB55CE /* FetchPresenter.m */; };
-		717B9580CB6AB57AC5BB2890 /* FetchInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8212BFC219DDA2FF121DB0 /* FetchInteractor.h */; };
-		780EA8D759DC14FBD9C4410A /* DimissWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5551A9144B8937C5EA5A7635 /* DimissWireframe.m */; };
-		79AB7785FC6C26B47E78CF3C /* FetchProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = D26B89479B28472DA7CFF95F /* FetchProtocols.h */; };
+		5548B333BC89712E2412F7D8 /* UpdatePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C2D9ECF2342EE4B25906 /* UpdatePresenter.m */; };
+		59BF74FF9F1A734D0F885674 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		5ACE1F49177FB4029D3360D8 /* UpdateWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 799ABD4BC7A248F4CAC8CBE1 /* UpdateWireframe.h */; };
+		7A173A832843996C70C3FA39 /* DismissPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E306D40FAD8E4D18A7FE84 /* DismissPresenter.m */; };
 		7CFAD56B7B933DC75CC755E0 /* ShowPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AAE195202489DCFBC43D24 /* ShowPresenter.h */; };
+		88E0395A669F8F7518DD2FF2 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		90E39ED3348DC6CD422D71CC /* ShowInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1152AD7BC80A504E41A48E /* ShowInteractor.m */; };
-		A3E4CE3D6B5D1F67DCC1BC19 /* DimissWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DBA1F6E3197F1EE65DD781E /* DimissWireframe.h */; };
+		91ABB2562B40393FDB801C08 /* UpdatePresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 860506B7AA73A4AE45035F9D /* UpdatePresenter.h */; };
+		94EE90AFFCE8A88000154310 /* DismissInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F972381E76BEC0E01066647 /* DismissInteractor.h */; };
+		96CE14B2CABCDF6C5AC3DE2F /* DismissPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E65353306F03513DD1FFF65 /* DismissPresenter.h */; };
+		A1F906442A83EDDE6433B0AE /* FetchUserWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FB8051C1EBCCDD90E71A5E /* FetchUserWireframe.h */; };
+		A5BA83C3C5C7AABA651F1797 /* UpdateProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2A3E87FEB11057AB0A760F /* UpdateProtocols.h */; };
+		A5C1BA33CA72EDB1BB93FDEA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		AB7F079187567D70C9655C98 /* AddPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 65E9E019F4AF8AC19ABE8E15 /* AddPresenter.h */; };
-		C151D12566FD09CB67699B1E /* DimissProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3EFFDAF69F9CF8E7BCED36 /* DimissProtocols.h */; };
+		ABC0F859D229E0C084C740F3 /* UpdateInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8FD23CC5027CD50D680C7B /* UpdateInteractor.h */; };
+		B854D66A731A9D576474F5A6 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		BCB9EC0A106267EB265E42C9 /* FetchUserPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B80B91327FF5A6BBEB50D7B /* FetchUserPresenter.h */; };
+		C313485FD717D783F184653C /* DismissInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B6966A0547CE7B781BBC7 /* DismissInteractor.m */; };
+		CB4BFDDD19D5F73EDB655DAD /* DismissWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFBDAF541096CAC97DADF98 /* DismissWireframe.m */; };
 		D696E9C59BF346FBCCB2901C /* AddInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F670C7A3B9C1C5B66260A22D /* AddInteractor.m */; };
 		D9DB836F9A0FE705416BFA86 /* ShowPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6714955735E645D1E6BF8E08 /* ShowPresenter.m */; };
-		DCEA8EA8480987A176A35B2A /* FetchInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC47AA22F26A4D76BE70E34A /* FetchInteractor.m */; };
+		E4967F5F7F13934F51BF591D /* DismissWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CA7AD6E8112F22382E8741 /* DismissWireframe.h */; };
+		ED2909B04C84E4C5CE6A13CE /* DismissProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EE33751801854C56DD57D8D /* DismissProtocols.h */; };
+		F4C9572C9E8EE4B96A371A96 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		FA542D6B2A710EAB1A42DC59 /* UpdateInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F447BE291A53069A61F479 /* UpdateInteractor.m */; };
+		FEAE0BE3BEF3D8AB3A576283 /* FetchUserPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C420544A61E63AF1B22C01AD /* FetchUserPresenter.m */; };
+		FF11DBCB9330E22C9388FC2F /* FetchUserInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B210054AD04F004A225BD /* FetchUserInteractor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,12 +104,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E35CDA58E1F35CC1BB55CE /* FetchPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FetchPresenter.m; sourceTree = "<group>"; };
 		016996F92A1AA196F9EEB1D9 /* AddPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AddPresenter.m; sourceTree = "<group>"; };
 		01AAE195202489DCFBC43D24 /* ShowPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ShowPresenter.h; sourceTree = "<group>"; };
+		0E65353306F03513DD1FFF65 /* DismissPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DismissPresenter.h; sourceTree = "<group>"; };
 		1840F7BA204AAB6B0005F4E9 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		18810605202CDA0B002C82D4 /* AddUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddUserDetail.h; sourceTree = "<group>"; };
 		18810606202CDA0B002C82D4 /* AddUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddUserDetail.m; sourceTree = "<group>"; };
+		188DA59720961BDF00570C1C /* Subcriber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Subcriber.h; sourceTree = "<group>"; };
+		188DA59820961BDF00570C1C /* Subcriber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Subcriber.m; sourceTree = "<group>"; };
+		188DA59B20961C0200570C1C /* CleanBag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanBag.h; sourceTree = "<group>"; };
+		188DA59C20961C0200570C1C /* CleanBag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanBag.m; sourceTree = "<group>"; };
 		1AC90A3F204CE595006D612D /* CoreDataStackHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStackHandler.h; sourceTree = "<group>"; };
 		1AC90A40204CE595006D612D /* CoreDataStackHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStackHandler.m; sourceTree = "<group>"; };
 		1AC90A43204CFF8F006D612D /* CoreDataHandlers_prefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHandlers_prefixHeader.pch; sourceTree = "<group>"; };
@@ -149,35 +170,40 @@
 		1AE54050202C61EB001B31BE /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
 		1AE54052202C69DA001B31BE /* FetchUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchUserDetail.h; sourceTree = "<group>"; };
 		1AE54053202C69DA001B31BE /* FetchUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchUserDetail.m; sourceTree = "<group>"; };
-		1AE54055202D4218001B31BE /* FetchUserListUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchUserListUserDetail.h; sourceTree = "<group>"; };
-		1AE54056202D4218001B31BE /* FetchUserListUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchUserListUserDetail.m; sourceTree = "<group>"; };
 		1AE54076202D624A001B31BE /* UserDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
 		1AE54077202D624A001B31BE /* UserDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
-		33F82D835D0EFF01F0E1271E /* FetchWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FetchWireframe.m; sourceTree = "<group>"; };
+		2392C2D9ECF2342EE4B25906 /* UpdatePresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UpdatePresenter.m; sourceTree = "<group>"; };
 		36549F3FECB651E7429A8A95 /* AddInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AddInteractor.h; sourceTree = "<group>"; };
-		397EC5BF43391065082425BE /* FetchWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchWireframe.h; sourceTree = "<group>"; };
+		3AFBDAF541096CAC97DADF98 /* DismissWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DismissWireframe.m; sourceTree = "<group>"; };
 		45826BEBD89E83C0976B2173 /* AddProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AddProtocols.h; sourceTree = "<group>"; };
 		493A1F4BA66C22556C4008C5 /* AddWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AddWireframe.m; sourceTree = "<group>"; };
-		4DBA1F6E3197F1EE65DD781E /* DimissWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DimissWireframe.h; sourceTree = "<group>"; };
-		5551A9144B8937C5EA5A7635 /* DimissWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DimissWireframe.m; sourceTree = "<group>"; };
+		4A4B210054AD04F004A225BD /* FetchUserInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FetchUserInteractor.m; sourceTree = "<group>"; };
+		51E306D40FAD8E4D18A7FE84 /* DismissPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DismissPresenter.m; sourceTree = "<group>"; };
+		61EB83A2DFB7B8B65DF04EAC /* FetchUserProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchUserProtocols.h; sourceTree = "<group>"; };
 		65E9E019F4AF8AC19ABE8E15 /* AddPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AddPresenter.h; sourceTree = "<group>"; };
 		6714955735E645D1E6BF8E08 /* ShowPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ShowPresenter.m; sourceTree = "<group>"; };
 		6A0F93D27D0EDC3935B23CCB /* AddWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AddWireframe.h; sourceTree = "<group>"; };
-		74025EFE24D531250C95421F /* DimissPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DimissPresenter.h; sourceTree = "<group>"; };
-		89AD8A93CFE16B61E637BAD9 /* DimissInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DimissInteractor.h; sourceTree = "<group>"; };
-		9D255BFAD7ACA96D9B11108F /* DimissPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DimissPresenter.m; sourceTree = "<group>"; };
+		6FB3FF372E9C0CE9FDB6C456 /* FetchUserWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FetchUserWireframe.m; sourceTree = "<group>"; };
+		799ABD4BC7A248F4CAC8CBE1 /* UpdateWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UpdateWireframe.h; sourceTree = "<group>"; };
+		7F972381E76BEC0E01066647 /* DismissInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DismissInteractor.h; sourceTree = "<group>"; };
+		82CA7AD6E8112F22382E8741 /* DismissWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DismissWireframe.h; sourceTree = "<group>"; };
+		860506B7AA73A4AE45035F9D /* UpdatePresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UpdatePresenter.h; sourceTree = "<group>"; };
+		8B80B91327FF5A6BBEB50D7B /* FetchUserPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchUserPresenter.h; sourceTree = "<group>"; };
+		99FB8051C1EBCCDD90E71A5E /* FetchUserWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchUserWireframe.h; sourceTree = "<group>"; };
+		9A2A3E87FEB11057AB0A760F /* UpdateProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UpdateProtocols.h; sourceTree = "<group>"; };
+		9D8FD23CC5027CD50D680C7B /* UpdateInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UpdateInteractor.h; sourceTree = "<group>"; };
+		9E22E241B90227CD21E59E34 /* UpdateWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UpdateWireframe.m; sourceTree = "<group>"; };
+		9EE33751801854C56DD57D8D /* DismissProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DismissProtocols.h; sourceTree = "<group>"; };
 		A415323378085B1B44556FE1 /* ShowProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ShowProtocols.h; sourceTree = "<group>"; };
-		AB3EFFDAF69F9CF8E7BCED36 /* DimissProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DimissProtocols.h; sourceTree = "<group>"; };
-		BA8212BFC219DDA2FF121DB0 /* FetchInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchInteractor.h; sourceTree = "<group>"; };
+		AEAEE3C85AB7C3DFF4CFB220 /* FetchUserInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchUserInteractor.h; sourceTree = "<group>"; };
+		C420544A61E63AF1B22C01AD /* FetchUserPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FetchUserPresenter.m; sourceTree = "<group>"; };
 		C95BD05A2116AA7F8CF5F204 /* ShowWireframe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ShowWireframe.h; sourceTree = "<group>"; };
-		CC47AA22F26A4D76BE70E34A /* FetchInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FetchInteractor.m; sourceTree = "<group>"; };
-		D26B89479B28472DA7CFF95F /* FetchProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchProtocols.h; sourceTree = "<group>"; };
+		D42B6966A0547CE7B781BBC7 /* DismissInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DismissInteractor.m; sourceTree = "<group>"; };
 		DD1152AD7BC80A504E41A48E /* ShowInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ShowInteractor.m; sourceTree = "<group>"; };
 		E283E8414049BEFEC713BC3E /* ShowInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ShowInteractor.h; sourceTree = "<group>"; };
+		E4F447BE291A53069A61F479 /* UpdateInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UpdateInteractor.m; sourceTree = "<group>"; };
 		F670C7A3B9C1C5B66260A22D /* AddInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AddInteractor.m; sourceTree = "<group>"; };
-		F721401F25F086B36D12CF1B /* FetchPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FetchPresenter.h; sourceTree = "<group>"; };
 		F8E703854C3E4D60892ECA3B /* ShowWireframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ShowWireframe.m; sourceTree = "<group>"; };
-		F9F6A0FB027F5616C88A3B65 /* DimissInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DimissInteractor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,13 +240,40 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		057E3120AD9BFC201C7EFAB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				860506B7AA73A4AE45035F9D /* UpdatePresenter.h */,
+				2392C2D9ECF2342EE4B25906 /* UpdatePresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0FF5AA1C88320B38F3B151ED /* Dismiss */ = {
+			isa = PBXGroup;
+			children = (
+				3688E1DF445470FB31CBAD5B /* Presenter */,
+				DFB8FC7D7D797D003F0D7ADC /* Interactor */,
+				21A85DD1145237AC635ADCF7 /* Wireframe */,
+				9EE33751801854C56DD57D8D /* DismissProtocols.h */,
+			);
+			path = Dismiss;
+			sourceTree = "<group>";
+		};
+		142F37E9DE5DB42EF8E93634 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9D8FD23CC5027CD50D680C7B /* UpdateInteractor.h */,
+				E4F447BE291A53069A61F479 /* UpdateInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		1840F7B3204A62100005F4E9 /* FetchUser */ = {
 			isa = PBXGroup;
 			children = (
 				1AE54052202C69DA001B31BE /* FetchUserDetail.h */,
 				1AE54053202C69DA001B31BE /* FetchUserDetail.m */,
-				1AE54055202D4218001B31BE /* FetchUserListUserDetail.h */,
-				1AE54056202D4218001B31BE /* FetchUserListUserDetail.m */,
 			);
 			path = FetchUser;
 			sourceTree = "<group>";
@@ -326,10 +379,11 @@
 			isa = PBXGroup;
 			children = (
 				1AE5403C202C3873001B31BE /* Root */,
-				C54C94110CB3EE42EC20D9BE /* Fetch */,
 				62D1D5F005B6A26DA17609FF /* Add */,
 				57D86FE6404368488FD1D389 /* Show */,
-				23C058ACCB6D0BF7AEAD02FC /* Dimiss */,
+				0FF5AA1C88320B38F3B151ED /* Dismiss */,
+				746B40C89F1DD86E6796CD98 /* Update */,
+				499F61C26845A31E89C2A282 /* FetchUser */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -379,6 +433,10 @@
 				1AE5400B202C25EC001B31BE /* ObservableObject+Private.h */,
 				1AE5400C202C25EC001B31BE /* ObservableObject.h */,
 				1AE5400A202C25EC001B31BE /* ObservableObject.m */,
+				188DA59720961BDF00570C1C /* Subcriber.h */,
+				188DA59820961BDF00570C1C /* Subcriber.m */,
+				188DA59B20961C0200570C1C /* CleanBag.h */,
+				188DA59C20961C0200570C1C /* CleanBag.m */,
 			);
 			path = ObservableBase;
 			sourceTree = "<group>";
@@ -464,24 +522,33 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		23C058ACCB6D0BF7AEAD02FC /* Dimiss */ = {
+		21A85DD1145237AC635ADCF7 /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
-				B10385C29A50932EEC2D7FDD /* Presenter */,
-				71B68575E03499E8204D0249 /* Interactor */,
-				2EE483510E438FA318503407 /* Wireframe */,
-				AB3EFFDAF69F9CF8E7BCED36 /* DimissProtocols.h */,
-			);
-			path = Dimiss;
-			sourceTree = "<group>";
-		};
-		2EE483510E438FA318503407 /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				4DBA1F6E3197F1EE65DD781E /* DimissWireframe.h */,
-				5551A9144B8937C5EA5A7635 /* DimissWireframe.m */,
+				82CA7AD6E8112F22382E8741 /* DismissWireframe.h */,
+				3AFBDAF541096CAC97DADF98 /* DismissWireframe.m */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		3688E1DF445470FB31CBAD5B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0E65353306F03513DD1FFF65 /* DismissPresenter.h */,
+				51E306D40FAD8E4D18A7FE84 /* DismissPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		499F61C26845A31E89C2A282 /* FetchUser */ = {
+			isa = PBXGroup;
+			children = (
+				F75968841F17E9679DE4133A /* Presenter */,
+				8C14A93B103983DDD39C9C2F /* Interactor */,
+				4C025D61556521A5BA1A5706 /* Wireframe */,
+				61EB83A2DFB7B8B65DF04EAC /* FetchUserProtocols.h */,
+			);
+			path = FetchUser;
 			sourceTree = "<group>";
 		};
 		49CD6E8C4523D16AD6434A79 /* Presenter */ = {
@@ -491,6 +558,15 @@
 				016996F92A1AA196F9EEB1D9 /* AddPresenter.m */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4C025D61556521A5BA1A5706 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				99FB8051C1EBCCDD90E71A5E /* FetchUserWireframe.h */,
+				6FB3FF372E9C0CE9FDB6C456 /* FetchUserWireframe.m */,
+			);
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		57D86FE6404368488FD1D389 /* Show */ = {
@@ -515,40 +591,24 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
-		71B68575E03499E8204D0249 /* Interactor */ = {
+		746B40C89F1DD86E6796CD98 /* Update */ = {
 			isa = PBXGroup;
 			children = (
-				89AD8A93CFE16B61E637BAD9 /* DimissInteractor.h */,
-				F9F6A0FB027F5616C88A3B65 /* DimissInteractor.m */,
+				057E3120AD9BFC201C7EFAB3 /* Presenter */,
+				142F37E9DE5DB42EF8E93634 /* Interactor */,
+				D2CF6212A422B2435CA28568 /* Wireframe */,
+				9A2A3E87FEB11057AB0A760F /* UpdateProtocols.h */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		8C14A93B103983DDD39C9C2F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AEAEE3C85AB7C3DFF4CFB220 /* FetchUserInteractor.h */,
+				4A4B210054AD04F004A225BD /* FetchUserInteractor.m */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		91422568D7BC86515E79C89C /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				F721401F25F086B36D12CF1B /* FetchPresenter.h */,
-				00E35CDA58E1F35CC1BB55CE /* FetchPresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B0939C9BD991C298CD4682CE /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				BA8212BFC219DDA2FF121DB0 /* FetchInteractor.h */,
-				CC47AA22F26A4D76BE70E34A /* FetchInteractor.m */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B10385C29A50932EEC2D7FDD /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				74025EFE24D531250C95421F /* DimissPresenter.h */,
-				9D255BFAD7ACA96D9B11108F /* DimissPresenter.m */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		BA49723E3800B0776B02ABCF /* Wireframe */ = {
@@ -560,17 +620,6 @@
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
-		C54C94110CB3EE42EC20D9BE /* Fetch */ = {
-			isa = PBXGroup;
-			children = (
-				91422568D7BC86515E79C89C /* Presenter */,
-				B0939C9BD991C298CD4682CE /* Interactor */,
-				EB20192ECC8A9687263955B9 /* Wireframe */,
-				D26B89479B28472DA7CFF95F /* FetchProtocols.h */,
-			);
-			path = Fetch;
-			sourceTree = "<group>";
-		};
 		C884588824214375931D4132 /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,13 +629,22 @@
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
-		EB20192ECC8A9687263955B9 /* Wireframe */ = {
+		D2CF6212A422B2435CA28568 /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
-				397EC5BF43391065082425BE /* FetchWireframe.h */,
-				33F82D835D0EFF01F0E1271E /* FetchWireframe.m */,
+				799ABD4BC7A248F4CAC8CBE1 /* UpdateWireframe.h */,
+				9E22E241B90227CD21E59E34 /* UpdateWireframe.m */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		DFB8FC7D7D797D003F0D7ADC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				7F972381E76BEC0E01066647 /* DismissInteractor.h */,
+				D42B6966A0547CE7B781BBC7 /* DismissInteractor.m */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		F467972589A86C5BEAE6AD32 /* Presenter */ = {
@@ -598,6 +656,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		F75968841F17E9679DE4133A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B80B91327FF5A6BBEB50D7B /* FetchUserPresenter.h */,
+				C420544A61E63AF1B22C01AD /* FetchUserPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -605,11 +672,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188DA59920961BDF00570C1C /* Subcriber.h in Headers */,
 				1AC90A41204CE595006D612D /* CoreDataStackHandler.h in Headers */,
-				79AB7785FC6C26B47E78CF3C /* FetchProtocols.h in Headers */,
-				21F25C68713D1AF70E3727A5 /* FetchPresenter.h in Headers */,
-				717B9580CB6AB57AC5BB2890 /* FetchInteractor.h in Headers */,
-				62FD94A1EC0538FE20568AD8 /* FetchWireframe.h in Headers */,
 				169E7E4466424832758A85C0 /* AddProtocols.h in Headers */,
 				AB7F079187567D70C9655C98 /* AddPresenter.h in Headers */,
 				21107B83DCE5AD2469E92CFB /* AddInteractor.h in Headers */,
@@ -618,10 +682,23 @@
 				7CFAD56B7B933DC75CC755E0 /* ShowPresenter.h in Headers */,
 				0F5B0BCB0F478C20F4C62664 /* ShowInteractor.h in Headers */,
 				16A3B5A9992604C6E7D85E73 /* ShowWireframe.h in Headers */,
-				C151D12566FD09CB67699B1E /* DimissProtocols.h in Headers */,
-				58E3A3377895458D188E0C05 /* DimissPresenter.h in Headers */,
-				56D18EBD040BD9215F23494A /* DimissInteractor.h in Headers */,
-				A3E4CE3D6B5D1F67DCC1BC19 /* DimissWireframe.h in Headers */,
+				188DA59D20961C0200570C1C /* CleanBag.h in Headers */,
+				A5BA83C3C5C7AABA651F1797 /* UpdateProtocols.h in Headers */,
+				91ABB2562B40393FDB801C08 /* UpdatePresenter.h in Headers */,
+				ABC0F859D229E0C084C740F3 /* UpdateInteractor.h in Headers */,
+				5ACE1F49177FB4029D3360D8 /* UpdateWireframe.h in Headers */,
+				2F3B3CE8A5E5B9DAC03738DC /* FetchUserProtocols.h in Headers */,
+				BCB9EC0A106267EB265E42C9 /* FetchUserPresenter.h in Headers */,
+				0FC395431B1CD0AEFE8D160F /* FetchUserInteractor.h in Headers */,
+				A1F906442A83EDDE6433B0AE /* FetchUserWireframe.h in Headers */,
+				120D60D2598E98D3AC8B0152 /* (null) in Headers */,
+				B854D66A731A9D576474F5A6 /* (null) in Headers */,
+				109D608E573606AEC04EE772 /* (null) in Headers */,
+				F4C9572C9E8EE4B96A371A96 /* (null) in Headers */,
+				ED2909B04C84E4C5CE6A13CE /* DismissProtocols.h in Headers */,
+				96CE14B2CABCDF6C5AC3DE2F /* DismissPresenter.h in Headers */,
+				94EE90AFFCE8A88000154310 /* DismissInteractor.h in Headers */,
+				E4967F5F7F13934F51BF591D /* DismissWireframe.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,7 +845,6 @@
 				1AE5401D202C25EC001B31BE /* CoreDataStack.m in Sources */,
 				1AE5404D202C4DDC001B31BE /* RemoteDataHandler.m in Sources */,
 				1AE54033202C2A13001B31BE /* DataHandler.m in Sources */,
-				1AE54057202D4218001B31BE /* FetchUserListUserDetail.m in Sources */,
 				1AE53FB1202C2598001B31BE /* ViewController.m in Sources */,
 				1AE54021202C25EC001B31BE /* MyTableViewCell.m in Sources */,
 				1AE53FAE202C2598001B31BE /* AppDelegate.m in Sources */,
@@ -784,19 +860,27 @@
 				1AE5401B202C25EC001B31BE /* CoreDataStack_iOS9.m in Sources */,
 				1AE5403F202C387F001B31BE /* RootPresenter.m in Sources */,
 				1AE5401E202C25EC001B31BE /* LocalDataHandler.m in Sources */,
-				7173FC34013DCF605A8126FE /* FetchPresenter.m in Sources */,
-				DCEA8EA8480987A176A35B2A /* FetchInteractor.m in Sources */,
 				1AC90A42204CE595006D612D /* CoreDataStackHandler.m in Sources */,
-				3E5D44E33AB796E4E2ED05A0 /* FetchWireframe.m in Sources */,
 				49F1AD3338F9D4BCB879832E /* AddPresenter.m in Sources */,
 				D696E9C59BF346FBCCB2901C /* AddInteractor.m in Sources */,
 				4A653474A9B7885CF721F6EF /* AddWireframe.m in Sources */,
+				188DA59E20961C0200570C1C /* CleanBag.m in Sources */,
 				D9DB836F9A0FE705416BFA86 /* ShowPresenter.m in Sources */,
 				90E39ED3348DC6CD422D71CC /* ShowInteractor.m in Sources */,
 				2D54F59E0EB3B2C558B9AA57 /* ShowWireframe.m in Sources */,
-				32B8CB93A39552E38717E863 /* DimissPresenter.m in Sources */,
-				361A6BD8B5B79F3448E0B6EC /* DimissInteractor.m in Sources */,
-				780EA8D759DC14FBD9C4410A /* DimissWireframe.m in Sources */,
+				188DA59A20961BDF00570C1C /* Subcriber.m in Sources */,
+				5548B333BC89712E2412F7D8 /* UpdatePresenter.m in Sources */,
+				FA542D6B2A710EAB1A42DC59 /* UpdateInteractor.m in Sources */,
+				2939F70052BD951FC56A75E2 /* UpdateWireframe.m in Sources */,
+				FEAE0BE3BEF3D8AB3A576283 /* FetchUserPresenter.m in Sources */,
+				FF11DBCB9330E22C9388FC2F /* FetchUserInteractor.m in Sources */,
+				2BA77BCBB76BF297255ABEA0 /* FetchUserWireframe.m in Sources */,
+				59BF74FF9F1A734D0F885674 /* (null) in Sources */,
+				A5C1BA33CA72EDB1BB93FDEA /* (null) in Sources */,
+				88E0395A669F8F7518DD2FF2 /* (null) in Sources */,
+				7A173A832843996C70C3FA39 /* DismissPresenter.m in Sources */,
+				C313485FD717D783F184653C /* DismissInteractor.m in Sources */,
+				CB4BFDDD19D5F73EDB655DAD /* DismissWireframe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

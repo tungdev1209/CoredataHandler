@@ -7,21 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Subcriber;
 
-typedef void(^SubcribeBlock)(id _Nullable);
-
-@interface CleanBag: NSObject
-
-+(instancetype _Nonnull)bag;
-
-@end
+typedef void(^SubcribeBlock)(NSString *_Nonnull keypath, id _Nullable value);
 
 @interface ObservableObject : NSObject
 
 -(ObservableObject *_Nonnull)syncupWithObject:(ObservableObject *_Nonnull)object;
 -(ObservableObject *_Nonnull)removeSyncupObject;
--(ObservableObject *_Nonnull)subcribe:(SubcribeBlock _Nonnull)subcriber;
--(ObservableObject *_Nonnull)subcribeKeySelector:(SEL _Nonnull)propertySelector binding:(SubcribeBlock _Nonnull)subcriber;
--(void)cleanupBy:(CleanBag * _Nonnull)bag;
+-(Subcriber *_Nonnull)subcribe:(SubcribeBlock _Nonnull)subcriber;
+-(Subcriber *_Nonnull)subcribeKeySelector:(SEL _Nonnull)propertySelector binding:(SubcribeBlock _Nonnull)subcriber;
 
 @end

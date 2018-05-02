@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoreDataHandlers/Model/ObservableBase/ObservableObject.m"
-            timestampString = "539814232.603739"
+            timestampString = "546960146.9952331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "-removeObservingPropertiesForObject:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CoreDataHandlers/Model/ObservableBase/ObservableObject.m"
-            timestampString = "539814232.604324"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "-removeObservingBag"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "-addObservingBag"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

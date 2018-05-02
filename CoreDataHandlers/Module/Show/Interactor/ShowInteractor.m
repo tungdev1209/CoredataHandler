@@ -15,12 +15,4 @@
 @implementation ShowInteractor
 @synthesize presenter;
 
-- (void)getUser:(NSString *)username {
-    weakify(self);
-    [UserModel getUserWithName:username completion:^(UserModel * _Nullable mUser) {
-        strongify(self);
-        [self.presenter didGetUser:mUser];
-    }];
-}
-
 @end

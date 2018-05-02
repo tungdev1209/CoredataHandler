@@ -11,17 +11,21 @@
 #import "ObservableObject.h"
 #import "LocalDataHandler.h"
 
+#define Admin @"Admin"
+#define Member @"Member"
+
+#define AdminUser [UserModel shareUser]
+
 @class UserModel;
 
 @interface UserModel : ObservableObject
 
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic) int16_t age;
+@property (nullable, nonatomic, copy) NSString *role;
 
++(instancetype)shareUser;
 -(instancetype _Nonnull )initWithUser:(User *_Nonnull)user;
-+(void)get:(ListUsersBlock _Nullable )completion;
-+(void)getUserWithName:(NSString * _Nonnull)name completion:(GetUserBlock _Nullable)completion;
--(void)saveInBackground:(SaveUserBlock _Nullable )completion;
--(NSError *_Nullable)save;
+-(User *)getCoreUser;
 
 @end

@@ -39,7 +39,11 @@ typedef enum : NSUInteger {
     
 }
 
--(void)getUserWithName:(NSString *)name completion:(GetUserBlock)completion {
+-(void)getUserWithPredicate:(NSPredicate *)predicate completion:(GetUserBlock)completion {
+    
+}
+
+-(void)getListUsersWithPredicate:(NSPredicate *)predicate completion:(ListUsersBlock)completion {
     
 }
 
@@ -49,6 +53,10 @@ typedef enum : NSUInteger {
 
 -(NSError *)addUser:(UserModel *)mUser {
     return nil;
+}
+
+-(void)updateUser:(UserModel *)mUser completion:(SaveUserBlock)completion {
+    
 }
 
 @end

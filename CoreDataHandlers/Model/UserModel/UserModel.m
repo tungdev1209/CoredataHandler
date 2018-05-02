@@ -8,7 +8,6 @@
 
 #import "UserModel.h"
 #import "NSObject_Extension.h"
-#import "ObservableObject+Private.h"
 #import "DataHandler.h"
 
 @interface UserModel()
@@ -19,6 +18,15 @@
 
 @implementation UserModel
 
++(instancetype)shareUser {
+    static UserModel *u = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        u = [[UserModel alloc] init];
+    });
+    return u;
+}
+
 - (instancetype)initWithUser:(User *)user {
     self = [super init];
     if (self) {
@@ -28,24 +36,8 @@
     return self;
 }
 
--(void)didObserveKeypath:(NSString *)key {
-    
-}
-
-+(void)get:(ListUsersBlock)completion {
-    [[DataHandler shared] local_getListUsers:completion];
-}
-
-+(void)getUserWithName:(NSString *)name completion:(GetUserBlock)completion {
-    [[DataHandler shared] local_getUserWithName:name completion:completion];
-}
-
--(void)saveInBackground:(SaveUserBlock)completion {
-    [[DataHandler shared] local_addUser:self completion:completion];
-}
-
--(NSError *)save {
-    return [[DataHandler shared] local_addUser:self];
+-(User *)getCoreUser {
+    return self.user;
 }
 
 @end

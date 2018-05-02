@@ -13,6 +13,7 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) int16_t age;
+@property (nonatomic, copy) NSString *role;
 
 -(void)add:(SaveUserBlock)completion;
 -(NSError *)add;

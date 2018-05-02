@@ -17,14 +17,14 @@
     
     NSString *keypath;
     NSMutableDictionary *objectKeypaths = [NSMutableDictionary dictionary];
-    for (int i = 0; i < count; ++i){
+    for (int i = 0; i < count; i++){
         keypath = [NSString stringWithUTF8String:property_getName(props[i])];
         [objectKeypaths setObject:@1 forKey:keypath];
     }
     free(props);
     
     objc_property_t *selfProps = class_copyPropertyList([self class], &count);
-    for (int i = 0; i < count; ++i){
+    for (int i = 0; i < count; i++){
         keypath = [NSString stringWithUTF8String:property_getName(selfProps[i])];
         if ([objectKeypaths objectForKey:keypath]) {
             [self setValue:[object valueForKey:keypath] forKey:keypath];
@@ -40,14 +40,14 @@
     
     NSString *keypath;
     NSMutableDictionary *selfKeypaths = [NSMutableDictionary dictionary];
-    for (int i = 0; i < count; ++i){
+    for (int i = 0; i < count; i++){
         keypath = [NSString stringWithUTF8String:property_getName(props[i])];
         [selfKeypaths setObject:@1 forKey:keypath];
     }
     free(props);
     
     objc_property_t *objProps = class_copyPropertyList([object class], &count);
-    for (int i = 0; i < count; ++i){
+    for (int i = 0; i < count; i++){
         keypath = [NSString stringWithUTF8String:property_getName(objProps[i])];
         if ([selfKeypaths objectForKey:keypath]) {
             [object setValue:[self valueForKey:keypath] forKey:keypath];
