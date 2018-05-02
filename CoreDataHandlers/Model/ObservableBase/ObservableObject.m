@@ -10,6 +10,124 @@
 #import "ObservableObject+Private.h"
 #import <objc/runtime.h>
 
+#pragma mark - ========== CleanBag ============
+
+@implementation CleanBag
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.bagId = [CleanBag getRunTimeId];
+    }
+    return self;
+}
+
+static dispatch_queue_t getUUIDQueue() {
+    static dispatch_once_t onceToken;
+    static dispatch_queue_t theQueue = nil;
+    dispatch_once(&onceToken, ^{
+        theQueue = dispatch_queue_create("com.elearning.observable.cleanbag", DISPATCH_QUEUE_SERIAL);
+    });
+    return theQueue;
+}
+
+//http://stackoverflow.com/questions/9015784/how-to-create-uuid-type-1-in-objective-c-ios/9015962#9015962
++(NSString *)getUUIDType1 {
+    __block NSString *uuid1;
+    dispatch_sync(getUUIDQueue(), ^{
+        // Get UUID type 1
+        
+        uuid_t dateUUID;
+        uuid_generate_time(dateUUID);
+        
+        // Convert it to string
+        
+        uuid_string_t unparsedUUID;
+        uuid_unparse_lower(dateUUID, unparsedUUID);
+        uuid1 = [[NSString alloc] initWithUTF8String:unparsedUUID];
+    });
+    return uuid1;
+}
+
++(NSString *)getRunTimeId {
+    return [CleanBag getUUIDType1];
+}
+
+-(NSHashTable *)subcribers {
+    if (!_subcribers) {
+        _subcribers = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsWeakMemory capacity:20];
+    }
+    return _subcribers;
+}
+
+-(void)removeAllSubcribers {
+    [self.subcribers removeAllObjects];
+}
+
+-(void)registerSubcriberObject:(Subcriber *)sub {
+    [self.subcribers addObject:sub];
+}
+
+-(void)dealloc {
+    NSLog(@"CleanBag === DEALLOC");
+    for (Subcriber *sub in self.subcribers.allObjects) {
+        sub.bag = nil;
+    }
+}
+
+@end
+
+#pragma mark - ========== Subcriber ============
+
+@implementation Subcriber
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.subcriberId = [CleanBag getRunTimeId];
+    }
+    return self;
+}
+
+-(void)cleanupBy:(CleanBag *)bag {
+    if ([bag.bagId isEqualToString:self.bag.bagId]) {
+        NSLog(@"same bag");
+        return;
+    }
+    if (self.bag) {
+        [self removeObservingBag];
+    }
+    self.bag = bag;
+    [bag registerSubcriberObject:self];
+    [self addObservingBag];
+}
+
+-(void)addObservingBag {
+    [self addObserver:self forKeyPath:NSStringFromSelector(@selector(bag)) options:NSKeyValueObservingOptionNew context:nil];
+}
+
+-(void)removeObservingBag {
+    @try {
+        [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(bag)) context:nil];
+    } @catch (NSException *exception) {
+        NSLog(@"remove error: %@", exception);
+    }
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"Subcriber === observed keypath: %@ from object: %@", object, keyPath);
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(bag))] && self.bag == nil) {
+        [self removeObservingBag];
+        [self.observableObj removeSubcriberWithId:self.subcriberId];
+    }
+}
+
+@end
+
+#pragma mark - ========== ObservableObject ============
+
 @implementation ObservableObject
 
 #pragma mark - Public funcs

@@ -7,9 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Subcriber;
 
 typedef void(^SubcribeBlock)(NSString *_Nonnull keypath, id _Nullable value);
+
+@interface CleanBag: NSObject
+@end
+
+@interface Subcriber: NSObject
+
+@property (nonatomic, strong) SubcribeBlock subBlock;
+
+-(void)cleanupBy:(CleanBag * _Nonnull)bag;
+
+@end
 
 @interface ObservableObject : NSObject
 

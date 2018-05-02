@@ -16,10 +16,6 @@
 		16A3B5A9992604C6E7D85E73 /* ShowWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = C95BD05A2116AA7F8CF5F204 /* ShowWireframe.h */; };
 		1840F7BB204AAB6B0005F4E9 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840F7BA204AAB6B0005F4E9 /* MyTableViewCell.xib */; };
 		18810607202CDA0B002C82D4 /* AddUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18810606202CDA0B002C82D4 /* AddUserDetail.m */; };
-		188DA59920961BDF00570C1C /* Subcriber.h in Headers */ = {isa = PBXBuildFile; fileRef = 188DA59720961BDF00570C1C /* Subcriber.h */; };
-		188DA59A20961BDF00570C1C /* Subcriber.m in Sources */ = {isa = PBXBuildFile; fileRef = 188DA59820961BDF00570C1C /* Subcriber.m */; };
-		188DA59D20961C0200570C1C /* CleanBag.h in Headers */ = {isa = PBXBuildFile; fileRef = 188DA59B20961C0200570C1C /* CleanBag.h */; };
-		188DA59E20961C0200570C1C /* CleanBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 188DA59C20961C0200570C1C /* CleanBag.m */; };
 		1AC90A41204CE595006D612D /* CoreDataStackHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC90A3F204CE595006D612D /* CoreDataStackHandler.h */; };
 		1AC90A42204CE595006D612D /* CoreDataStackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC90A40204CE595006D612D /* CoreDataStackHandler.m */; };
 		1AE53FAE202C2598001B31BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE53FAD202C2598001B31BE /* AppDelegate.m */; };
@@ -110,10 +106,6 @@
 		1840F7BA204AAB6B0005F4E9 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		18810605202CDA0B002C82D4 /* AddUserDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddUserDetail.h; sourceTree = "<group>"; };
 		18810606202CDA0B002C82D4 /* AddUserDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddUserDetail.m; sourceTree = "<group>"; };
-		188DA59720961BDF00570C1C /* Subcriber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Subcriber.h; sourceTree = "<group>"; };
-		188DA59820961BDF00570C1C /* Subcriber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Subcriber.m; sourceTree = "<group>"; };
-		188DA59B20961C0200570C1C /* CleanBag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanBag.h; sourceTree = "<group>"; };
-		188DA59C20961C0200570C1C /* CleanBag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanBag.m; sourceTree = "<group>"; };
 		1AC90A3F204CE595006D612D /* CoreDataStackHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStackHandler.h; sourceTree = "<group>"; };
 		1AC90A40204CE595006D612D /* CoreDataStackHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStackHandler.m; sourceTree = "<group>"; };
 		1AC90A43204CFF8F006D612D /* CoreDataHandlers_prefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHandlers_prefixHeader.pch; sourceTree = "<group>"; };
@@ -433,10 +425,6 @@
 				1AE5400B202C25EC001B31BE /* ObservableObject+Private.h */,
 				1AE5400C202C25EC001B31BE /* ObservableObject.h */,
 				1AE5400A202C25EC001B31BE /* ObservableObject.m */,
-				188DA59720961BDF00570C1C /* Subcriber.h */,
-				188DA59820961BDF00570C1C /* Subcriber.m */,
-				188DA59B20961C0200570C1C /* CleanBag.h */,
-				188DA59C20961C0200570C1C /* CleanBag.m */,
 			);
 			path = ObservableBase;
 			sourceTree = "<group>";
@@ -672,7 +660,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188DA59920961BDF00570C1C /* Subcriber.h in Headers */,
 				1AC90A41204CE595006D612D /* CoreDataStackHandler.h in Headers */,
 				169E7E4466424832758A85C0 /* AddProtocols.h in Headers */,
 				AB7F079187567D70C9655C98 /* AddPresenter.h in Headers */,
@@ -682,7 +669,6 @@
 				7CFAD56B7B933DC75CC755E0 /* ShowPresenter.h in Headers */,
 				0F5B0BCB0F478C20F4C62664 /* ShowInteractor.h in Headers */,
 				16A3B5A9992604C6E7D85E73 /* ShowWireframe.h in Headers */,
-				188DA59D20961C0200570C1C /* CleanBag.h in Headers */,
 				A5BA83C3C5C7AABA651F1797 /* UpdateProtocols.h in Headers */,
 				91ABB2562B40393FDB801C08 /* UpdatePresenter.h in Headers */,
 				ABC0F859D229E0C084C740F3 /* UpdateInteractor.h in Headers */,
@@ -864,11 +850,9 @@
 				49F1AD3338F9D4BCB879832E /* AddPresenter.m in Sources */,
 				D696E9C59BF346FBCCB2901C /* AddInteractor.m in Sources */,
 				4A653474A9B7885CF721F6EF /* AddWireframe.m in Sources */,
-				188DA59E20961C0200570C1C /* CleanBag.m in Sources */,
 				D9DB836F9A0FE705416BFA86 /* ShowPresenter.m in Sources */,
 				90E39ED3348DC6CD422D71CC /* ShowInteractor.m in Sources */,
 				2D54F59E0EB3B2C558B9AA57 /* ShowWireframe.m in Sources */,
-				188DA59A20961BDF00570C1C /* Subcriber.m in Sources */,
 				5548B333BC89712E2412F7D8 /* UpdatePresenter.m in Sources */,
 				FA542D6B2A710EAB1A42DC59 /* UpdateInteractor.m in Sources */,
 				2939F70052BD951FC56A75E2 /* UpdateWireframe.m in Sources */,

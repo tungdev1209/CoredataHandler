@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoreDataHandlers/Model/ObservableBase/ObservableObject.m"
-            timestampString = "546960146.9952331"
+            timestampString = "546960573.44735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "-addObservingBag"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
+            landmarkName = "-addSubcriberWithBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

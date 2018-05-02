@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "ObservableObject.h"
-#import "Subcriber.h"
-#import "CleanBag.h"
 
 #define kCleanBagDealloc @"CleanBag_Dealloc"
 #define kCleanBagObjectId @"CleanBag_ObjectId"
